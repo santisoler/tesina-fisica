@@ -1,0 +1,2 @@
+All quantity in meters
+x_center	y_center	win width	Te	w rms
