@@ -3,14 +3,19 @@
 Software desarrollado en la Tesina de Grado
 
 >**Métodos Espectrales para la Determinación de la Profundidad del Punto de Curie y el Espesor Elástico de la Corteza Terrestre**
+
 >Autor: *Santiago Rubén Soler*
+
 >Director: *Dr. Mario E. Giménez*
+
 >Consejero de Estudios: *Dr. Pablo A. Turner*
->Departamento de Física, Escuela de Ciencias 
-Exactas y Naturales
->Facultad de Ciencias Exactas
+
+>Departamento de Física, Escuela de Ciencias Exactas y Naturales,
+>Facultad de Ciencias Exactas,
 >Ingeniería y Agrimensura, Universidad Nacional de Rosario.
+
 >En colaboración con el Instituto Geofísico-Sismológico Ing. Volponi, Universidad Nacional de San Juan.
+
 >Argentina, 2015.
 
 -------------------------
