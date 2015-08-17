@@ -23,16 +23,17 @@ Software desarrollado en la Tesina de Grado
 
 Testeado en Debian Jessie 8: Stable Relase.
 
-* Python 2.7.9-1
+* Python (>= 2.7.9-1)\*
 
-* Numpy 1.8.2-2
+* Numpy (>= 1.8.2-2)\*
 
-* Scipy 0.14.0-2
+* Scipy (>= 0.14.0-2)\*
 
-* Matplotlib 1.4.2-3.1
+* Matplotlib (>= 1.4.2-3.1)\*
 
 * [Fatiando a Terra](http://www.fatiando.org/) 0.3
 
+\* Versión con la que fue testeado. Puede funcionar con versiones anteriores.
 
 
 -------------------------------
