@@ -160,3 +160,31 @@ def anomaly_calculation(x, y, w, t, rho):
     gz = utils.mgal2si(np.reshape(gz,(ny,nx)))
     return gz
 
+
+"""
+def parker(x, y, delta_g, w0, t, rho, cut_factor=1):
+    
+    def low_pass_filter(F, k, k_cut):
+        mask = (k < k_cut)
+        return F*mask
+        
+    def hamming_filter(F, k, k_cut):
+        mask = (k < k_cut)*(0.5*(1 + np.cos(np.pi*k/k_cut)))
+        return F*mask
+    
+    ny, nx = np.shape(x)
+    dx = abs(x[0][1] - x[0][0])
+    dy = abs(y[1][0] - y[0][0])
+    assert dx == dy, "dx != dy"
+    fx = fftpack.fftfreq(nx, dx)
+    fy = fftpack.fftfreq(ny, dy)
+    fx, fy = np.meshgrid(fx, fy)
+    k = 2*np.pi*np.sqrt(fx**2 + fy**2)
+    k_cut = cut_factor*(np.pi/t)
+    
+    F_w_w0 = -1/(2*np.pi*G*rho)*np.exp(k*t)*fftpack.fft2(delta_g)
+    F_w_w0 = hamming_filter(F_w_w0, k, k_cut)
+    w_w0 = np.real(fftpack.ifft2(F_w_w0))
+    w = w_w0 + w0
+    return w
+"""
