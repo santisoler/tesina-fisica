@@ -32,7 +32,7 @@ from fatiando import gridder
 | Apertura del Proyecto |
 -------------------------
 """
-proyect_name = "payunia0"
+proyect_name = "payunia"
 grid_name = "curiePayunia.dat"
 curie_filename = "curie.dat"
 default_spectrum_points=70
