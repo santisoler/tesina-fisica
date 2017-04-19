@@ -37,6 +37,14 @@ Testeado en Debian Jessie 8: Stable Relase.
 
 
 -------------------------------
+## Citing
+
+>Soler, S.R. 2015. Métodos Espectrales para la Determinación de la
+Profundidad del Punto de Curie y Espesor Elástico de la Corteza Terrestre.
+Facultad de Ciencias Exactas, Ingeniería y Agrimensura (FCEIA),
+Universidad Nacional de Rosario (UNR). Tesis de Grado para Título de
+Licenciado en Física, https://www.github.com/santis19/tesina-fisica
+
 ## Licencia
 
 This program is free software; you can redistribute it and/or modify
