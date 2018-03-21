@@ -1,0 +1,677 @@
+\part[Determinación del Espesor Elástico]{Determinación del Espesor Elástico de la Corteza Terrestre}
+
+\chapter{Isostasia Flexural}
+
+%~ \vspace{1cm}
+
+Los modelos isostáticos clásicos, como el de Airy o el de Pratt, pueden clasificarse dentro de los llamados modelos locales. Esto se debe a que una columna topográfica de altura $h$ solo afecta a la columna subyacente generando una raíz que se deflecta una profundidad $w$. La presencia de esa columna no modifica en absoluto la profundidad de la raíz en regiones vecinas.
+
+Esto fue discutido por Vening Meinesz, quien creía que la compensación de la superficie terrestre no necesariamente debía ser local. En cambio, propuso un modelo de isostasia regional, en el cual la corteza terrestre se comporta como una placa elástica (en escala de tiempos geológicos) que flota sobre un sustrato no viscoso y la topografía puede considerarse como una carga que genera la deflexión de la placa, explicando así la presencia de la raíz.
+
+Esta placa elástica tendrá una propiedad que se conoce como rigidez flexural, la cual define qué tan rígida es la placa. Cuánto mayor es este valor, la isostasia será más regional. Más adelante mostraremos que esta magnitud depende de parámetros como los módulos de Young y de Poisson de la placa y a su vez de su espesor.
+
+Al aplicar el modelo a la litósfera, definimos el Espesor Elástico de la corteza como el espesor que debería tener una placa elástica de módulo de Young $E=1\cdot 10^{11}\,{\rm Pa}$ y módulo de Poisson $\nu = 0.25$ para generar la misma deflexión que presenta la corteza.
+
+Vale observar que el espesor elástico resulta una propiedad virtual de la corteza, o bien, un parámetro de un modelo análogo a ella. Sin embargo, el análisis de las variaciones del espesor elástico permite identificar elementos de la reología de la misma, así como hallar estructuras internas o variaciones térmicas, hasta obtener información sobre la edad de las placas.
+
+Actualmente existen diversos métodos para la determinación del espesor elástico, siendo todos muy discutidos. Aquí presentaremos un método espectral que recopila aspectos de varios de los métodos ya existentes con el objetivo de mejorar el análisis de los resultados y disminuir los tiempos de cómputo.
+
+A continuación describiremos el modelo de placa delgada, a través del cual interpretamos el espesor elástico de la corteza.
+
+\vspace{2cm}
+
+\section{Modelo Elástico de Placa Delgada}
+\label{section-modelo-placa-delgada}
+Consideremos una placa de espesor $T_{e}$, largo $L$ y extendida infinitamente en el eje $z$ que se encuentra fija en sus extremos y bajo la acción de una fuerza por unidad de area $q(x)$ aplicada a lo largo de largo de la misma (ver Figura \ref{fig-placa-delgada-1}).
+
+Vamos a suponer que la placa es delgada, es decir, que su largo es mucho mayor que su espesor ($L \gg T_{e}$) y que posee un comportamiento elástico, el cual podemos garantizar exigiendo que la deflexión $w$ que presenta la placa, debido a la presencia de la fuerza $q(x)$, sea mucho más pequeña que su largo ($L \gg w$).
+
+\begin{figure}[b!]
+\centering
+\includegraphics[width=0.9\textwidth]{\Flexion/figs/placa-delgada-1.pdf}
+\caption{Esquema de la placa delgada propuesta.}
+\label{fig-placa-delgada-1}
+\end{figure}
+
+Bajo estas hipótesis, analicemos el balance de fuerzas y momentos sobre una porción infinitesimal de la placa de longitud $dx$. En él actuará una fuerza $q(x)\,dx$ sobre la superficie superior debido a la carga $q(x)$ y unas fuerzas netas de corte (shear) por unidad de longitud $V$ y $V + dV$ en sus caras verticales, respectivamente. Además, debido a las tensiones normales (normal stress $\sigma_{xx}$) aparecen momentos resultantes por unidad de longitud $M$ y $M + dM$ en las caras verticales, respectivamente. Estas fuerzas y momentos están esquematizadas en la Figura \ref{fig-placa-delgada-2}. Como es de esperarse, la deflexión $w$ varía a lo largo de la placa, por lo cual en cada cara vertical de la porción infinitesimal tendremos dos deflexiones: $w$ y $w+dw$, respectivamente.
+
+Realizando el balance de fuerzas en el eje $y$ obtenemos que:
+\begin{equation}
+    q(x)\, dx + (V + dV) - V = 0 \quad \Rightarrow \quad q(x)\,dx + dV = 0 \\
+\end{equation}
+\begin{equation}
+    \therefore \,\, q(x) = -\frac{dV}{dx}
+    \label{eq-placa-delgada-q-V}
+\end{equation}
+
+Realizando el balance de momentos obtenemos:
+\begin{equation}
+    M - (M+dM) + \frac{1}{2} V dx + \frac{1}{2}(V+dV)dx = 0
+\end{equation}
+\begin{equation}
+    \therefore \,\, \frac{dM}{dx} = V
+    \label{eq-placa-delgada-M-V}
+\end{equation}
+
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.75\textwidth]{\Flexion/figs/placa-delgada-2.pdf}
+\caption{Porción infinitesimal de la placa delgada.}
+\label{fig-placa-delgada-2}
+\end{figure}
+
+Derivando la ecuación anterior y utilizando la relación \ref{eq-placa-delgada-q-V}, podemos arribar a la siguiente relación entre el momento $M$ y la carga $q(x)$:
+\begin{equation}
+    \therefore \,\, \frac{d^2 M}{dx^2} = -q(x)
+    \label{eq-momento-carga}
+\end{equation}
+
+Veamos cómo podemos relacionar al momento $M$ con la deflexión $w$ para así transformar la ecuación anterior en una ecuación diferencial que relacione la carga $q(x)$ con la deflexión de la placa.
+
+El momento $M$ lo podemos calcular como la sumatoria de los momentos generados por todas las tensiones normales aplicadas en una cara vertical:
+\begin{equation}
+    M = \int\limits_{-T_{e}/2}^{T_{e}/2} \!\! \sigma_{xx} \, y' dy'
+\end{equation}
+
+\begin{figure}[b!]
+\centering
+\includegraphics[width=0.6\textwidth]{\Flexion/figs/placa-delgada-3.pdf}
+\caption{Esquema de las tensiones normales (normal stress) en un corte de la placa.}
+\label{fig-placa-delgada-3}
+\end{figure}
+
+
+
+Si la placa se deflecta hacia abajo, la cara superior se contrae y la tensión normal es positiva desde el centro de la placa hacia arriba, mientras que la cara inferior se dilata y la tensión normal desde el centro hacia abajo es negativa, como se puede ver en la Figura \ref{fig-placa-delgada-3}.
+
+La relación entre la tensión normal $\sigma_{xx}$ y la dilatación o contracción de la placa viene dada por la Ley de Hooke. Considerando que las tensiones normales $\sigma_{xx}$ generan una deformación $\varepsilon_{xx}$ en la misma dirección; que no existen deformaciones en direcciones perpendiculares al plano $xy$ ya que en $z$ la placa se extiende infinitamente; y que podemos despreciar las tensiones $\sigma_{yy}$ debido a la aproximación de placa delgada, podemos escribir entonces la tensión $\sigma_{xx}$ en función de la deformación $\varepsilon_{xx}$:
+\begin{equation}
+    \sigma_{xx} = \frac{E}{1-\nu^{2}} \, \varepsilon_{xx}
+\end{equation}
+donde $E$ y $\nu$ son el módulo de Young y el de Poisson de la placa, respectivamente.
+
+Tras un análisis geométrico \cite[p. 203-204]{Turcotte2001} es posible relacionar la deformación $\varepsilon_{xx}$ con la deflexión de la placa:
+\begin{equation}
+    \varepsilon_{xx} (y') = -y' \, \frac{d^{2} w}{dx^{2}}
+\end{equation}
+
+Agrupando la información de las últimas tres ecuaciones podemos reescribir al momento $M$ como:
+\begin{equation}
+    M = - \frac{E}{1-\nu^{2}} \, \frac{d^{2} w}{dx^{2}} \int\limits_{-T_{e}/2}^{T_{e}/2} \!\! {y'}^{2} dy' = - \frac{E \, T_{e}^{\,3}}{12 (1-\nu^{2})} \, \frac{d^{2} w}{dx^{2}}
+\end{equation}
+
+Definimos la rigidez flexural $D$ como:
+\begin{equation}
+    \boxed{ D \equiv \frac{E \, T_{e}^{\,3}}{12 (1-\nu^{2})} } 
+    \label{eq-rigidez-flexural}
+\end{equation}
+entonces, la relación entre el momento $M$ y la flexión de la placa $w$ queda determinada por la siguiente ecuación diferencial:
+\begin{equation}
+    M = -D \, \frac{d^{2}w}{dx^{2}}
+\end{equation}
+
+Remplazando finalmente la última expresión del momento $M$ en la ecuación \ref{eq-momento-carga} obtenemos la ecuación diferencial que relaciona la carga $q(x)$ con la deflexión $w(x)$ que esta genera:
+\begin{equation}
+    \frac{d^{2}}{dx^{2}} \left[ D \, \frac{d^{2} w}{dx^{2}} \right] = q(x)
+\end{equation}
+
+Y si además suponemos que la rigidez flexural es constante a lo largo de toda la placa, entonces la ecuación anterior puede escribirse como:
+\begin{equation}
+    \therefore \,\, \boxed{D \, \frac{d^{4}w}{dx^{4}} = q(x)}
+    \label{eq-deflexion-carga}
+\end{equation}
+
+\newpage{}
+\section{Aplicación al Modelado de la Litósfera}
+A la hora de modelizar la corteza como si se tratase de una placa elástica y delgada, es necesario tener en cuenta ciertas cuestiones. Nuestro modelo partirá de una litósfera normal, es decir, una corteza de ancho $t$ que flota sobre un manto no viscoso (ver Figura \ref{fig-litosfera-fuerza-q}a). Al incorporar topografía a este esquema, estas serán consideradas como cargas, tal y como lo hacíamos con las fuerzas por unidad de superficie $q(x)$. Esta topografía producirá una deflexión en la corteza, generando así la aparición de la raíz.
+
+\begin{figure}[b!]
+    \centering{}
+    \includegraphics[width=0.98\textwidth]{\Flexion/figs/litosfera-fuerza-q.pdf}
+    \caption{$(a)$ Esquema del modelo de partida para desarrollar la isostasia flexural en litósfera. $(b)$ Al incorporar una carga topográfica al escenario anterior, aparece una raíz que se deflecta hacia abajo para compensar dicha carga. $(c)$ Comprimimos toda la carga topográfica en una fuerza $q_{a}$ por unidad de área. $(d)$ Columna de la litósfera para evaluar la fuerza total $q$ como sumatoria de las cargas topográficas y las enterradas.}
+    \label{fig-litosfera-fuerza-q}
+\end{figure}
+
+Sin embargo, cuando esta última desplaza parte del manto, genera una fuerza hidrostática que intentará restaurarla a su posición original. Es por ello que dentro de la carga $q(x)$ deberemos incorporar tanto las cargas topográficas como las fuerzas hidrostáticas (conocidas también como cargas enterradas).
+
+Llamemos $q_{a}$ a la fuerza por unidad de área generada únicamente por la carga topográfica y consideremos una columna de la litósfera (ver Figura \ref{fig-litosfera-fuerza-q}c). Calculemos la carga total $q$ como sumatoria de las cargas topográficas y las enterradas. Por un lado tenemos el peso por unidad de área de cada uno de los elementos de la columna:
+\begin{equation}
+    \rho_{c}(t+w)g + \rho_{m}h_{m}\,g
+\end{equation}
+
+Y por otro la presión  en la base de la columna:
+\begin{equation}
+    \rho_{c}\, tg + \rho_{m}(w+h_{m})g
+\end{equation}
+
+Añadiendo la carga topográfica $q_{a}$, la fuerza total $q$ queda determinada:
+\begin{gather}
+    q = q_{a} + \Big[ \rho_{c}(t+w)g + \rho_{m}h_{m}\, g \Big] - \Big[ \rho_{c}\, tg + \rho_{m}(w+h_{m})g \Big] \\[2ex]
+    \therefore \,\, q(x) =  q_{a}(x) - \underbrace{(\rho_{m}-\rho_{c})g\, w(x) }_{\mathclap{\textrm{fuerza hidrostática restauradora}}}
+\end{gather}
+
+
+Reemplazando esta expresión de $q(x)$ en la ecuación \ref{eq-deflexion-carga} obtenemos:
+\begin{equation}
+    \therefore \,\, D \, \frac{d^{4}w}{dx^{4}} + (\rho_{m} - \rho_{c})g\, w(x) = q_{a}(x)
+\end{equation}
+
+Finalmente, si consideramos que la topografía posee una densidad constante de $\rho_{t}$, entonces podemos reemplazar a $q_{a}$ por:
+\begin{equation}
+    q_{a}(x) = \rho_{t}g \, h(x)
+\end{equation}
+donde $h(x)$ es la cota topográfica en el punto $x$. Y por ende la ecuación diferencial queda expresada como:
+
+\begin{equation}
+    \therefore \,\, \boxed{ D \, \frac{d^{4}w}{dx^{4}} + (\rho_{m} - \rho_{c})g\, w(x) = \rho_{t}g\, h(x) }
+    \label{eq-deflexion-litosfera}
+\end{equation}
+
+Esta ecuación diferencial nos permite obtener la deflexión de la raíz $w(x)$ de una corteza con rigidez flexural $D$ generada por una carga topográfica $q_{a}(x)$. La única dificultad que tendríamos sería la capacidad de resolución de dicha ecuación. Una opción puede ser encararla a través de diferencias finitas, sin embargo, veremos más adelante que es posible trasladar el problema al espacio de frecuencias, donde además tendremos una mejor interpretación del comportamiento del sistema.
+
+\section{Isostasia Flexural como Filtro de Frecuencias}
+Con el fin de interpretar el comportamiento de la raíz frente a cargas topográficas y de obtener un método de resolución rápida de la ecuación diferencial \ref{eq-deflexion-litosfera}, trasladaremos el problema al espacio de frecuencias. Para ello aplicamos la Transformada de Fourier en cada miembro de la ecuación antes nombrada.
+
+\begin{multline}
+    \mathcal{F} \Bigg[ D \, \frac{d^{4}w}{dx^{4}} + (\rho_{m} - \rho_{c})g\, w(x) \Bigg] = \mathcal{F} \Big[ \rho_{t}g\, h(x) \Big] \quad \Rightarrow \\
+    D \, \mathcal{F} \Big[ \frac{d^{4}w}{dx^{4}} \Big] + (\rho_{m} - \rho_{c})g\,\mathcal{F} \Big[ w(x) \Big] = \rho_{t}g \, \mathcal{F} \Big[ h(x) \Big]
+\end{multline}
+
+
+Vamos a llamar $W(k)$ y $H(k)$ a las Transformadas de Fourier de la deflexión $w(x)$ y la topografía $h(x)$, respectivamente. Además, haciendo uso de la propiedad de la ecuación \ref{eq-transformada-de-la-derivada}, la ecuación diferencial queda reescrita en el espacio de frecuencias como:
+
+\begin{multline}
+    \left[ Dk^{4} + (\rho_{m} - \rho_{c})g \right]\, W(k) = \rho_{t}g \, H(k) \quad \Rightarrow \\
+    W(k) = \frac{\rho_{t}g}{Dk^{4} + (\rho_{m}-\rho_{c})g}\, H(k)
+\label{eq-deflexion-frecuencias-1}
+\end{multline}
+
+Definiendo la función $\Phi_{e}(k)$ como:
+\begin{equation}
+    \Phi_{e}(k) \equiv \Bigg[ \frac{Dk^{4}}{(\rho_{m}-\rho_{c})g} +1 \Bigg]^{-1}
+    \label{eq-filtro-phi}
+\end{equation}
+
+Podemos reescribir la ecuación \ref{eq-deflexion-frecuencias-1} de la siguiente manera:
+\begin{equation}
+    \therefore \,\, \boxed{ W(k) = \frac{\rho_{t}}{\rho_{m}-\rho_{c}} \, \Phi_{e}(k) \, H(k) }
+    \label{eq-deflexion-topografia-freq-1d}
+\end{equation}
+
+De esta forma, conociendo las densidades involucradas y la rigidez flexural de la placa, es posible obtener la Transformada de Fourier de la deflexión de la corteza sólo a partir de la cota topográfica. La obtención de la deflexión $w(x)$ se reduce únicamente a antitransformar la $W(k)$ obtenida.
+
+La ecuación anterior no solo nos brinda una sencilla forma de resolución de la isostasia flexural, sino que además nos permite interpretar la obtención de la deflexión como un filtrado de frecuencias de la topografía, realizado a través de la función $\Phi_{e}(k)$.
+
+En la Figura \ref{fig-filtro-phi} se observa una gráfica de $\Phi_{e}(k)$ para distintos valores de rigidez flexural. En ella se puede apreciar que el filtro se comporta como un pasabajos, atenuando el efecto de las altas frecuencias y manteniendo el de las más bajas. Además, podemos ver que cuánto mayor es la rigidez $D$, más estricto es el filtro.
+
+
+\begin{figure}[b!]
+    \centering{}
+    \includegraphics[width=0.7\textwidth]{\Flexion/figs/filtro_phi.pdf}
+    \caption{Gráfica del filtro $\Phi_{e}(k)$ para distintos valores de rigidez flexural. Se puede corroborar que efectivamente se comporta como un pasabajos y que cuánto mayor es el valor de $D$, más estricto es el filtro.}
+    \label{fig-filtro-phi}
+\end{figure}
+
+
+En la Figura \ref{fig-deflexiones} podemos ver una topografía arbitraria con densidad $\rho_{t} = 2670$kg/m$^{3}$ en una corteza de densidad $\rho_{c} = 2900$kg/m$^{3}$ y ancho $t=35$km. Y por debajo de ella se muestran las distintas raíces que se obtienen para diferentes valores de espesor elástico $T_{e}$.
+
+En el caso particular en el que la placa no tiene rigidez ($D=0$), el filtro $\Phi_{e}(k)$ es igual a la identidad y por ende se recupera el modelo isostático de Airy (ecuación \ref{eq-airy}). Observando la gráfica de la Figura \ref{fig-deflexiones} podemos ver que el Moho generado con $T_{e}=0$ coincide con el modelo isostático de Airy, generando una raíz local. Mientras que los modelos flexurales producen que las raíces sean regionales y no reproduzcan el efecto de las altas frecuencias, como es el caso del pico que podemos ver en la topografía propuesta en dicha Figura.
+
+\begin{figure}[t!]
+    \centering{}
+    \includegraphics[width=0.98\textwidth]{\Flexion/figs/deflexiones.pdf}
+    \caption{Perfil de litósfera con topografía arbitraria de densidad 2670kg/m$^{3}$, sostenida por una corteza normal de 35km de ancho y densidad 2900kg/m$^{3}$ sobre un manto de 3300kg/m$^{3}$. Se muestran los Mohos que se obtienen al aplicar un modelo de isostasia flexural para distintos valores de espesor elástico $T_{e}$. El $T_{e}=0$ coincide con el modelo isostático de Airy.}
+    \label{fig-deflexiones}
+\end{figure}
+
+
+\section{Generalización del Modelo}
+El modelo propuesto en la sección \ref{section-modelo-placa-delgada} supone que las cargas están homogeneamente distribuidas a lo largo del eje $z$, pudiendo reducir el estudio de la deflexión de la corteza a una función unidimiensional $w(x)$. Sin embargo, en la práctica, las masas se encuentran distribuidas en todo el plano $xy$ heterogeneamente, por ende la deflexión vendrá dada por una función $w(x, y)$ como solución de una ecuación diferencial a derivadas parciales.
+
+Además, la rigidez de la corteza no suele ser constante para regiones amplias, sino que pueden presentar variaciones, por lo tanto, es posible representarla mediante una función $D(x, y)$.
+
+La ecuación diferencial que determina la raíz para cargas distribuidas en el plano $xy$ y rigidez flexural variable es la siguiente (\cite{Garcia2014}):
+\begin{equation}
+    \nabla^{2} \left[ D\, \nabla^{2} w \right] - (1-\nu) \left[ \frac{\partial^{2} D}{\partial x^{2}} \, \frac{\partial^{2} w}{\partial y^{2}} - 2 \frac{\partial^{2} D}{\partial x \partial y} \, \frac{\partial^{2} w}{\partial x \partial y} + \frac{\partial^{2} D}{\partial y^{2}} \, \frac{\partial^{2} w}{\partial x^{2}} \right] + (\rho_{m}-\rho_{c})g\, w = \rho_{t}g \, h
+    \label{eq-garcia}
+\end{equation}
+
+En el caso particular de que $D$ sea constante en toda la región, la ecuación diferencial se reduce a:
+\begin{equation}
+    D \, \nabla^{4} w + (\rho_{m}-\rho_{c})g\, w = \rho_{t}g \, h
+\end{equation}
+
+Y aplicando la Transformada de Fourier en esta ecuación, se obtiene una relación similar a la de \ref{eq-deflexion-topografia-freq-1d}:
+\begin{equation}
+    \boxed {W(k_{x}, k_{y}) = \frac{\rho_{t}}{\rho_{m}-\rho_{c}} \, \Phi_{e}(k) \, H(k_{x}, k_{y}) }
+    \label{eq-deflexion-topografia-freq}
+\end{equation}
+donde $k$ es el módulo del vector ${\bf k} = (k_{x}, k_{y})$ y $\Phi_{e}(k)$ sigue estando definida según la ecuación \ref{eq-filtro-phi}.
+
+\prechapterpage
+\chapter{Inversión del Moho}
+
+Nuestro objetivo es construir un método que nos permita determinar el espesor elástico de una región de interés particular. De contar con datos de altura topográfica ($h$) y de profundidad del Moho en dicha zona ($t+w$), solo resta obtener el valor de $T_{e}$ que mejor ajusta la ecuación \ref{eq-deflexion-topografia-freq}. Los datos de topografía son sencillos de recolectar a partir de modelos globales o mapas de elevación digital; mientras que la profundidad del Moho se obtiene generalmente por sismología. Sin embargo suele suceder que no tengamos mediciones sismológicas en nuestra zona de estudio.
+
+En situaciones como esta es necesario hallar otra forma de calcular la profundidad del Moho. La opción que vamos a abordar aquí reside en realizar una inversión de las anomalías de Bouguer mediante métodos espectrales.
+
+En un trabajo que abrió nuevas puertas dentro de los métodos espectrales en geofísica, \cite{Parker1973} consideró el potencial gravitatorio producido por una capa de material de densidad $\rho$, cuyos límites inferior y superior son el plano $z=0$ y una superficie definida por $z = h({\bf r})$, respectivamente (con ${\bf r} = (x, y)$). Supuso que fuera de una región finita, la placa se desvanece ($h({\bf r}) = 0 \,\, \forall \,\, r > R$, por ejemplo); y que $h$ es acotada e integrable. A partir de estas hipótesis, obtuvo una expresión para la Transformada de Fourier de dicho potencial gravitatorio (medido en el plano de observación $z = z_{0}$) como serie de potencias de la TF de $h({\bf r})$, modulada por una exponencial decreciente:
+\begin{equation}
+    \mathcal{F} \big[ U \big] = 2\pi G \rho \, e^{-kz_{0}} \, \sum\limits_{n=1}^{\infty} \frac{k^{\,n-2}}{n!} \mathcal{F} \big[ h^{n}({\bf r}) \big]
+\end{equation}
+
+Junto con una expresión análoga para la componente en $z$ de la aceleración de la gravedad, en el mismo plano de observación:
+\begin{equation}
+    \mathcal{F} \big[\, g_{z} \,\big] = 2\pi G \rho \, e^{-kz_{0}} \, \sum\limits_{n=1}^{\infty} \frac{k^{\,n-1}}{n!} \mathcal{F} \big[ h^{n}({\bf r}) \big]
+    \label{eq-parker-simple}
+\end{equation}
+
+Con estas ecuaciones elaboró también una solución espectral para el problema de la continuación ascendente, es decir, obtener la anomalía gravitatoria $\Delta g'$ a un nivel $z'_{0}$ conociendo la anomalía $\Delta g$ en un nivel $z_{0}$. Ya que si consideramos que ambas están generadas por los mismos cuerpos, responderán a relaciones como la anterior a diferencia del factor del exponente ($z'_{0}$ y $z_{0}$ en cada caso). Es sencillo de calcular la relación que existirá entre las TF de ambas anomalías:
+\begin{equation}
+    \mathcal{F} \big[ \Delta g' \big] = e^{-(z'_{0}-z_{0})\, k} \, \mathcal{F} \big[ \Delta g \big]
+\end{equation}
+
+De esta forma obtuvo una solución espectral muy simple, que se reduce a la aplicación de un filtro pasabajos, a un problema que espacialmente debe encararse como la resolución de una integral de superficie.
+
+Finalmente, generalizó la ecuación \ref{eq-parker-simple} para una capa con límite superior $h({\bf r})$ e inferior $g({\bf r})$; y con densidad variable $\rho({\bf r})$:
+\begin{equation}
+    \mathcal{F} \big[\, g_{z} \,\big] = 2\pi G \, e^{-kz_{0}} \, \sum\limits_{n=1}^{\infty} \frac{k^{\,n-1}}{n!} \mathcal{F} \Big[ \rho({\bf r}) \big\{ h^{n}({\bf r}) - g^{n}({\bf r}) \big\} \Big]
+    \label{eq-parker}
+\end{equation}
+
+\section{Modelo de Raíz e Inversión de Anomalías de Bouguer}
+Para la inversión del Moho que propondremos vamos a considerar una raíz de densidad constante con superficies superior e inferior $h({\bf r}) = -t$ y $g({\bf r}) = -[t + w({\bf r})]$ medidas desde $o$. La atracción gravitatoria que la raíz genera se aproximará mucho a la anomalía de Bouguer, salvo por los cuerpos anómalos que puedan aparecer en corteza (ver Figura \ref{fig-anomalias-3-4}), asignándole una densidad equivalente al contraste entre las densidades del manto y la corteza. Tomaremos como hipótesis para nuestro modelo que la única fuente de anomalía de Bouguer es la raíz propuesta con densidad constante $\rho_{c}-\rho_{m} < 0$.
+
+Para simplificar los cálculos, nos trasladamos al marco de referencia $o'$, en el cual las superficies de la raíz vienen dadas por $h({\bf r'}) = 0$ y $g({\bf r'}) = - w({\bf r})$; y tomamos como plano de observación de la anomalía el $z=0$ ($z'=t$).
+
+\begin{figure}[b!]
+    \centering{}
+    \includegraphics[width=0.7\textwidth]{\Flexion/figs/esquema-raiz.pdf}
+    \caption{Modelo de raíz con densidad constante para realizar la inversión del Moho a partir de anomalías de Bouguer. Las superficies $h({\bf r})$ y $g({\bf r})$ medidas desde $o$ delimitan la raíz superior e inferiormente, respectivamente. El ancho de la corteza normal es $t$ y $w({\bf r}) > 0$ es la deflexión de la misma.}
+    \label{fig-esquema-raiz}
+\end{figure}
+
+Según la ecuación \ref{eq-parker}, la anomalía de Bouguer estará relacionada con las superficies que limitan la raíz de la siguiente forma:
+\begin{equation}
+    \mathcal{F} \big[ \Delta g_{bg} \big] = -2\pi G \, (\rho_{m} - \rho_{c}) \,\, e^{-kt} \, \sum\limits_{n=1}^{\infty} \frac{k^{\,n-1}}{n!} \, \mathcal{F} \big[ \underbrace{ h^{n}({\bf r'}) }_{\mathclap{0^{n}}}  - \underbrace{ g^{n}({\bf r'}) }_{\mathclap{[-w({\bf r})]^{n}}} \big] \quad \Rightarrow
+\end{equation}
+
+\begin{equation}
+    \mathcal{F} \big[ \Delta g_{bg} \big] = 2\pi G \, (\rho_{m} - \rho_{c}) \,\, e^{-kt} \, \sum\limits_{n=1}^{\infty} \frac{(-1)^{n}\,k^{\,n-1}}{n!} \, \mathcal{F} \big[ w^{n}({\bf r}) \big]
+\end{equation}
+
+Para llevar a cabo la inversión deseada tendremos que reordenar la ecuación anterior, de forma análoga a la propuesta por \cite{Oldenburg1974}; despejando el primer término de la sumatoria:
+\begin{equation}
+    \mathcal{F} \big[ w({\bf r}) \big] \,=\, - \frac{\mathcal{F} \big[ \Delta g_{bg} \big] \, e^{kt} }{2\pi G (\rho_{m}-\rho_{c})} \,\, +  \,\, \sum\limits_{n=2}^{\infty} \frac{(-1)^{n}\,k^{\,n-1}}{n!} \, \mathcal{F} \big[ w^{n}({\bf r}) \big]
+    \label{eq-parker-oldenburg}
+\end{equation}
+
+Y luego construir un algoritmo iterativo que se retroalimente con la salida de la última iteración. Este método fue desarrollado por \cite{Oldenburg1974} y se conoce como el método de inversión de Parker-Oldenburg. Consiste en partir de una deflexión arbitraria $w_{0}$ y calcular la raíz de la iteración $i$ a partir de la obtenida en la iteración $i-1$:
+\begin{equation}
+    \boxed{\mathcal{F} \big[\, w_{i} \,\big]  \,=\, \underbrace{ - \frac{\mathcal{F} \big[ \Delta g_{bg} \big] \, e^{kt} }{2\pi G (\rho_{m}-\rho_{c})}}_{\mathclap{\textrm{término constante}}} \,\, +  \,\, \sum\limits_{n=2}^{N} \frac{(-1)^{n}\,k^{\,n-1}}{n!} \, \mathcal{F} \big[\, w^{n}_{i-1} \,\big]}
+    \label{eq-parker-oldenburg-iterativo}
+\end{equation}
+donde $N$ es el orden máximo de la sumatoria. Las iteraciones se llevan a cabo hasta que el sistema alcance un criterio de interrupción deseado. Notemos que el primer término de la ecuación anterior no se ve modificado en ninguna de las iteraciones, es por ello que lo denominaremos término constante.
+
+\begin{figure}[t!]
+    \centering{}
+    \includegraphics[width=0.65\textwidth]{\Flexion/figs/hamming-filter.pdf}
+    \caption{Gráfica del filtro pasabajos de Hamming, definido en la ecuación \ref{eq-hamming-filter} y utilizado para eliminar las altas frecuencias en cada iteración de la inversión del Moho mediante el método Parker-Oldenburg.}
+    \label{fig-hamming-filter}
+\end{figure}
+
+Un aspecto importante para asegurar la convergencia de este algoritmo es aplicar un filtro pasabajos entre cada iteración (\cite{Oldenburg1974}, \cite{Braitenberg1999}, \cite{Braitenberg2000}, \cite{Gomez-Ortiz2005}). Esto se debe a que la exponencial creciente del término constante amplifica las altas frecuencias, lo cual dificulta la convergencia del algoritmo. Nuestra propuesta es utilizar un filtro que se conoce como filtro de Hamming:
+\begin{equation}
+    \textrm{Hamming}\,(k) = \left\{
+    \begin{array}{cr}
+        \frac{1}{2} \left[ 1 + \cos \left( \pi \frac{k}{k_{cut}} \right) \right] \quad & k<k_{cut}\\[2ex]
+        0 \quad & k \ge k_{cut}
+    \end{array}
+    \right.{}
+    \label{eq-hamming-filter}
+\end{equation}
+
+En la Figura \ref{eq-hamming-filter} se muestra una gráfica de este filtro de frecuencias, donde se ve que $k_{cut}$ cumple la función de una frecuencia de corte: se eliminan las contribuciones de frecuencias mayores a ella.
+
+
+
+\section[Implementación en Python del Algoritmo Parker-Oldenburg]{Implementación en Python del Algoritmo\\Parker-Oldenburg}
+\sectionmark{Parker-Oldenburg en Python}
+En el presente trabajo se implementó el método de inversión del Moho a través de Parker-Oldenburg en lenguaje Python. En la Figura \ref{fig-diagrama-flujo-parker-oldenburg} se muestra el diagrama de flujo del algoritmo implementado.
+\begin{figure}[b!]
+    \centering{}
+    \includegraphics[width=0.85\textwidth]{\Flexion/figs/diagrama-de-flujo-parker-oldenburg.pdf}
+    \caption{Diagrama de Flujo del algoritmo de inversión de Paker-Oldenburg implementado en Python.}
+    \label{fig-diagrama-flujo-parker-oldenburg}
+\end{figure}
+
+Como entrada del programa tomamos una grilla regular de las anomalías de Bouguer [m/s$^{2}$] en coordenadas planas, además de los siguientes parámetros: espesor de corteza normal $t$, contraste de densidad de la raíz $\Delta\rho = \rho_{m} - \rho_{c}$, orden máximo $N$ de la sumatoria, valor de tolerancia y un factor de corte utilizado por el filtro de Hamming.
+
+
+Lo primero que realizamos es calcular el término constante a partir de la TF de las anomalías, el cual es una cantidad invariante durante todo el proceso iterativo. Las Transformadas de Fourier y sus Antitransformadas son calculadas a lo largo de todo el proceso de inversión a través de las funciones fftpack.fft2 y fftpack.iff2 de las librerías SciPy (\cite{SciPy}). Mientras que los vectores de frecuencias son calculados con la función fftpack.fftfreq, también de SciPy.
+
+Luego proponemos una deflexión inicial, que sirve únicamente como punto de partida para el algoritmo. En nuestro caso elegimos partir con una deflexión nula para todo punto de la grilla.
+
+\subsection{Cálculo de Nueva Deflexión con Parker-Oldenburg}
+\label{subsection-nueva-deflexion-parker-oldenburg}
+
+En este paso obtenemos la TF de una nueva deflexión haciendo uso de la ecuación \ref{eq-parker-oldenburg-iterativo}, tomando el término constante ya calculado y la deflexión obtenida en la iteración anterior (en caso de ser ésta la primer iteración, tomamos como deflexión anterior la inicialmente propuesta).
+
+Antes de antitransformarla para obtener la nueva raíz propiamente dicha, aplicamos el filtro de Hamming a su Transformada. Para lo cual es necesario determinar un valor para la frecuencia de corte $k_{cut}$. Como este parámetro es el que está más liberado a la subjetividad del usuario, decidimos darle una interpretación física. Para ello propusimos que sea proporcional a la frecuencia asociada al espesor de la corteza normal.
+
+Se sabe que una fuente localizada a una profundidad $d$ generará efectos gravimétricos con longitudes de onda de aproximadamente $2\pi/d$. Es por ello que al eliminar las frecuencias mayores  sólo descartamos las contribuciones de las fuentes que estén a menor profundidad que $d$.
+
+Es por ello que vamos a definir al $k_{cut}$ como:
+\begin{equation}
+    k_{cut} = \textrm{factor de corte} \cdot \frac{\pi}{t}
+\end{equation}
+donde el factor de corte es el parámetro de entrada. Este valor puede variar entre 0 y 2, y aunque esté asociado con una interpretación física, sigue quedando sujeto a la subjetividad del usuario en función del resultado que el algoritmo genere, solo que ahora contamos con una interpretación del mismo.
+
+Una vez aplicado el filtro de Hamming con la frecuencia de corte deseada, antitransformamos el resultado para obtener así la nueva deflexión.
+
+
+\subsection{Criterio de Interrupción del Algoritmo}
+En algoritmos iterativos de este tipo es necesario contar con un criterio de interrupción que determine cuándo este converge o alcanza una situación deseada, o bien cuando diverge.
+
+En este caso propusimos calcular la desviación estándar entre la deflexión de la iteración actual con la de la anterior como: 
+\begin{equation}
+    \textrm{RMS} = \sqrt{ \frac{1}{N_{x}N_{y}} \sum\limits_{n=1}^{N_{x}} \sum\limits_{m=1}^{N_{y}} \big[w_{i}(x_{n}, y_{m}) - w_{i-1}(x_{n}, y_{m})\big]^{2}}
+\end{equation}
+donde $N_{x}$ y $N_{y}$ son la cantidad de puntos por eje que posee la grilla de valores de anomalía de Bouguer sobre la cual trabajamos; y $w_{i}$ y $w_{i-1}$ son las raíces de las iteraciones actuales y anteriores, respectivamente.
+
+En caso de que el RMS sea menor que el valor de tolerancia elegido, entonces consideramos que el algoritmo converge finalizando exitosamente y devolviendo la ráiz obtenida en está última iteración. Caso contrario, verificamos que el valor de RMS no haya incrementado desde el valor que obtuvo en la iteración previa. Si lo ha hecho damos por finalizado el algoritmo como no convergente, devolviendo la raíz obtenida en la iteración anterior.
+
+Si el RMS no alcanza la tolerancia ni se incrementa desde la iteración anterior, entonces procedemos a calcular una nueva raíz como se describió en \ref{subsection-nueva-deflexion-parker-oldenburg} y continuar iterativamente con el algoritmo.
+
+\section{Modelo Sintético para Inversión del Moho}
+Con el objetivo de corroborar el funcionamiento del algoritmo de inversión, aquí proponemos un modelo sintético que consiste en una corteza normal de ancho $t$ y densidad $\rho_{c}=2900$kg/m$^{3}$, sobre un manto de densidad $\rho_{m}=3300$kg/m$^{3}$, la cual se deflecta como lo muestra la primer gráfica de la Figura \ref{fig-sintetico-parker-oldenburg}. Trabajamos sobre una grilla de 400km$\times$400km con 101$\times$101 nodos.
+
+\begin{figure}[b!]
+    \centering{}
+    \includegraphics[width=0.85\textwidth]{\Flexion/figs/sintetico-parker-oldenburg-perfil.pdf}
+    \caption{Perfiles correspondientes a las deflexiones sintéticas e invertida realizados en las líneas de puntos que se ven en la Figura \ref{fig-sintetico-parker-oldenburg}.}
+    \label{fig-sintetico-parker-oldenburg-perfil}
+\end{figure}
+
+Para calcular la anomalía gravimétrica que la raíz genera, construimos un ``mesh'' de 100$\times$100 prismas rectangulares que se extienden verticalmente desde $-t$ hasta un promedio entre las profundidades de la raíz en los cuatro vértices del prisma. De esta manera generamos un conjunto de prismas que se aproximan geométricamente a la raíz (ver Figura \ref{fig-sintetico-raiz-prismas}).
+
+Haciendo uso de funciones de la librería Fatiando a Terra (\cite{Uieda2014}), pudimos determinar la anomalía que genera la raíz como la contribución a la atracción gravitatoria que genera cada uno de los prismas. Para lo cual, la función prism.gz de fatiando.gravmag hace uso de los resultados de \cite{Nagy2000} acerca del potencial gravitatorio generado por prismas. La anomalía de Bouguer que se obtiene se puede ver en la segunda gráfica de la Figura \ref{fig-sintetico-parker-oldenburg}.
+
+\begin{figure}[t!]
+    \centering{}
+    \includegraphics[width=0.98\textwidth]{\Flexion/figs/sintetico-parker-oldenburg.png}
+    \caption{Modelo Sintético para demostrar un ejemplo del algoritmo de Parker-Oldenburg. La primer gráfica muestra la deflexión propuesta por el modelo, mientras que a su derecha se expone la anomalía gravimétrica que ella genera (obtenida a través de un modelado con prismas, ver Figura \ref{fig-sintetico-raiz-prismas}). La tercer gráfica muestra la raíz que se obtiene al invertir las anomalías usando Parker-Oldenburg y la última muestra la diferencia entre ambas deflexiones.}
+    \label{fig-sintetico-parker-oldenburg}
+\end{figure}
+
+Luego, procedemos a invertir la anomalía obtenida a través del algoritmo implementado. Para ello consideramos un factor de corte igual a 2, las sumatorias hasta el orden 30 y el valor de tolerancia lo tomamos de 1$\cdot$10$^{-10}$m.
+Después de 17 iteraciones, el algoritmo converge a la raíz que se muestra en la tercera gráfica de la Figura \ref{fig-sintetico-parker-oldenburg}.
+
+A modo de comparación entre la raíz sintética propuesta y la obtenida a través del algoritmo de inversión; en la última gráfica de la Figura \ref{fig-sintetico-parker-oldenburg} se muestra una deflexión residual, es decir, la diferencia entre la invertida y la original. Y en la Figura \ref{fig-sintetico-parker-oldenburg-perfil} podemos ver el perfil de ambas deflexiones en un corte que en las Figuras \ref{fig-sintetico-parker-oldenburg} se muestra como líneas de puntos.
+
+Mediante este modelo sintético podemos ver que el algoritmo permite invertir de forma aproximada la deflexión de la corteza a partir de las anomalías de Bouguer. Es interesante hacer hincapié en dos cuestiones acerca del resultado del mismo.
+
+La primera involucra los efectos de borde. Como se puede ver tanto en la gráfica de la Deflexión Residual como en el perfil, la raíz invertida se escapa de la original en los extremos de la grilla. Esto se debe a efectos de borde producidos por los métodos espectrales y es algo a tener en cuenta cuando deseamos utilizar la raíz invertida para futuros cálculos o bien para interpretar datos. La segunda cuestión tiene que ver con un detalle que \cite{Braitenberg2002} ya hizo mención: el algoritmo de Parker-Oldenburg suele subestimar la profundidad del Moho, lo cual se traducirá luego en una sobrestimación del espesor elástico $T_{e}$.
+
+\begin{figure}[t!]
+    \centering{}
+    \includegraphics[width=0.98\textwidth]{\Flexion/figs/sintetico-raiz-prismas.png}
+    \caption{Conjunto de prismas utilizado para simular la deflexión propuesta y calcular a partir de ellos la anomalía gravimétrica que genera.}
+    \label{fig-sintetico-raiz-prismas}
+\end{figure}
+
+
+\section{Mejora a Parker-Oldenburg}
+Con el objetivo de solucionar el problema que presenta el algoritmo de Parker-Oldenburg, aquí proponemos una mejora al método, que consiste en realizar correcciones a la deflexión que se obtiene calculando la anomalía residual, es decir, la diferencia entre Bouguer y la anomalía que la deflexión invertida genera.
+
+Supongamos que hemos obtenido a partir de Parker-Oldenburg una deflexión que denominamos $w_{\rm PO}$ y llamo $\Delta g_{\rm PO}$ a la anomalía que esa deflexión genera. Vamos a definir a la anomalía residual como:
+\begin{equation}
+    \delta g = \Delta g_{bg} - \Delta g_{\rm PO}
+\end{equation}
+
+Podemos interpretar a esta anomalía residual como la que genera el agregado o la sustracción de masa a $w_{PO}$, hasta que esta alcanza la raíz objetivo $w$ (ver Figura \ref{fig-mejora-po-diagrama-deflexiones}). En ese caso, podemos hacer uso de la ecuación \ref{eq-parker} de Parker:
+\begin{equation}
+    \mathcal{F} \big[ \delta g \big] = + 2\pi G (\rho_{m}-\rho_{c}) \,\, e^{-kt} \, \sum\limits_{n=1}^{\infty} \frac{k^{\,n-1}}{n!} \, \mathcal{F} \Big[\big\{ \underbrace{-w_{\rm PO}({\bf r})}_{\mathclap{\textrm{Superficie superior}}} \big\}^{n} - \big\{ \underbrace{-w({\bf r})}_{\mathclap{\textrm{Superficie inferior}}}\big\}^{n} \Big]
+\end{equation}
+
+\begin{figure}[t!]
+    \centering{}
+    \includegraphics[width=0.65\textwidth]{\Flexion/figs/mejora-parker-oldenburg-diagrama-deflexiones.pdf}
+    \caption{Esquema de la deflexión invertida mediante Parker-Oldenburg y la deflexión objetivo, es decir, la que genera fielmente la anomalía de Bouguer.}
+    \label{fig-mejora-po-diagrama-deflexiones}
+\end{figure}
+
+Reordenando la ecuación anterior obtenemos la siguiente relación:
+\begin{equation}
+    \mathcal{F} \big[ w({\bf r}) - w_{\rm PO}({\bf r}) \big] = - \frac{\mathcal{F}[\,\delta g\,]\,e^{kt}}{2\pi G(\rho_{m}-\rho_{c})} \,\, - \,\, \sum\limits_{n=2}^{\infty} \frac{(-1)^{n} k^{\,n-1}}{n!} \, \mathcal{F} \big[ w^{n}({\bf r}) - w_{\rm PO}^{n} ({\bf r}) \big]
+\end{equation}
+
+A partir de ella podemos proponer un método iterativo similar al de Parker-Oldenburg:
+\begin{equation}
+    \mathcal{F} \big[ w_{i} - w_{\rm PO} \big] = - \frac{\mathcal{F}[\,\delta g\,]\,e^{kt}}{2\pi G(\rho_{m}-\rho_{c})} \,\, - \,\, \sum\limits_{n=2}^{N} \frac{(-1)^{n} k^{\,n-1}}{n!} \, \mathcal{F} \big[ w_{i-1}^{n} - w_{\rm PO}^{n} \big]
+\end{equation}
+
+De esta manera podemos obtener una nueva deflexión que ajuste de forma más precisa la anomalía residual. Proponemos realizar este proceso iterativamente: utilizamos al principio la deflexión que se obtiene por Parker-Oldenburg para calcular una $w^{1}$; esta tomará luego el lugar de la primera; computamos la anomalía residual que esta nueva raíz genera y mediante un método similar a Parker-Oldenburg obtenemos la deflexión $w^{2}$. 
+
+Podemos resumir éste método en la siguiente ecuación, donde $i$ barre iteraciones del simil Parker-Oldenburg, mientras que $j$ barre las iteraciones en las que recalculamos la anomalía residual.
+\begin{equation}
+    \boxed{ \mathcal{F} \big[ w^{\,j}_{i} - w^{\,j-1} \big] = - \frac{\mathcal{F}[\,\delta g^{\,j-1}\,]\,e^{kt}}{2\pi G(\rho_{m}-\rho_{c})} \,\, - \,\, \sum\limits_{n=2}^{N} \frac{(-1)^{n} k^{\,n-1}}{n!} \, \mathcal{F} \big[ \{ w^{\,j}_{i-1} \}^{n} - \{ w^{\,j-1} \}^{n} \big] }
+    \label{eq-parker-oldenburg-mejorado}
+\end{equation}
+\begin{equation}
+    \textrm{con}\quad\delta g^{\,j-1} = \Delta g_{bg} - \Delta g^{\,j-1}
+\end{equation}
+
+\begin{figure}[t!]
+    \centering{}
+    \includegraphics[width=0.98\textwidth]{\Flexion/figs/mejora-parker-oldenburg-diagrama-de-flujo.pdf}
+    \caption{Diagrama de Flujo del algoritmo de mejora a Parker-Oldenburg.}
+    \label{fig-mejora-po-diagrama-de-flujo}
+\end{figure}
+
+En la Figura \ref{fig-mejora-po-diagrama-de-flujo} se muestra el diagrama de flujo del algoritmo en cuestión. Allí se puede ver que el criterio de interrupción utilizado es similar al de Parker-Oldenburg, solo que ahora comparamos la anomalía que genera cada deflexión $w^{\,j}$ con la anomalía de Bouguer original. Si el RMS que se obtiene es menor que a un valor de tolerancia damos por finalizado con éxito al método.
+
+En esta mejora solo utilizamos un filtro pasabajos dentro del simil Parker-Oldenburg. Por lo tanto el RMS entre la anomalía de Bouguer y la que genera cada deflexión $w^{\,j}$ puede ser alto, ya que la primera poseerá componentes de altas frecuencias que la última no. Esto debe tenerse en cuenta a la hora de definir la tolerancia, o bien, filtrar la anomalía de Bouguer antes de introducirla en el algoritmo.
+
+Los cálculos de la anomalía gravitatoria que cada deflexión $w^{\,j}$ genera son realizados al igual que en el último modelo sintético: aproximando la raíz por prismas rectangulares y obteniendo su efecto gravitatorio, haciendo uso de la función prism.gz de fatiando.gravmag, disponible a través de la librería Fatiando a Terra (\cite{Uieda2014}).
+
+La desventaja que posee este método es el tiempo de cómputo. El proceso de calcular la anomalía que genera la deflexión en cada iteración $j$ requiere un tiempo de procesamiento elevado en comparación con los cálculos espectrales que se realizan con mucha velcidad. Además, a medida que la grilla aumenta en ancho, la cantidad de prismas necesarios para modelizar la raíz aumenta en potencia de 2, como también lo hace el tiempo de cómputo. Es por ello que antes de intentar un cálculo semejante es necesario analizar nuestra grilla de trabajo y evaluar tanto su extensión como su resolución.
+
+\newpage
+\sectionmark{Modelo Sintético con Nuevo Método}
+\section[Modelo Sintético para Inversión del Moho con Mejora a\\Parker-Oldenburg]{Modelo Sintético para Inversión del Moho con Mejora a Parker-Oldenburg}
+
+
+Partiendo de la deflexión obtenida por Parker-Oldenburg en el ejemplo de la Figura \ref{fig-sintetico-parker-oldenburg} aplicamos el método descripto en los últimos párrafos para obtener una deflexión que ajuste mejor a la original.
+
+Para ello extendimos las sumatorias de la ecuación \ref{eq-parker-oldenburg-mejorado} hasta orden 15, utilizamos un factor de corte igual a 1 para el filtro pasabajos y los valores de tolerancia usados fueron de 10$^{-3}$m para el simil Parker-Oldenburg y 10$^{-8}$m/s$^{2}$ para el RMS entre la anomalía de Bouguer y la anomalía generada por cada deflexión $w^{\,j}$.
+
+En la Figura \ref{fig-sintetico-mejora-parker-oldenburg} se muestran las gráficas de la deflexión sintética (la misma que la del modelo sintético previo) y la invertida a través del nuevo método. Además, se exponen las deflexión y anomalía residuales. A simple vista podemos observar que bajaron considerablemente los valores de la deflexión residual y que ahora la raíz no está subestimada.
+
+Para visualizar mejor el ajuste de la raíz, en la Figura \ref{fig-sintetico-mejora-perfil} se puede ver los perfiles de las deflexiones original e invertida, respectivamente; en un perfil delimitado por las lineas de puntos de la Figura \ref{fig-sintetico-mejora-parker-oldenburg}. En ella se puede apreciar que el ajuste es mucho más preciso que haciendo uso de Parker-Oldenburg. Sin embargo, continuamos teniendo los efectos de borde, por ende debemos seguir teniéndolos en cuenta a la hora de construir nuestras grillas de inversión.
+
+\begin{figure}[h!]
+    \centering{}
+    \includegraphics[width=0.85\textwidth]{\Flexion/figs/sintetico-mejora-perfil.pdf}
+    \caption{Perfiles correspondientes a las deflexiones sintética e invertida realizados en las líneas de puntos que se ven en la Figura \ref{fig-sintetico-mejora-parker-oldenburg}.}
+    \label{fig-sintetico-mejora-perfil}
+\end{figure}
+
+
+\newpage
+\begin{figure}[h!]
+    \centering{}
+    \includegraphics[width=0.98\textwidth]{\Flexion/figs/sintetico-mejora-parker-oldenburg.png}
+    \caption{Modelo Sintético para demostrar un ejemplo de la mejora al algoritmo de Parker-Oldenburg. La primer gráfica muestra la deflexión propuesta por el modelo, mientras que a su derecha se expone la deflexión que se obtiene de dicho método. Las últimas dos muestran la deflexión y anomalía residuales, respectivamente; es decir, las diferencias entre las deflexiones y anomalías gravitatorias originales y las generadas por el método de inversión.}
+    \label{fig-sintetico-mejora-parker-oldenburg}
+\end{figure}
+$\ $
+
+
+
+\prechapterpage
+\chapter{Determinación del Espesor Elástico}
+
+Siendo capaces de invertir el Moho a través de las anomalías de Bouguer, estamos en condiciones de proceder a la determinación del espesor elástico de la corteza. Como hemos dicho anteriormente, lo haremos calculando cuál es el valor de $T_{e}$ que mejor ajusta en la ecuación \ref{eq-deflexion-topografia-freq}, haciendo uso de la topografía $h({\bf r})$ y la deflexión invertida $w({\bf r})$.
+
+Para lo cual es necesario suponer que el espesor elástico es constante en toda la zona de estudio, lo cual no suele suceder en situaciones reales. Solucionaremos esto trabajando con ventanas pequeñas, dentro de las cuales supondremos que dicha hipótesis es válida.
+
+Sin embargo, al desechar los datos de topografía y deflexión exteriores a la ventana, caemos en el error de calcular una deflexión local, sin importarnos qué cargas tenemos alrededor de dicha ventana ni cómo deflectan regionalmente la pequeña zona que estamos analizando.
+
+Para evitarlo, aquí proponemos obtener una deflexión de prueba por cada valor de $T_{e}$ posible, haciendo uso de la ecuación \ref{eq-deflexion-topografia-freq} y considerando la carga topográfica de toda la zona de estudio; luego comparar estas deflexiones de prueba con la invertida solo en la ventana en la que estamos parados. Tomando finalmente como el $T_{e}$ óptimo, aquel que minimiza la desviación estándar entre las subgrillas de las deflexiones de prueba e invertida.
+
+Para hacerlo hemos desarrollado una simple interfaz que permite seleccionar ventanas modificando su posición y tamaño; además de un rango de valores de espesor elástico posibles, dentro de los cuales se estima que se encuentra el característico de la ventana en cuestión.
+
+El cálculo del $T_{e}$ óptimo lo llevamos a cabo obteniendo una deflexión de prueba para cada valor de espesor elástico determinado y calculando la desviación estándar entre cada una de ellas y la deflexión invertida anteriormente. Con estos valores generamos una gráfica de RMS vs $T_{e}$, tomando como $T_{e}$ óptimo aquel que minimiza el RMS. Con dicho valor graficamos en áreas más pequeñas los valores de deflexión invertida y la deflexión óptima dentro de la ventana seleccionada. En la Figura \ref{fig-flex-y-lito-captura1} se puede ver la interfaz siendo utilizada sobre una zona de estudio como ejemplo.
+
+Una vez obtenido el $T_{e}$ que mejor ajusta en la ventana seleccionada, asociaremos al centro de la misma dicho valor de espesor elástico. Repitiendo el proceso para un número grande de ventanas obtendremos un scatter de puntos con valores de $T_{e}$ diversos. Si la densidad de puntos es suficiente, podemos realizar una interpolación para obtener una grilla de valores de espesor elástico en nuestra zona de estudio.
+
+\begin{figure}[t!]
+    \centering{}
+    \includegraphics[width=0.98\textwidth]{\Flexion/figs/flex-y-lito-captura1.png}
+    \caption{Interfaz gráfica para la determinación del espesor elástico por ventanas. El primer gráfico muestra la carta topográfica de la zona de estudio, a su derecha encontramos la deflexión previamente invertida. En ellas podemos seleccionar la ventana que deseamos analizar, pudiendo modificar su posición y tamaño. Una vez elegida, le ordenamos que construya la gráfica superior derecha que contiene valores de RMS entre las ventanas de la deflexión invertida y las deflexiones de prueba obtenidas para cada valor de $T_{e}$ (entre 0 y 50km, en este caso). Sobre ella se muestra el valor de $T_{e}$ que minimiza dicha curva y por debajo se exponen las deflexiones invertida y óptima sólo en las ventanas seleccionadas.}
+    \label{fig-flex-y-lito-captura1}
+\end{figure}
+
+\section[Deflexión de Placa Delgada con Espesor Elástico Variable]{Deflexión de Placa Delgada con Espesor \\Elástico Variable}
+\sectionmark{Deflexión con Espesor Elástico Variable}
+La ecuación diferencial \ref{eq-garcia} determina la deflexión de una placa con rigidez flexural variable $D(x,y)$ a partir de las cargas topográficas. Es interesante obtener 
+esta deflexión a partir de la grilla $D(x,y)$ obtenida.
+
+\cite{Garcia2014} proponen un algoritmo iterativo para resolver dicha ecuación. Para realizarlo consideran que $D(x,y)$ varía suavemente y lo separan entre una deflexión constante $D_{0}$ y una variable $D'(x,y)$:
+\begin{equation}
+    D(x,y)= D_{0} + D'(x,y)
+\end{equation}
+
+Definen como $w_{0}(x,y)$ a la deflexión que presenta una placa elástica con la rigidez flexural constante $D_{0}$, determinada por la ecuación \ref{eq-deflexion-topografia-freq}; y $w(x,y)$ a la deflexión de la placa con rigidez variable $D(x,y)$. El método iterativo que desarrollaron permite obtener la Transformada de Fourier de $w(x,y)$ de la siguiente manera:
+\begin{multline}
+    \mathcal{F} \big[\, w_{i} \,\big] = \mathcal{F} \big[\, w_{0} \,\big] \,-\, \frac{\Phi_{e}(k)}{(\rho_{m}-\rho_{c})g} \, \mathcal{F} \Bigg\{ \nabla^{2} \left[ D'\, \nabla^{2} w_{i-1} \right] \,- \\
+    -\, (1-\nu) \left[ \frac{\partial^{2} D'}{\partial x^{2}}  \frac{\partial^{2} w_{i-1}}{\partial y^{2}} - 2 \frac{\partial^{2} D'}{\partial x \partial y} \frac{\partial^{2} w_{i-1}}{\partial x \partial y}  + \frac{\partial^{2} D'}{\partial y^{2}}  \frac{\partial^{2} w_{i-1}}{\partial x^{2}} \right] \Bigg\}
+\end{multline}
+donde $\rho_{m}$ y $\rho_{c}$ son las densidades del manto y la corteza, respectivamente; $\Phi_{e}(k)$ es el filtro pasabajos definido en la ecuación \ref{eq-filtro-phi} usando la rigidez flexural constante $D_{0}$; $\nu$ el módulo de Poisson y $w_{i}\equiv w_{i}(x,y)$ es la deflexión obtenida en la $i$-ésima iteración.
+\begin{figure}[b!]
+    \centering{}
+    \includegraphics[width=0.98\textwidth]{\Flexion/figs/garcia-diagrama-de-flujo.pdf}
+    \caption{Diagrama de Flujo del algoritmo de \cite{Garcia2014} para resolución de la ecuación diferencial que rige la deflexión de una placa delgada con rigidez flexural variable $D(x,y)$.}
+    \label{fig-garcia-diagrama-de-flujo}
+\end{figure}
+
+Siguiendo las indicaciones de los autores, hemos implementado este método en lenguaje Python. Las tres derivadas parciales de $D'$ pueden calcularse al incio ya que no varían iteración a iteración, como sí lo hacen las derivadas de la deflexión $w_{i-1}$. Todas las derivaciones son realizadas espectralmente ya que es la forma más precisa y eficiente de obtener la derivada de valores discretos (\cite{Garcia2014}). 
+\begin{equation}
+\begin{gathered}
+    \mathcal{F} \Big[\, \frac{\partial^{2} f }{\partial x^{2}} \,\Big] =  - \, k_{x}^{2} \, \mathcal{F} \big[\, f \,\big] \quad ,\quad \mathcal{F} \Big[\, \frac{\partial^{2} f}{\partial y^{2}} \,\Big] =  - \, k_{y}^{2} \, \mathcal{F} \big[\, f \,\big]\\
+    \mathcal{F} \Big[\, \frac{\partial^{2} f}{\partial x \partial y} \,\Big] =  - \, k_{x}\,k_{y} \, \mathcal{F} \big[\, f \,\big]
+\end{gathered}
+\end{equation}
+
+Las derivadas obtenidas mediante diferencias finitas amplifican las componentes de ruido, generando resultados no deseados. Para evitar esto al calcular las derivadas espectralmente; hemos filtrado las bajas frecuencias de las funciones a derivar con filtros de Hamming, usando como frecuencia de corte la frecuencia de Nyquist: $k_{cut}=\pi/dx$, donde $dx$ es la distancia entre primeros vecinos de la grilla $x,y$.
+
+Además, \cite{Garcia2014} aconsejan extender la grilla en los extremos, colocando algún valor constante de espesor elástico, para evitar los efectos de borde que su método introduce.
+
+En la Figura \ref{fig-garcia-diagrama-de-flujo} se muestra un diagrama de flujo del algoritmo implementado. La utilización de los filtros pasabajos no se muestra, pero se da por entendido que están incluidas en los cálculos de las derivadas tanto de $D'(x,y)$ como de cada deflexión $w_{i}(x,y)$.
+
+Es interesante, luego de haber obtenido esta nueva deflexión, compararla con la que se calculó a través de la inversión de la anomalía de Bouguer. Incluso calcular la anomalía que genera y determinar la residual.
+
+
+\section{Resumen del Método Completo}
+Agrupemos las ideas centrales de los últimos capítulos, con el fin de ordenar los procesos necesarios para determinar el Espesor Elástico de una región de interés.
+
+\begin{figure}[b!]
+    \centering{}
+    \includegraphics[width=0.9\textwidth]{\Flexion/figs/diagrama-de-flujo-metodo-completo.pdf}
+    \caption{Diagrama de Flujo del método completo para la determinación del Espesor Elástico de la corteza terrestre.}
+    \label{fig-diagrama-de-flujo-metodo-completo}
+\end{figure}
+
+Debemos partir desde la construcción de grillas regulares de topografía y anomalías de Bouguer de nuestra zona de estudio. Las mismas deben estar en coordenadas planas, requisito necesario para que las Transformadas de Fourier trabajen con frecuencias en unidades de la inversa del metro.
+
+El modelo de litósfera que proponemos está constituido por una corteza normal de ancho $t$ y densidad $\rho_{c}$ que descansa sobre un manto no viscoso de densidad $\rho_{m}$. Consideramos que sobre dicha corteza se coloca una carga topográfica de densidad $\rho_{t}$ la cual produce una deflexión de la primera, generando una raíz que posee la misma densidad $\rho_{c}$.
+
+El primer paso consiste en obtener dicha deflexión mediante la inversión de las anomalías de Bouguer. Lo hacemos aplicando primero el algoritmo de Parker-Oldenburg y luego la mejora que presentamos en este trabajo.
+
+En segundo lugar determinaremos el espesor elástico en la zona de estudio utilizando la grilla de topografía; mediante el uso de ventanas pequeñas, en las cuales suponemos que el $T_{e}$ se mantiene constante. Para lograrlo se implementó una simple interfaz gráfica que facilita la selección de las ventanas, la visualización y la escritura de los datos que se van construyendo. Cada valor de espesor elástico es asociado al centro de su respectiva ventana.
+
+Una vez que contamos con una densidad de puntos de $T_{e}$ considerable, procedemos a interpolarlos sobre una grilla regular; para luego aplicar el algoritmo propuesto por \cite{Garcia2014} para la determinación de una deflexión flexural a partir de la grilla de espesor elástico y la carga topográfica.
+
+En la Figura \ref{fig-diagrama-de-flujo-metodo-completo} se muestra un diagrama de flujo que sintetiza el método completo para la determinación del espesor elástico.
+
+
+
+%~ \section[Sintético para Determinación de Espesor Elástico]{Sintético para Determinación de Espesor\\Elástico}
+\sectionmark{Modelo Sintético para Determinación de $T_{\lowercase{e}}$}
+\section{Modelo Sintético para Determinación de Espesor Elástico}
+\sectionmark{Modelo Sintético para Determinación de $T_{\lowercase{e}}$}
+Con el objetivo de corroborar el funcionamiento del método global, construimos un modelo sintético a partir de una grilla de topografía arbitraria de 61$\times$61 nodos, como se ve en la Figura \ref{fig-sintetico-completo}a. Consideramos una corteza normal de ancho $t=35$km y densidades de topografía, corteza y manto $\rho_{t}=2670$kg/m$^{3}$, $\rho_{t}=2900$kg/m$^{3}$ y $\rho_{t}=3300$kg/m$^{3}$, respectivamente. Propusimos un espesor elástico que aumenta linealmente en $y$ (ver Figura \ref{fig-sintetico-completo}b); y utilizando el algoritmo de \cite{Garcia2014} obtuvimos la deflexión que la carga topográfica genera (Figura \ref{fig-sintetico-completo}c); para luego calcular la anomalía que produce mediante el modelado con prismas (Figura \ref{fig-sintetico-completo}d). De esta forma tenemos las dos grillas de entrada para nuestro método: la topografía y la anomalía de Bouguer.
+
+Lo primero que hacemos es invertir la anomalía para obtener el Moho, aplicando Parker-Oldenburg y la mejora propuesta en este trabajo. En el primero utilizamos un factor de corte igual a 1, extendimos el orden de las sumatorias hasta 15 y el valor de tolerancia lo fijamos en 10$^{-8}$m. Para la mejora aplicamos los mismos parámetros más un valor de tolerancia de 10$^{-8}$m/s$^{2}$. La deflexión resultante de la inversión se puede ver en la Figura \ref{fig-sintetico-completo-1}a, y comparándolo con la deflexión original o sintética de la Figura \ref{fig-sintetico-completo}c vemos que ambas ajustan satisfactoriamente. En la Figura \ref{fig-sintetico-completo-1}b se muestra la anomalía residual, es decir, la diferencia entre la anomalía de Bouguer sintética (Fig. \ref{fig-sintetico-completo}d) y la que genera la raíz invertida. Estas discrepancias no superan el $0,1\%$ de la anomalía original, reforzando aún más la validez de la deflexión obtenida.
+
+En segundo lugar calculamos valores de espesor elástico usando el software de ventanas interactivas. En su mayoría utilizamos ventanas de 20km de ancho sobre 155 puntos distribuidos en toda la región, a excepción de los extremos de la grilla donde suponemos la presencia de efectos de borde. Finalmente interpolamos este scatter sobre la grilla regular con la que venimos trabajando. El resultado se puede apreciar en la Figura \ref{fig-sintetico-completo-1}c.
+
+A simple vista, la comparación entre la grilla de Espesor Elástico obtenida con la original parece ser desalentadora, sin embargo, al calcular la diferencia entre ambas (Figura \ref{fig-sintetico-completo-1}d) observamos que en los puntos más interiores las discrepancias no superan los 600m, representando no más del $7\%$ de error. Las mayores diferencias se dan cerca de los extremos, donde llegan hasta los 2km, alrededor de un $20\%$ de error. Por lo tanto, podemos concluir que el modelo sintético se muestra exitoso en la determinación del Espesor Elástico con un grado de confiabilidad del $10\%$ en los puntos interiores de la grilla de trabajo. Se debe prestar especial atención a la hora de construir esta última, con el fin de centrar nuestra zona de estudio dejando un lugar amplio en los extremos; donde probablemente existan efectos de borde que se verán arrastrados a lo largo de todo el cálculo del $T_{e}$.
+
+
+\begin{figure}[b!]
+    \centering{}
+    \includegraphics[width=0.95\textwidth]{\Flexion/figs/sintetico-completo.jpg}
+    \caption{Grillas con los datos sintéticos del modelo construido para la determinación del espesor elástico. En $a$ y $b$ podemos ver la topografía y el espesor elástico propuesto, respectivamente; mientras que en $c$ y $d$ podemos observar la deflexión de la placa generada por la carga topográfica y la anomalía que la misma produce, respectivamente. }
+    \label{fig-sintetico-completo}
+\end{figure}
+
+
+Finalmente aplicamos el algoritmo de \cite{Garcia2014} para obtener la deflexión flexural, es decir, la raíz que se genera debido a la carga topográfica si ésta posee el espesor elástico obtenido. El resultado puede verse en la Figura \ref{fig-sintetico-completo-1}e, y en la Figura \ref{fig-sintetico-completo-1}f vemos la diferencia entre la deflexión sintética y esta última. En ella podemos ver que las diferencias en los puntos interiores no superan los 200m, es decir que la discrepancia no representa más que el 10$\%$ de los valores de deflexión; manteniendo el grado de confiabilidad que establecimos en el párrafo anterior.
+
+
+\begin{figure}[b!]
+    \centering{}
+    \includegraphics[width=0.95\textwidth]{\Flexion/figs/sintetico-completo-1.jpg}
+    \caption{Grillas con los resultados obtenidos en la resolución del modelo sintético propuesto. Las magnitudes del mismo tipo se encuentran graficadas bajo la misma escala de colores que en la Figura \ref{fig-sintetico-completo}. En $a$ observamos la deflexión que se obtiene invirtiendo las anomalías de Bouguer y en $b$ la diferencia de esta con la que genera dicha deflexión. En $c$ vemos la grilla de espesor elástico que se obtuvo mediante el método propuesto y en $d$ la diferencia entre la sintética y esta última. En $e$ se puede ver la deflexión flexural generada con el algoritmo de \cite{Garcia2014}, mientras que en $f$ vemos la diferencia entre la deflexión original y esta última.}
+    \label{fig-sintetico-completo-1}
+\end{figure}
+
+
+\prechapterpage
+\chapter{Determinación de Espesor Elástico en Cuenca Neuquina}
+\chaptermark{Espesor Elástico en Cuenca Neuqina}
+
+\begin{figure}[b!]
+    \centering{}
+    \includegraphics[width=1\textwidth]{\Flexion/figs/loncopue-deg.pdf}
+    \caption{Grillas de Topografía y Anomalía de Bouguer de la Cuenca Neuquina y regiones vecinas, obtenidas del modelo EIGEN-6C4 del ICGEM (\cite{icgem}).}
+    \label{fig-loncopue-deg}
+\end{figure}
+
+Para finalizar , deseamos aplicar el método desarrollado para la determinación el Espesor Elástico en una zona real que actualmente se encuentra en estudio debido a su especial interés tectónico. Dicha zona comprende la cuenca Neuquina y regiones aledañas.
+
+Los datos de topografía y anomalías de Bouguer fueron obtenidos a través de datos satelitales puestos a disposición por el ICGEM (\cite{icgem}) bajo el modelo EIGEN-6C4, que condensa datos de los satélites GOCE, GRACE y LAGEOS junto con mediciones en tierra y mar. Los mismos se ofrecen dispuestos en una grilla de 181$\times$241 nodos equiespaciados por $0.05\degree$ (ver Figura \ref{fig-loncopue-deg}).
+
+Lo primero que realizamos fue proyectarlos en coordenadas planas mediante el método de Gauss-Krüger en la zona 2 de Argentina, y luego construimos grillas regulares de los datos en dichas coordenadas, con un equiespaciado de 5km. Además removimos la batimetria, colocando altitud nula en las regiones marítimas. El resultado se puede ver en la Figura \ref{fig-loncopue-mts}.
+
+En segundo lugar, obtuvimos la profundidad del Moho a través de la inversión de las anomalías de Bouguer con un factor de corte de 0.5 y tolerancia de 10$^{-11}$m; que luego utilizamos para calcular valores de espesor elástico en más de 200 puntos, con ventanas entre 40km y 60km, haciendo foco en los más interiores de la grilla (ver Figura \ref{fig-loncopue-1}).
+
+\begin{figure}[b!]
+    \centering{}
+    \includegraphics[width=1\textwidth]{\Flexion/figs/loncopue-mts.pdf}
+    \caption{Grillas de Topografía y Anomalía de Bouguer de la Cuenca Neuquina en coordenadas planas.}
+    \label{fig-loncopue-mts}
+\end{figure}
+\begin{figure}[h!]
+    \centering{}
+    \includegraphics[width=1\textwidth]{\Flexion/figs/loncopue-1.pdf}
+    \caption{Profundidad del Moho obtenido a partir de la inversión de las anomalías de Bouguer y una grilla de valores de espesor elástico calculada mediante el software de ventanas interactivas. Para su comprensión, los valores están expuestos en coordenadas geográficas.}
+    \label{fig-loncopue-1}
+    \includegraphics[width=1\textwidth]{\Flexion/figs/loncopue-2.pdf}
+    \caption{Profundidad del Moho Flexural, obtenido a través del algoritmo de García utilizando la grilla de espesor elástico de la Figura \ref{fig-loncopue-1}. Y Moho Residual, es decir, la diferencia entre el Moho Invertido y el Flexural. El Moho Flexural posee la misma escala de colores que el Moho Invertido de la Figura \ref{fig-loncopue-1}.}
+    \label{fig-loncopue-2}
+\end{figure}
+
+
+Finalmente, aplicamos el algoritmo de \cite{Garcia2014} para obtener el Moho Flexural. Para hacerlo, extendimos la grilla de espesor elástico a valores nulos en las regiones donde no tenemos información. De esta forma disminuimos la aparición de efectos de borde. Además, los valores de espesor elástico nulo generan solo perturbaciones locales, por lo tanto no introducen información dentro de la subgrilla en cuestión. Luego simplemente cortamos el Moho Flexural que se obtiene a dicha región. Y por último calculamos el Moho residual, es decir, la diferencia entre el Moho Invertido y el Flexural (ver Figura \ref{fig-loncopue-2}).
+
+Como se puede ver en esta última Figura, existe una región central de mucha discrepancia entre el Moho Invertido y el Flexural. En esta zona también hay valores muy bajos de Espesor Elástico y una raíz pequeña (ver Figura \ref{fig-loncopue-1}). Estas discrepancias las asociamos no a un acortamiento cortical, sino a una falla en el modelo en relación con los cuerpos anómalos presentes en la zona.
+
+%%%% CITAR ACA a alguien:
+
+Actualmente se sabe que en dichas latitudes se encuentra la dorsal de Huincul, que se presume poseer densidades más altas que la de la corteza. La presencia de un cuerpo denso  produce un aumento en la anomalía, lo cual, a la hora de invertir con un modelo de densidad constante, genera una raíz pequeña. Con respecto al modelo de isostasia flexural, un cuerpo más denso puede ser representado como una carga enterrada.
+
+Sería interesante en futuros trabajos incorporar un modelo de la dorsal, quitarle a la anomalía de Bouguer el efecto gravitatorio que él genera y obtener una nueva grilla de espesor elástico considerando una carga equivalente, donde introducimos tanto las cargas topográficas como las cargas enterradas. 

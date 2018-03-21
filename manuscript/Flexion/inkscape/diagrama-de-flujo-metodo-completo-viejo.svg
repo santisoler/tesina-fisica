@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1828.29"
+   height="1129.39"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="diagrama-de-flujo-metodo-completo.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend"
+       style="overflow:visible">
+      <path
+         id="path3908"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         id="path3902"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="539.61676"
+     inkscape:cy="309.17615"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="717"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-61.843741,24.326196)">
+    <g
+       id="g3050"
+       transform="translate(620.27448,-49.6346)">
+      <flowRoot
+         transform="translate(-80.141189,-133.02452)"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot2985"
+         xml:space="preserve"><flowRegion
+           id="flowRegion2987"><rect
+             y="183.79076"
+             x="157.14285"
+             height="125.71429"
+             width="557.14288"
+             id="rect2989" /></flowRegion><flowPara
+           style="text-align:center;text-anchor:middle"
+           id="flowPara2991">Grillas de Topografía y Anomalías de Bouguer</flowPara></flowRoot>      <path
+         id="rect3037"
+         d="m 100,32.362183 511.42856,0 0,142.857147 -511.42856,0 z"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g3057"
+       transform="translate(617.41734,-118.51623)">
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot2993"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         transform="translate(-80,145.71429)"><flowRegion
+           id="flowRegion2995"><rect
+             id="rect2997"
+             width="557.14288"
+             height="125.71429"
+             x="157.14285"
+             y="183.79076" /></flowRegion><flowPara
+           id="flowPara2999"
+           style="text-align:center;text-anchor:middle">Inversión del Moho con Parker-Oldenburg</flowPara></flowRoot>      <path
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0"
+         d="m 102.85714,311.10099 511.42856,0 0,142.85715 -511.42856,0 z"
+         id="path3040" />
+    </g>
+    <g
+       id="g3064"
+       transform="translate(622.98067,-120.45987)">
+      <flowRoot
+         transform="translate(-82.857142,315.71429)"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot3001"
+         xml:space="preserve"><flowRegion
+           id="flowRegion3003"><rect
+             y="183.79076"
+             x="157.14285"
+             height="125.71429"
+             width="557.14288"
+             id="rect3005" /></flowRegion><flowPara
+           style="text-align:center;text-anchor:middle"
+           id="flowPara3007">Mejora a Parker-Oldenburg</flowPara></flowRoot>      <path
+         id="path3042"
+         d="m 76.579522,484.04464 552.857138,0 0,88.57143 -552.857138,0 z"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g3118"
+       transform="translate(623.13164,-3.634508)">
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot3009"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         transform="translate(-93.984671,357.42378)"><flowRegion
+           id="flowRegion3011"><rect
+             id="rect3013"
+             width="577.14288"
+             height="168.57141"
+             x="157.14285"
+             y="183.79076" /></flowRegion><flowPara
+           id="flowPara3015"
+           style="text-align:center;text-anchor:middle">Cálculo de Espesor Elástico a través de pequeñas ventanas interactivas</flowPara></flowRoot>      <path
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0"
+         d="m 62.857131,523.93354 579.999989,0 0,182.85714 -579.999989,0 z"
+         id="path3044" />
+    </g>
+    <g
+       id="g3078"
+       transform="translate(628.13163,-57.305745)">
+      <flowRoot
+         transform="translate(-99.804974,616.17465)"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot3017"
+         xml:space="preserve"><flowRegion
+           id="flowRegion3019"><rect
+             y="183.79076"
+             x="157.14285"
+             height="168.57141"
+             width="577.14288"
+             id="rect3021" /></flowRegion><flowPara
+           style="text-align:center;text-anchor:middle"
+           id="flowPara3023">Interpolado del Espesor Elástico en grilla regular</flowPara></flowRoot>      <path
+         id="path3046"
+         d="m 81.42857,789.505 532.85713,0 0,128.57142 -532.85713,0 z"
+         style="fill:none;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0"
+         inkscape:connector-curvature="0" />
+    </g>
+    <flowRoot
+       transform="translate(529.16649,753.60271)"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot3025"
+       xml:space="preserve"><flowRegion
+         id="flowRegion3027"><rect
+           y="183.79076"
+           x="157.14285"
+           height="168.57141"
+           width="577.14288"
+           id="rect3029" /></flowRegion><flowPara
+         style="text-align:center;text-anchor:middle"
+         id="flowPara3031">Algoritmo de García para obtener el Moho debido al <flowSpan
+   style="font-style:italic;-inkscape-font-specification:Sans Italic"
+   id="flowSpan3033">T<flowSpan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="flowSpan3035">e</flowSpan>(x,y)</flowSpan> variable</flowPara></flowRoot>    <path
+       id="path3048"
+       d="m 687.41734,930.44195 577.14286,0 0,169.99995 -577.14286,0 z"
+       style="fill:none;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0"
+       inkscape:connector-curvature="0" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4339"
+       d="m 975.98876,335.50916 0,23.52412"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4709"
+       d="m 975.98876,451.50916 0,63.36387"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 975.98876,703.50916 0,23.52412"
+       id="path4711"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m 975.98876,124.6088 0,63.36387"
+       id="path4713"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m 975.98876,861.50916 0,63.36387"
+       id="path4715"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>

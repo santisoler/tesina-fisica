@@ -1,0 +1,2063 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML .95.3 (Nov 17 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Manual de Latex</title>
+<meta name="description" content="Manual de Latex">
+<meta name="keywords" content="latex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="Manual%20de%20Latex_archivos/general.html">
+</head>
+<body lang="EN" bgcolor="white">
+<p>
+</p><center>
+<h1>MANUAL DE LATEX<br></h1>
+</center>
+<p>
+
+</p><p>
+</p><p></p><h2><a name="SECTION01000000000000000000">Contenidos</a></h2>
+<ul> 
+<li> <a name="tex2html9" href="#SECTION01010000000000000000">Introducción</a>
+</li><li> <a name="tex2html10" href="#SECTION01020000000000000000">Creando e imprimiendo un documento</a>
+</li><li> <a name="tex2html11" href="#SECTION01030000000000000000">Caracteres reservados de LaTeX </a>
+</li><li> <a name="tex2html12" href="#SECTION01040000000000000000">Cómo comenzar y estructurar la forma del texto </a>
+<ul> 
+<li> <a name="tex2html13" href="#SECTION01041000000000000000">Un encabezado típico  </a>
+</li><li> <a name="tex2html14" href="#SECTION01042000000000000000">Tipo de documento</a>
+</li><li> <a name="tex2html14a" href="#SECTION01042a0000000000000">Paquetes</a>
+</li><li> <a name="tex2html15" href="#SECTION01043000000000000000">Márgenes del texto </a>
+</li><li> <a name="tex2html16" href="#SECTION01044000000000000000">Indentación y salto entre párrafos </a>
+</li><li> <a name="tex2html17" href="#SECTION01045000000000000000">Estilo de página </a>
+</li></ul> 
+</li><li> <a name="tex2html18" href="#SECTION01050000000000000000">Número de página </a>
+<ul> 
+<li> <a name="tex2html19" href="#SECTION01051000000000000000">Referenciando una página</a>
+</li></ul> 
+</li><li> <a name="tex2html20" href="#SECTION01060000000000000000">Secciones </a>
+<ul>
+<li> <a name="tex2html21" href="#SECTION01061000000000000000">Títulos de secciones </a>
+</li><li> <a name="tex2html22" href="#SECTION01062000000000000000">Referenciando una sección </a>
+</li><li> <a name="tex2html31" href="#SECTION01064000000000000000">Índice </a>
+</li></ul> 
+</li><li> <a name="tex2html32" href="#SECTION02120000000000000000">Justificando y centrando texto </a>
+<ul> 
+<li> <a name="tex2html33" href="#SECTION02121000000000000000">Justificando </a>
+</li><li> <a name="tex2html34" href="#SECTION02122000000000000000">Párrafos </a>
+</li><li> <a name="tex2html35" href="#SECTION02123000000000000000">Cambio de línea y página </a>
+</li><li> <a name="tex2html36" href="#SECTION02124000000000000000">Insertando espacios verticales </a>
+</li><li> <a name="tex2html37" href="#SECTION02125000000000000000">Insertando espacios horizontales </a>
+</li><li> <a name="tex2html38" href="#SECTION02126000000000000000">Centrando texto</a>
+</li><li> <a name="tex2html39" href="#SECTION02127000000000000000">Ambiente Verbatim </a>
+</li></ul> 
+</li><li> <a name="tex2html40" href="#SECTION02130000000000000000">Cambiando el estilo y tamaño de las letras </a>
+<ul> 
+<li> <a name="tex2html41" href="#SECTION02131000000000000000">Cambiando el tipo de letra </a>
+</li><li> <a name="tex2html42" href="#SECTION02132000000000000000">Cambiando el tamaño de la letra </a>
+</li></ul> 
+</li><li> <a name="tex2html43" href="#SECTION02140000000000000000">Subrayando e imprimiendo caracteres especiales </a>
+<ul> 
+<li> <a name="tex2html44" href="#SECTION02141000000000000000">Subrayando </a>
+</li><li> <a name="tex2html45" href="#SECTION02142000000000000000">Comillas y acentos </a>
+</li><li> <a name="tex2html46" href="#SECTION02143000000000000000">Subíndice y superíndice</a>
+</li><li> <a name="tex2html47" href="#SECTION02144000000000000000">Letras griegas </a>
+</li><li> <a name="tex2html48" href="#SECTION02145000000000000000">Letras caligráficas </a>
+</li><li> <a name="tex2html49" href="#SECTION02146000000000000000">Símbolos y caracteres diversos </a>
+</li><li> <a name="tex2html50" href="#SECTION02147000000000000000">Incluyendo la fecha actual </a>
+</li></ul> 
+</li><li> <a name="tex2html51" href="#SECTION02150000000000000000">Imprimiendo en columnas a través de tabuladores </a>
+</li><li> <a name="tex2html52" href="#SECTION02160000000000000000">Listas </a>
+<ul> 
+<li> <a name="tex2html53" href="#SECTION02161000000000000000">El ambiente Enumerate  </a>
+</li><li> <a name="tex2html54" href="#SECTION02162000000000000000">El ambiente  Itemize</a>
+</li></ul> 
+</li><li> <a name="tex2html55" href="#SECTION02170000000000000000">El ambiente Description </a>
+</li><li> <a name="tex2html56" href="#SECTION02180000000000000000">Ecuaciones y fórmulas </a>
+<ul> 
+<li> <a name="tex2html57" href="#SECTION02181000000000000000">El ambiente Math </a>
+</li><li> <a name="tex2html58" href="#SECTION02182000000000000000">Los ambientes Displaymath y Equation </a>
+</li><li> <a name="tex2html59" href="#SECTION02183000000000000000">Símbolos matemáticos </a>
+<ul> 
+<li> <a name="tex2html60" href="#SECTION02183100000000000000">Glosario de símbolos </a>
+</li><li> <a name="tex2html61" href="#SECTION02183200000000000000">Raíz cuadrada y otras raices </a>
+</li><li> <a name="tex2html62" href="#SECTION02183300000000000000">Sumatorias, productorias e integrales </a>
+</li><li> <a name="tex2html63" href="#SECTION02183400000000000000">Líneas superiores, inferiores y paréntesis </a>
+</li><li> <a name="tex2html64" href="#SECTION02183500000000000000">Acentos y tildes, tongos, etc. </a>
+</li></ul> 
+</li><li> <a name="tex2html65" href="#SECTION02184000000000000000">Creando fórmulas y ecuaciones y complejas</a>
+<ul> 
+<li> <a name="tex2html66" href="#SECTION02184100000000000000">Paréntesis, corchetes, paréntesis cuadrados y otros delimitadores  </a>
+</li><li> <a name="tex2html67" href="#SECTION02184200000000000000">Símbolos sobrepuestos</a>
+</li><li> <a name="tex2html68" href="#SECTION02184300000000000000">Cambiando el tipo en modo matemático </a>
+</li><li> <a name="tex2html69" href="#SECTION02184400000000000000">Espaciado en modo matemático </a>
+</li></ul> 
+</li><li> <a name="tex2html70" href="#SECTION02185000000000000000">Ecuaciones en varias líneas </a>
+</li><li> <a name="tex2html71" href="#SECTION02186000000000000000">Referenciando ecuaciones </a>
+</li></ul> 
+</li><li> <a name="tex2html72" href="#SECTION02190000000000000000">Tablas </a>
+<ul> 
+<li> <a name="tex2html73" href="#SECTION02191000000000000000">El ambiente de tabuladores (tabular) </a>
+</li><li> <a name="tex2html74" href="#SECTION02192000000000000000">El ambiente Table </a>
+</li><li> <a name="tex2html75" href="#SECTION02193000000000000000">Produciendo un índice de tablas </a>
+</li></ul> 
+</li><li> <a name="tex2html76" href="#SECTION021100000000000000000">Arreglos </a>
+</li><li> <a name="tex2html77" href="#SECTION021110000000000000000">Apendices </a>
+<ul> 
+<li> <a name="tex2html78" href="#SECTION021111000000000000000">Pie de página</a>
+</li><li> <a name="tex2html79" href="#SECTION021112000000000000000">Cajas </a>
+</li></ul> 
+</li><li> <a name="tex2html80" href="#SECTION021120000000000000000">  Problemas con la compilación </a>
+<ul> 
+<li> <a name="tex2html81" href="#SECTION021121000000000000000">Cómo manejar los errores en la compilación </a>
+</li><li> <a name="tex2html82" href="#SECTION021122000000000000000">Advertencias de overfull y underfull (warnings) </a>
+</li><li> <a name="tex2html83" href="#SECTION021123000000000000000">Algunos errores comunes </a>
+<ul> 
+<li> <a name="tex2html84" href="#SECTION021123100000000000000">*</a>
+</li><li> <a name="tex2html85" href="#SECTION021123200000000000000">! Missing $  inserted </a>
+</li><li> <a name="tex2html86" href="#SECTION021123300000000000000">! Missing { (or }) inserted </a>
+</li><li> <a name="tex2html87" href="#SECTION021123400000000000000">! Missing number, treated as zero. </a>
+</li><li> <a name="tex2html88" href="#SECTION021123500000000000000">! Undefined control sequence </a>
+</li><li> <a name="tex2html89" href="#SECTION021123600000000000000">! Extra alignment tab has been changed </a>
+</li></ul> 
+</li></ul> 
+</li><li> <a name="tex2html90" href="#SECTION021130000000000000000">Ejemplo de documento en Latex </a>
+</li></ul> 
+ 
+<li> <a name="tex2html91" href="#SECTION03000000000000000000">  About this document ... </a>
+
+<p>
+
+
+</p><h1><a name="SECTION01010000000000000000">Introducción</a></h1>
+<p>
+Latex es un procesador  de texto, de gran  potencialidad 
+en el manejo de  fórmulas matemáticas, cuadros y tablas.
+	A través de este manual aprenderás como crear un documento en LaTeX .
+</p><p>
+</p><h1><a name="SECTION01020000000000000000">Creando e imprimiendo un documento</a></h1>
+<p>
+Los archivos de LaTeX tienen la terminación <em>.tex</em> es decir
+un documento escrito en Latex debe estar contenido en un archivo cuya
+extensión sea <em>.tex</em>, por ejemplo <em>informe.tex</em>.
+	Para la edición de este documento puedes  utilizar cualquier editor,como 
+	por ejemplo  <em>vi</em> o  <em>joe</em> .
+	Una vez terminada  la edición del documento éste debe ser compilado. El proceso
+	puede variar un poco dependiendo del computador en que te encuentres trabajando, por
+	ejemplo, en cipres, araucaria o anakena se utiliza el siguiente comando: 
+</p><p>
+</p><pre>         % latex informe.tex
+</pre>
+<p>
+
+</p><p>
+	Esta instrucción genera cuatro archivos más: <em>informe.log</em> (mensajes de la
+	compilación), <em>informe.aux</em> e <em>informe.dvi</em>,  este último
+	es el que posteriormente
+	se imprimirá.
+	Para el trabajo con Latex, también existe una herramienta muy importante que
+	permite ver el documento creado tal como se obtendrá en la impresión, 
+	el comando sólo se puede utilizar una vez compilado el documento
+	en Latex, esta herramienta es el <em>xdvi</em> y se encuentra disponible en
+	<em>araucaria</em>, <em>cipres</em> y <em>anakena</em>, pero, debido a su interfaz gráfica,
+	sólo se puede utilizar en las
+	estaciones de trabajo. Su forma es
+</p><p>
+</p><pre>          % xdvi informe.dvi
+</pre>
+<p>
+	Esto dará como resultado una nueva ventana que desplegará el documento tal
+	como se obtendrá de la impresora, su manejo es muy sencillo, y con ese
+	fin en la parte derecha de la nueva ventana, se encuentra una columna con
+	los comandos  y  sólo
+	necesitas hacer un <em>click</em> sobre el que deseas se ejecute.
+	Finalmente para poder imprimir tu documento debes utilizar el comando
+	<em>qprint</em>, que está disponible en <em>araucaria</em> y <em>cipres</em>.
+</p><p>	Para imprimir tu documento por ambos lados de la hoja :
+</p><pre>          % qprint informe.dvi
+</pre>
+<p>     Para imprimir por un solo lado de la hoja:
+</p><pre>          % qprint -simplex informe.dvi
+</pre>
+
+<p> Algunas opciones de este comando son:
+</p><pre>    -c #n          Saca #n copias.
+    -duplex        Imprime por ambos lados de la hoja.
+    -simplex       Imprime solamente por una cara de la hoja.
+    -oficio        Imprime en hojas oficio (legal).
+    -carta         Imprime en hojas de carta (A4 o letter).
+</pre>
+
+<p> Para imprimir tu documento desde <em>anakena</em>, debes ejecutar:
+</p><pre>          % dvips informe.dvi
+
+
+
+</pre>
+
+<p>
+ </p><h1><a name="SECTION01030000000000000000">Caracteres reservados de LaTeX </a></h1>
+<p>
+	Para evitar un tipo común de errores en Latex, es necesario conocer 
+	cuales  caracteres son usados como comandos o delimitadores por el compilador
+	de Latex, estos caracteres son:
+</p><p>
+</p><pre>        #  $  %  &amp;  _  {  }  ~  ^  \
+</pre>
+<p>
+	</p><p>Para poder incluir estos caracteres dentro de tu documento, como parte del
+	texto debes anteponerle un <em>backslash</em>, por ejemplo
+</p><p>
+
+<tt> 
+	Para obtener # , escribe \# <br>
+	Para obtener $ ,  escribe \$<br>
+	Para obtener % ,  escribe \%<br>
+	Para obtener &amp; ,  escribe \&amp;<br>
+ 	Para obtener _ ,  escribe \_<br>
+	Para obtener { o } ,  escribe  \{ o \}<br>
+ 	Para obtener ~ ,  escribe \verb'~'<br>
+ 	Para obtener ^ ,  escribe \verb'^'<br>
+ 	Para obtener \ ,  escribe \verb'\'
+</tt>
+
+</p><p>
+</p><h1><a name="SECTION01040000000000000000">Cómo comenzar y estructurar la forma del texto </a></h1>
+<p>
+	Un documento en Latex consiste en un texto propiamente tal y una serie de
+	comandos para el compilador que son los que le van a dar la forma al texto.
+	Un comando comienza con el caracter \ seguido por su nombre
+	(debes tener cuidado pues existen diferencias en la utilización de mayúsculas
+	y minúsculas), un  ejemplo de comando es
+</p><p>
+	</p><pre>       \pagestyle{empty};</pre>
+<p>
+	El documento contiene dos secciones principales que son, el 
+	encabezado, que está <br>compuesto por los comandos para definir
+	la estructura general del documento, y el
+	documento propiamente tal, que contiene el texto y algunos otros
+	comandos. La forma general de un documento en Latex es
+</p><p>
+<tt></tt></p><pre><tt>      
+      \documentclass[...
+      \usepackage{...}
+      (Comandos del encabezado) 
+      \begin{document}
+      (Texto del documento y comandos)
+      \end{document}
+</tt></pre>
+
+<p>
+</p><h2><a name="SECTION01041000000000000000">Un encabezado típico  </a></h2>
+<p>
+	Un encabezado típico para un documento es
+</p><p>
+	<tt>
+	</tt></p><pre><tt>      
+      \documentclass[12pt,spanish]{article}
+      \usepackage[spanish,activeacute]{babel}
+      \usepackage[latin1]{inputenc}
+      \oddsidemargin 0in
+      \textwidth 6.75in
+      \topmargin 0in
+      \textheight 8.5in
+      \parindent 0em
+      \parskip 2ex
+      \vegin{document}
+	</tt></pre><tt>
+	</tt>
+<p>
+	Una buena idea es tener este encabezado en una archivo aparte que puede incluirse en el
+	documento a través del editor.
+</p><p>
+	A continuación se verá el significado de las instrucciones del encabezado.
+</p><pre>
+
+</pre>
+
+<p>
+</p><h2><a name="SECTION01042000000000000000">Tipo de documento</a></h2>
+<p>
+</p><pre>      \documentclass[12pt,double]{article}</pre>
+<p>
+ Este es el primer comando, y especifica el tipo de documento que se va utilizar.
+</p><p>
+ Lo encerrado por los paréntesis cuadrados son opciones asociadas al comando, éstas pueden ser, por ejemplo <em>12pt</em> que tiene como finalidad decidir el tamaño de
+ las letras para la impresión. Otras posibilidades son: <em>spanish</em>
+ que permite el uso de acentos y ñ, y  <em>twocolumn</em> que produce un documento en dos
+ columnas.
+</p><p>
+	El término encerrado entre corchetes es el argumento del comando y especifica el estilo del documento, que puede ser
+</p><p>
+</p><dl><em>article</em>
+<dd> Este tipo es conveniente en la mayoría de los casos.
+</dd><dt><em>report</em>
+</dt><dd> Este estilo es sugerido para documentos largos. Aquí cuentas con un nivel
+más de encabezados (<em>Chapter</em>) que en el 
+estilo <em>Article</em> y además las tablas, figuras
+y ecuaciones son numeradas según los capítulos y no consecutivamente a través del
+documento como en el estilo <em>article</em>.<br>
+<p>
+ </p></dd></dl>
+<p>
+Además existen otros estilos de documentos como <em>Book</em> , <em>Letter</em> y <em>Slides</em>.
+</p><p>
+
+
+</p><h2><a name="SECTION01042a0000000000000">Paquetes</a></h2>
+
+Mientras se escribe un documento, te darás cuenta que existen algunas 
+áreas donde el LATEX básico no puede resolver el problema, por ejemplo 
+si se desea incluir una gráfica, texto de color o código fuente de algún
+ archivo en el documento. En tal caso, se requiere ampliar las capacidad
+ de LATEX usando paquetes. Los paquetes son activados con el siguiente 
+comando:
+<p>
+</p><pre>      \usepackage[opciones]{paquete}</pre>
+<p>
+
+Las <em>opciones</em> son una lista de palabras que activan ciertas capacidades del paquete.
+
+</p><h2><a name="SECTION01043000000000000000">Márgenes del texto </a></h2>
+<p>
+</p><pre>    
+         \oddsidemargin 0in
+         \textwidth 6.75in
+         \topmargin 0
+         \headheight 0in
+         \textheight 8.5in
+</pre>
+<p>El comando <em>\oddsidemargin</em> dice al compilador de Latex que el
+ márgen izquierdo será de 1+0 pulgadas desde el borde izquierdo de la 
+hoja ( el argumento 0in también puede ser negativo). 
+</p><p>El comando  <em>\textwidth</em> define el ancho del
+texto y con esto también se puede calcular el márgen derecho asociado.
+</p><p>El comando  <em>\topmargin</em> coloca el margen superior del texto a 1+0 pulgadas
+desde el inicio de la hoja. 
+</p><p>El comando <em>\headheight</em> define el largo del
+texto excluyendo el encabezado y el pie de página.
+</p><p>
+No se pueden utilizar estos comandos para modificar los márgenes del texto durante
+documento, para esto se utilizan otras instrucciones que se verán más adelante.
+</p><p>
+Nota: Las unidades de medida para los comandos, se darán más adelante.
+</p><pre>
+</pre>
+<p>
+</p><h2><a name="SECTION01044000000000000000">Indentación y salto entre párrafos </a></h2>
+<p>
+
+</p><p> El comando <em>\parindent 3em </em> define que la indentación debe ser de 3 espacios
+</p><p> El comando <em>\parskip </em> define el salto entre párrafos.
+</p><p>
+<br>
+<br>
+</p><h2><a name="SECTION01045000000000000000">Estilo de página </a></h2>
+<pre>	\pagestyle{<em>style</em>}
+</pre>
+<p>
+	Este comando decide cual será el encabezado y el pie de página. Las opciones de
+	argumento para este comando son
+</p><p>
+</p><dl><dt>plain
+</dt><dd> Indica que el número de página va en el final y que el encabezado es
+	vacío, ésta es la opción por omisión en el caso de <em>article</em> y <em>report</em>.<br>
+	<br></dd><dt>empty
+</dt><dd> Indica que tanto el encabezado como el pie de página van vacíos.<br>
+	<br></dd><dt>headings
+</dt><dd> El número de página y cualquier otra información, que ha sido
+	determinada en el <em>documentclass</em> va en el encabezado,
+	 y el pie de página va vacío.  <br>
+	<br></dd><dt>myheadings
+</dt><dd> Similar a <em>headings</em> pero es posible anexar información
+	propia a través de los comandos <em>\markboth</em> y <em>\markright</em>.<br>
+<br><br><p>
+ </p></dd></dl><h1><a name="SECTION01050000000000000000">Número de página </a></h1>
+<p>
+Es posible setear o resetear el contador de páginas en cualquier parte del
+documento, esto se logra con el comando  <em>\setcounter{página}</em> 
+, además puedes especificar el tipo de números que deseas a través del comando 
+<em>\pagenumber</em>. 
+</p><p>La forma de utilizar estos comandos es :
+</p><p>
+<tt>\setcounter{page}{25}</tt> <br>Esto ocasiona que el número
+actual de la página sea 25.
+</p><p>
+<tt>\pagenumbering{estilo}</tt> <br>Vuelve el contador de páginas a 1 y
+comienza a numerar de acuerdo con lo especificado en estilo, que puede ser una de las
+siguientes opciones:
+</p><p>
+</p><pre>  
+           <em>arabic</em> :  Para obtener números como 1,2,3... (Este es el estilo por omisión).
+           <em>roman</em>  :  i, ii, iii, iv, ...
+           <em>Roman</em>  :  I, II, III, IV, ...
+           <em>alph</em>   :  a, b, c, ...
+           <em>Alph</em>   :  A, B, C, ...
+
+
+</pre>
+
+
+<p></p><h2><a name="SECTION01051000000000000000">Referenciando una página</a></h2>
+<p>
+	Para referenciar una página desde cualquier lugar del texto debes
+	usar dos comandos. Estos comandos son:
+</p><pre>        label{'key'}
+        ~\pageref{'key'}
+
+</pre>
+<p>
+	El primero sirve para especificar la llave y la página o sección que
+	deseas referenciar. El segundo es sustituido por la página o el número de
+	sección marcada. Un ejemplo puede ser, escribir el siguiente texto en la
+	página 5
+</p><p>
+	<tt>\label{'fig1'}</tt>
+</p><p>
+	y luego en otra parte del texto incluyes el comando
+</p><p>
+	<tt>( ver pag.~\pageref{'fig1'} )</tt>
+</p><p>
+		esto produce como resultado
+</p><p>
+		<tt>(ver pag.5)</tt>
+</p><p><br><br>
+
+</p><h1><a name="SECTION01060000000000000000">Secciones </a></h1>
+<p>
+</p><h2><a name="SECTION01061000000000000000">Títulos de secciones </a></h2>
+<p>
+	LaTeX provee de varias formas de seccionar el texto, estas son:
+</p><pre>  
+       \part{ }        (Opcional. Utilizado frecuentemente en el estilo book.)
+       \chapter{ }     (Sólo en los estilos Book y report )
+       \section{ }  \subsection{ }  \subsubsection{ }
+       \paragraph{ }  \subparagraph{ }
+</pre>
+<p>
+	El encabezado de las secciones va entre los corchetes y debes dejar una
+	línea en blanco antes y después del comando.
+</p><p>
+	Debes considerar que Latex automáticamente numera las secciones y subsecciones, si 
+	no deseas que se numere una sección debes agregar un asterisco (por ejemplo
+	<em>section*{ }</em>). Además todas las secciones aparecerán en el contenido.
+</p><p><br><br>
+</p><h2><a name="SECTION02112000000000000000">Referenciando una sección </a></h2>
+<p>
+	Para referenciar una sección, los comandos son los mismos que para
+	una página, lo único que cambia es que estás obligado
+	a poner el comando <em> \label {key} </em>justo después del comienzo de la sección. Por ejemplo:
+</p><pre>        \subsection{Referencia...}
+        \label{'fig1`}
+</pre>
+	 y luego, en alguna otra parte de texto se escribe
+<pre>        (ver  ~\ref{'fig1'} )  </pre>
+     esto produce como resultado
+<pre>        (ver 5.1)   </pre>
+<p>
+</p><h2><a name="SECTION02114000000000000000">Índice </a></h2>
+<p>
+	 LaTeX da la posibilidad de crear el índice del
+	 documento a través del comando
+	<em>\tableofcontents</em>, este requiere ser escrito después del
+	comando <em>\begin{document}</em>. Es necesario compilar dos veces tu
+	documento, pues genera  un archivo de extensión <em>.toc</em> en la primera
+	compilación y que es utilizado en la segunda.
+<br><br>
+</p><p>
+</p><h1><a name="SECTION02120000000000000000">Justificando y centrando texto </a></h1>
+<p>
+</p><h2><a name="SECTION02121000000000000000">Justificando </a></h2>
+<p>
+ LaTeX automáticamente quita los espacios en blanco que se
+ encuentren entre
+	palabras, además justifica la línea, es decir, rellena con espacios de tal forma de
+	que ésta se distribuya justo en el espacio asignado. En algunos casos uno
+	no desea que esto ocurra, para ello hay varias posibilidades, una es poner dos
+	backslash  (\\) lo que obliga un salto de línea. Por ejemplo:
+</p><p><tt>
+	Universidad Michoacana\\Escuela de Físico Matemáticas \\<br>
+	Laboratorio de Computación
+	
+</tt></p><p>
+	Esto genera como resultado
+</p><p>
+<tt> 
+	Universidad Michoacana<br>Escuela de Físico Matemáticas<br>
+	Laboratorio de Computación
+</tt>
+</p><p>
+	Otra posibilidad para evitar la justificación es un par de comandos que provocan,
+	que el texto encerrado entre ellos no sea justificado, pero si son borrados los
+	espacios entre palabras, un ejemplo es
+<br>
+<tt>    \begin{raggedright}<br>
+	 Universidad Michoacana<br>
+	 Escuela de Físico Matemáticas<br>
+	 \end{raggedright}<br>
+</tt>
+</p><p>
+	Y obtienes como resultado
+</p><p>
+<tt> Universidad Michoacana Escuela de Físico Matemáticas</tt>
+</p><p>
+Por último otra posibilidad es escribir un texto en ambiente <em>verbatim</em>, pero esto
+se explicará mas adelante en detalle (ver 7.7).
+<br><br></p><p>
+</p><h2><a name="SECTION02122000000000000000">Párrafos </a></h2>
+<p>
+LaTeX comienza un nuevo párrafo cada
+vez que uno deja una línea en blanco, esto provoca que el compilador  salte 
+el espacio asignado por el comando <em>parskip</em> e indente la primera línea según lo
+indicado por el comando  <em>parindent</em>. Es necesario tener en cuenta que más de una
+línea no hace ninguna diferencia, es decir, da lo mismo una que cinco líneas, entre dos
+de texto.
+</p><p>
+</p><h2><a name="SECTION02123000000000000000">Cambio de línea y página </a></h2>
+<p>
+Si escribes \\ en una línea, esto indica al compilador que el
+texto continúa en la próxima línea, al contrario si  escribes un  tilde (~)
+entre dos palabras, esto significa que el compilador no debe cortar la línea entre
+estas dos palabras.
+</p><p>
+El comando  <em>\newpage</em> fuerza un cambio de página, y los comandos
+<em>\nolinebreak</em> y <em>\nopagebreak</em> previenen un cambio de línea o
+página donde tú no lo deseas.
+</p><p>
+</p><h2><a name="SECTION02124000000000000000">Insertando espacios verticales </a></h2>
+<p>
+LaTeX te provee de tres sencillos comandos para insertar espacios 
+predefinidos entre líneas, estos son
+</p><p>
+<tt></tt></p><pre><tt>         \smallskip
+         \medskip
+         \bigskip
+</tt></pre>
+<p>
+Estos comandos generan espacios dependiendo del estilo del documento. 
+Si se desea  decidir el tamaño exacto del espacio, existe el comando
+</p><p>
+<tt>      \vspace*{<em>tamaño</em>}  </tt>
+
+</p><p>
+Donde <em>tamaño</em> es el argumento y consiste en un número seguido de una unidad de
+medida que puede ser
+</p><pre>         1in      = 1 pulgada.
+         2.34cm   = 2.34 centímetros.
+         -0.7m    = -0.7 milímetros. El signo negativo significa que el salto
+                      será hacia arriba en vez de hacia el final de la página.
+         2ex      = el largo igual a dos veces una letra x.
+         30pt     = es el tamaño del punto utilizado para definir
+                      el tamaño de las letras. 
+</pre>
+Por último el comando <em>\vfill</em> seguido de un texto, genera el espacio justo
+para que éste quede al final de la página.<br><br>
+<br><br><p>
+</p><h2><a name="SECTION02125000000000000000">Insertando espacios horizontales </a></h2>
+<p>
+<tt>  \hspace*{<em>tamaño</em>} </tt>
+</p><p>
+El uso de este comando  es idéntico al de inserción de espacios verticales
+y sus unidades de medida son las mismas.
+</p><p>
+<tt>   \hfill</tt>
+</p><p>
+Este comando seguido de un texto genera los espacios horizontales suficientes para 
+que este quede al final de la líneas, por ejemplo
+</p><p>
+<tt>Esto es un \hfill Ejemplo</tt>
+</p><p>
+Esto da como resultado
+</p><p>
+<tt></tt></p><pre><tt>Esto es un                                                                Ejemplo</tt></pre>
+<br><br>
+<h2><a name="SECTION02126000000000000000">Centrando texto</a></h2>
+<p>
+Para centrar una o más líneas de texto, debes escribir los siguientes
+comandos :
+</p><p>
+<tt></tt></p><pre><tt>        \begin{center}
+        lineas 1\\
+        lineas 2\\
+        \end{center}
+</tt></pre>
+<p>
+Si lo deseas puedes ingresar <em>líneas 1</em> y <em>líneas 2</em> en
+la misma línea física de texto, pero
+debes separarlas por un doble backslash.
+<br><br></p><p>
+</p><h2><a name="SECTION02127000000000000000">Ambiente Verbatim </a></h2>
+<p>
+En este ambiente, lo que tú escribes es lo que tú obtienes en la
+impresión. El comando es de la forma
+</p><p>
+<tt></tt></p><pre><tt>       \begin{verbatim}
+       (texto)
+       \end{verbatim}
+</tt></pre>
+<p>
+Este ambiente posee su propio tipo de letra que es el <em>typewriter</em> (tt), además en
+su interior no es posible ejecutar ningún comando de Latex, por ejemplo si escribes
+</p><p>
+<tt></tt></p><pre><tt>        \begin{verbatim}
+        Laboratorio de Computación
+        \bigskip
+        Universidad Michoacana
+        \end{verbatim}
+</tt></pre>
+<p>
+Lo que se obtiene es
+</p><p>
+<tt></tt></p><pre><tt>        Laboratorio de Computación
+        \bigskip
+        Universidad Michoacana
+</tt></pre>
+
+<h1><a name="SECTION02130000000000000000">Cambiando el estilo y tamaño de las letras </a></h1>
+<p>
+</p><h2><a name="SECTION02131000000000000000">Cambiando el tipo de letra </a></h2>
+<p>
+LaTeX  provee de varios tipos y tamaños de letras, la siguiente es una
+lista de sus posibilidades:
+
+</p><pre><tt> 
+       \rm          roman
+       \em          italic
+       \bf          boldface
+       \sl          slanted
+       \sf          sans serif
+       \sc          small caps
+       \tt          typewriter
+</tt></pre>
+
+<p>
+<em>Roman</em> es el estilo por omisión y <em>typewriter</em> es el estilo del ambiente <em>verbatim</em>.
+</p><p>
+Si se desea cambiar el estilo de la letra sólo en unos pocos caracteres, se tiene la 
+posibilidad de utilizar el siguiente comando
+</p><p>
+<tt>Según el {\emSeñor Gonzalez} el trabajo...</tt>
+</p><p>
+Da como resultado:
+</p><p><tt> Según el <em>Señor Gonzalez</em> el trabajo... </tt>
+</p><p>
+Para secciones de texto más largas, es mejor cambiar el tipo de letra a través del
+comando
+</p><p>
+<tt>\begin{bf}</tt><br>
+<tt>(text to be printed)<br></tt>
+<tt>\end{bf}</tt><br>
+</p><p>
+</p><h2><a name="SECTION02132000000000000000">Cambiando el tamaño de la letra </a></h2>
+<p>
+Los mismos comados que se utilizan para cambiar el estilo de las letras son
+los que se utilizan para cambiar el tamaño de estas. Una lista de tamaños viene a
+continuación (ordenada desde al más pequeño al más grande)
+</p><p>
+</p><pre><tt> 
+         \tiny
+         \scriptsize
+         \footnotesize
+         \small
+         \normalsize
+         \large
+         \Large
+         \LARGE
+</tt></pre> 
+<p>
+Al igual que en la sección anterior se puede hacer un comando de la forma:
+</p><p>
+<tt>{\Large CENTRO DE COMPUTACIÓN }</tt>
+<br><br>
+</p><p>
+</p><h1><a name="SECTION02140000000000000000">Subrayando e imprimiendo caracteres especiales </a></h1>
+<p>
+</p><h2><a name="SECTION02141000000000000000">Subrayando </a></h2>
+<p>
+El comando  <em>\underline</em> pone una línea horizontal 
+bajo  el argumento encerrado entre los corchetes. Esto se ocupa de la siguiente forma
+</p><p>
+<tt>Esto es  \underline{muy, pero muy }importante</tt>.
+
+</p><h2><a name="SECTION02142000000000000000">Comillas y acentos </a></h2>
+<p>
+Las comillas (")  y apóstrofos (' `) en Latex 
+no son caracteres especiales, por tanto no es  
+un problema incluirlos, en el texto . Sin embargo, para poner acentos y ñ es
+necesario poner un apóstrofo (') antes de la vocal a acentuar o de la n, por ejemplo
+</p><p>
+<tt></tt></p><pre><tt>      'o 'A 'n 'N  </tt></pre>
+<p>
+Da como resultado
+</p><p>
+<tt></tt></p><pre><tt>      ó Á ñ Ñ </tt></pre>
+<p>
+Otro ejemplo puede ser el siguiente:
+<tt></tt></p><pre><tt>H\^otel, na\"\ive, \'el\`eve,\\
+sm\o rrebr\o d, !'Se\~norita!,\\
+Sch\"onbrunner Schlo\ss{} Stra\ss e
+</tt></pre>
+<p>
+que genera la siguiente salida
+<tt></tt></p><pre><tt>Hôtel, naïve, élève,
+smørrebrød, ¡Señorita!,
+Schönbrunner Schloß Straße
+</tt></pre>
+
+<h2><a name="SECTION02143000000000000000">Subíndice y superíndice</a></h2>
+<p>
+Para obtener subíndices o superíndices
+es necesario utilizar el ambiente matemático,
+para esto se utiliza el comando  $  para abrir y cerrar el ambiente. La forma de
+obtener estos efectos es la  siguiente:
+</p><p>
+<tt></tt></p><pre><tt>         $base_{subindice}$
+         $base^{superindice}$
+</tt></pre>
+<p> También puedes obtener cosas más complicadas como un superíndice con un subíndice :
+<tt></tt></p><pre><tt>         $x^{y_{1}}$
+
+
+</tt></pre>
+
+<h2><a name="SECTION02144000000000000000">Letras griegas </a></h2>
+<p>
+En algunas ocasiones es necesario editar letras griegas que acompañen al
+texto. En Latex, para obtener una de estas letras es necesario entrar en el modo
+matemático, a través del comando $. Un ejemplo puede ser:
+</p><p>
+<tt>La variable $\beta$ es la principal.</tt>
+</p><p>
+
+
+</p><p></p><h2><a name="SECTION02145000000000000000">Letras caligráficas </a></h2>
+<p>
+Puedes usar el comando <tt>$\cal <em> texto </em> $ </tt> para obtener una
+versión caligráfica del <em>texto</em>. Por ejemplo:
+</p><p>
+<tt></tt></p><pre><tt> $\cal F $(x) es una función continua.</tt></pre>
+<p><br>
+</p><h2><a name="SECTION02146000000000000000">Símbolos y caracteres diversos </a></h2>
+<p>
+La mayor parte de los símbolos especiales forman parte del ambiente
+matemático, por ejemplo, si deseas hacer una flecha desde A hasta B, debes escribir:
+</p><p>
+<tt></tt></p><pre><tt>       A $\longrightarrow$ B  </tt></pre>
+<p>
+En este comando los símbolos $ marcan la entrada y la salida del ambiente 
+matemático, éstos y otros símbolos se analizarán más adelante.
+</p><p>
+<br>
+</p><h2><a name="SECTION02147000000000000000">Incluyendo la fecha actual </a></h2>
+<p>
+Si escribes <em>\today\</em> en el texto aparece la
+fecha actual.
+</p><p><br>
+</p><h1><a name="SECTION02150000000000000000">Imprimiendo en columnas a través de tabuladores </a></h1>
+<p>
+El ambiente de tabulación se define de la siguiente manera:
+<tt></tt></p><pre><tt>       \begin{tabbing}
+       ---- \= ------ \= ----- \= ... \kill
+       Texto \&gt; Texto \&gt; Texto \\
+       \&gt; Texto \&gt; Texto \&gt; Texto \\
+       \end{tabbing}
+
+</tt></pre>
+<p>
+La primera línea abre el ambiente de tabulación. La segunda línea localiza las
+posiciones de tabuladores. El comando <em>\=</em> es el que establece la posición 
+exacta del tabulador y los signos menos (-) sólo son filtros para establecer la
+posición. Luego el comando <em>\kill</em> es el que da término al formateo de los
+tabuladores.
+</p><p>
+En la siguiente línea , entre el texto, se encuentra el comando  <em>\&gt;</em> ,
+ es él quien produce que la impresión continue en el siguiente tabulador.
+</p><p>
+ Por último el comando <em>\end{tabbing}</em> es el que cierra el ambiente de tabulación. Un ejemplo es el siguiente:
+
+<tt></tt></p><pre><tt>        \begin{tabbing}
+         ----- \= --- \= \kill
+         C *** Este es un programa en fortran\\
+         \&gt; DO 200J=1,15\\
+         \&gt; \&gt; Y(J) = A*X(J)\\
+         \&gt; \&gt; SUM = SUM + Y(J)\\
+         200  \&gt; CONTINUE
+         \end{tabbing}
+
+</tt></pre>
+<p> Esto produce:
+
+<tt></tt></p><pre><tt> 
+         C *** Este una programa en fortran
+		DO 200J=1,15
+		    Y(J) = A*X(J)
+	 	    SUM = SUM + Y(J)
+         200	CONTINUE
+</tt></pre>
+
+
+<p>
+</p><h1><a name="SECTION02160000000000000000">Listas </a></h1>
+<p>
+Una lista es una serie de ítemes, que son marcados con caracteres, letras o
+números. LaTeX provee tres tipos de listas, estas son; <em>enumerate</em>, <em>itemize</em> y <em>description</em>.
+</p><p>
+</p><h2><a name="SECTION02161000000000000000">El ambiente Enumerate  </a></h2>
+<p>
+<tt></tt></p><pre><tt>         \begin{enumerate}
+            \item Primer item de la lista
+            \item Segundo item de la lista
+            \begin{enumerate}
+                 \item Primer item en la lista anidada
+                 \item Segundo item en la lista anidada
+            \end{enumerate}
+            \item Tercer  item de la lista
+         \end{enumerate}
+</tt></pre>
+<p>
+Esto genera:
+</p><p>
+<tt> </tt></p><dl><dl><ol><li><tt> Primer item de la lista 
+</tt></li><li><tt> Segundo item de la lista 
+ <ol>(a)  Primer item en la lista anidada<br>
+ (b)  Segundo item en la lista anidada 
+</ol>
+</tt></li><li><tt> Tercer  item de la lista 
+</tt></li></ol><tt> 
+ </tt></dl><tt> 
+ </tt></dl>
+<p>
+Nota: No necesitas indentar los comandos, como en el ejemplo, sólo está así para poder
+entenderlo mejor.
+</p><p>
+Los ítemes por omisión tienen la numeración como en el ejemplo, pero esto puede cambiar
+ejecutando uno de los siguientes comandos
+<tt></tt></p><pre><tt>      \renewcommand{\labelenumi}{\arabic{enumi}.}  (1., 2., 3.,...)
+      \renewcommand{\labelenumi}{\roman{enumi}.}   (i., ii., iii.,...)
+      \renewcommand{\labelenumi}{\Roman{enumi}.}   (I., II., III.,...)
+      \renewcommand{\labelenumi}{\alph{enumi}.}    (a., b., c.,...)
+      \renewcommand{\labelenumi}{(\alph{enumi}).}  [(a), (b), (c),...]
+      \renewcommand{\labelenumi}{\Alph{enumi}.}    (A., B., C.,...)
+
+
+</tt></pre>
+<p>
+</p><h2><a name="SECTION02162000000000000000">El ambiente  Itemize</a></h2>
+<p>
+</p><dl><dl><pre>\begin{itemize}
+   \item Primer item en la lista 
+   \item Segundo item en la lista  
+      \begin{itemize}
+         \item  Primer item en la lista anidada 
+         \item  Segundo item en la lista anidada 
+      \end{itemize}
+   \item Tercer item en la lista  
+\end{itemize}
+</pre></dl>
+<p>
+Este ambiente tiene cuatro niveles de anidamiento, por defecto el primer nivel se marca
+con un punto grande, para el segundo nivel está el signo menos (-), para el
+tercer nivel se ocupa el asterisco (*) y por último para el cuarto nivel se ocupa
+un punto pequeño.
+</p><p>
+Si lo deseas puedes cambiar estos signos, para esto se 
+utiliza el siguiente comando, antes de la instrucción <em>\begin{itemize}</em>
+</p><p>
+<tt></tt></p><pre><tt>        \renewcommand{\labelitemi}{caracter}  </tt></pre>
+<p>
+Y para cambiar los caracteres del segundo, tercer y cuarto nivel de anidamiento, debes
+utilizar los comandos  <em>\labelitemii</em>, <em>\labelitemiii</em> o <em>\labelitemiv</em>, respectivamente.
+</p><p><br>
+</p><h1><a name="SECTION02170000000000000000">El ambiente Description </a></h1>
+<p>
+Este ambiente es especialmente bueno, como su nombre lo dice, para dar
+descripciones de elementos o palabras. Un ejemplo
+</p><p>
+</p><dl><dl><pre>\begin{description}
+    \item [contra] {\em prep}. against; before; opposite. 
+        {\em Remar contra a mare}, to pursue one's course,
+        to persist in spite of all opposition.
+    \item [contradi\c{c}\~{a}o] {\em noun, fem.} contradiction.
+    \item [contrap\^{e}so] {\em noun, masc.} counterbalance.
+\end{description}
+</pre>
+<p>
+ </p></dl> 
+ </dl>
+<p>
+Esto da como resultado
+</p><p>
+</p><dl><dl><dl><dt>contra
+</dt><dd> <em>prep</em>. against; before; opposite.  <em>Remar contra a
+mare</em>, to pursue one's course, to persist in spite of all opposition.
+</dd><dt>contradição
+</dt><dd> <em>noun, fem.</em> contradiction.
+</dd><dt>contrapêso
+</dt><dd> <em>noun, masc.</em> counterbalance.
+<p><br>
+ </p></dd></dl> 
+ </dl> 
+ </dl><h1><a name="SECTION02180000000000000000">Ecuaciones y fórmulas </a></h1>
+<p>
+Como anteriormente se mencionó Latex es especialmente apropiado para 
+imprimir fórmulas, ecuaciones y símbolos matemáticos. Para esto existe el ambiente
+matemático, el cual se puede utilizar a través de 4 comandos que son: <em>math</em> (para
+fórmulas en el texto), <em>displaymath</em> (para una línea de ecuación no numerada),
+<em>equation</em> (para una línea de ecuación numerada) y por último <em>eqnarray</em> (para
+varias líneas de ecuación).
+</p><p>
+En esta sección del manual se describe como utilizar herramientas
+para obtener formulas.
+</p><p>
+</p><p> </p><p></p><h2><a name="SECTION02181000000000000000">El ambiente Math </a></h2>
+<p>
+Este ambiente se utiliza para intercalar fórmulas en las líneas de texto,
+por ejemplo si se escribe
+
+<tt></tt></p><pre><tt> El teorema de Pitágoras, $x^{2} + y^{2} = h^{2}$ . </tt></pre>
+<p> O también puede ser:
+<tt></tt></p><pre><tt>        El teorema de Pitágoras.</tt>
+        \begin{math}
+        x^{2} + y^{2} = h^{2}.
+        \end{math}
+ </pre>
+<p>
+El estilo por defecto que se tiene en el ambiente matemático es el <em>italic</em>. No es
+aconsejable utilizar el modo matemático para obtener palabras o frases con letras itálica,
+pues en este modo, todos los espacios son eliminados, por ejemplo:
+</p><pre><tt>     $Hola   amigos$
+</tt></pre>
+<p> produce:
+</p><pre><tt>     Holaamigos
+
+
+</tt></pre>
+<p>
+</p><h2><a name="SECTION02182000000000000000">Los ambientes Displaymath y Equation </a></h2>
+<p>
+Este comando se utiliza para imprimir una ecuación en el centro de la
+línea. Los comandos son:
+</p><p>
+</p><ul><li> Si encierras la fórmula entre los comandos \begin{displaymath} y \end{displaymath} o entre \[ y \], 
+ocasiona que la fórmula no sea numerada
+<p>
+</p></li><li> En cambio si se utiliza \begin{equation} y \end{equation} la fórmula
+será numerada. Y cada vez que ingreses una nueva fórmula en este ambiente se
+incrementará automáticamente el número.
+<p>
+</p></li></ul>
+<p>
+El siguiente es un ejemplo
+</p><p>
+</p><pre>          \begin{displaymath}
+               x^{2} + y^{2} = h^{2}
+          \end{displaymath}
+</pre>
+<p>
+</p><p>
+Sin embargo, se puede utilizar el otro ambiente
+</p><p>
+</p><pre>          \begin{equation}
+               x^{2}+y^{2}=h^{2}
+          \end{equation}
+</pre>
+<p>
+</p><p></p><h2><a name="SECTION02183000000000000000">Símbolos matemáticos </a></h2>
+<p>
+</p><h3><a name="SECTION02183100000000000000">Glosario de símbolos </a></h3>
+<p>
+Algunos  de los símbolos matemáticos que se pueden utilizar están en la 
+tabla 2. Estos se utilizan en el modo matemático de la siguiente forma
+</p><p>
+Si  $\log x \leq \epsilon$ entonces $\partial y / \partial x = 20 \pm 0.1$
+
+</p><p>
+</p><p>
+</p><p><br><br>
+</p><p></p><h3><a name="SECTION02183200000000000000">Raíz cuadrada y otras raíces </a></h3>
+<p>
+El comando <em>\sqrt{}</em> es que el permite generar el
+símbolo de raíz cuadrada. Entre los corchetes es donde debes poner el argumento que
+deseas esté dentro de la raíz. 
+</p><p>
+Existe un segundo parámetro opcional para este
+comando  <em><tex2html_verb_mark><tex2html_verb_mark>sqrt<tex2html_verb_mark><tex2html_verb_mark>[n]"</tex2html_verb_mark></tex2html_verb_mark></tex2html_verb_mark></tex2html_verb_mark></em>, donde n es el número que identifica el orden de
+la raíz, ejemplos
+</p><p>
+<tt> $\sqrt{b^{2}-4ac}$   
+</tt></p><p><tt>
+      $sqrt[3]{x+y}$ 
+</tt></p><p><tt>
+<br><br>
+</tt></p><h3><a name="SECTION02183300000000000000">Sumatorias, productorias e integrales </a></h3>
+<p>
+Los comandos  <em>\sum</em>, <em>\prod</em> y <em>\int</em>, son los utilizados para crear estos símbolos
+especiales muy importantes en el ambiente matemático. Para darles argumentos e
+intervalos, se utiliza la siguiente forma :
+</p><p>
+ \[sum_{i=1}^{n} x_{i} \]  </p><p>
+</p><p>
+ \[ \prod_{i=1}^{n} x_{i} \]   
+
+</p><p><br><br>
+</p><h3><a name="SECTION02183400000000000000">Líneas superiores, inferiores y paréntesis </a></h3>
+<p>
+Los comandos \overline y  <em>\underline</em> son los que ponen líneas superiores e inferiores respectivamente
+sobre el argumento. Ejemplos:
+</p><p>
+<tt> $\underline{x+y}$
+</tt></p><p><tt>
+ $\overline{\overline{x}^{2} + 1}$
+ </tt>
+</p><p>
+De la misma forma es posible poner corchetes en vez de líneas, para esto los comandos
+</p><p>
+son, <em>\overbrace</em> y <em>\underbrace</em>, por ejemplo
+</p><p>
+<tt> $\overbrace{a+ \underbrace{b + c} + d}$ </tt>
+</p><p>
+También es posible titular el corchete,  esto se hace, por ejemplo:
+</p><p>
+<tt>  \[ \underbrace{a + \overbrace{b+ \cdots + y}^{24} + z}_{35} \]
+</tt>
+ 
+</p><p><br><br>
+</p><h3><a name="SECTION02183500000000000000">Acentos, tildes, tongos, etc. </a></h3>
+<p>
+Es posible generar tongos y acentos a las letras en ambiente matemático,
+para esto se utilizan comandos que están en la siguiente lista
+</p><p>
+<tt> </tt></p><pre><tt>     \hat{x}
+     \check{x}
+     \breve{x}
+     \tilde{x}
+     \bar{x}
+     \vec{x}
+     \acute{x}
+     \grave{x}
+     \dot{x}
+     \ddot{x}
+
+
+</tt></pre>
+ <p>
+</p><h2><a name="SECTION02184000000000000000">Creando fórmulas y ecuaciones y complejas</a></h2>
+<p>
+El comando <em>\frac{num}{den}</em> es usado para crear una fracción donde <em>num</em> 
+es el numerador y <em>den</em> es el denominador, por ejemplo
+</p><p>
+ \[ x = \frac{y + z/2}{y^{2} + 1} \]   </p><p>
+</p><p>
+ \[ \frac{e^{xy} }{1+ \frac{y}{x+1}} \]  
+</p><p><br><br>
+</p><h3><a name="SECTION02184100000000000000">Paréntesis, corchetes, paréntesis cuadrados y otros delimitadores  </a></h3>
+<p>
+En el ambiente matemático son muy usados distintos delimitadores, es por
+ello que en Latex están incluidos la mayoría, y se muestran en la tabla 3.
+</p><p>
+</p><p>
+Para generar delimitadores más grandes, que encierren a una fórmula completa o
+expresiones grandes, existen los comandos <em>\left</em> y <em>\right</em>.
+Estos puestos inmediatamente antes del delimitador generan el tamaño deseado, por
+ejemplo, la línea
+</p><p>
+<tt><tex2html_verb_mark><tex2html_verb_mark>left(</tex2html_verb_mark></tex2html_verb_mark></tt> (<em>expresión</em>) <tt><tex2html_verb_mark><tex2html_verb_mark>right)</tex2html_verb_mark></tex2html_verb_mark></tt>
+</p><p>
+Genera dos  paréntesis que encerrarán toda la <em>expresión</em>
+</p><p> Un ejemplo concreto es:
+</p><p>
+\[ Y = 1+ \left[ \frac{x+3}{2x^{2}+4x-5} \right] \]
+</p><p>
+</p><p>
+También es posible poner un subíndice y un superíndice al delimitador, esto se hace de
+la siguiente forma\
+</p><p> \[ \left \frac{x-3}{2x+7} \right]^{1}_{0} \]
+</p><p> 
+</p><p>
+Por último, también es posible dar el tamaño preciso que uno desea para el delimitador 
+a través del comando <tex2html_verb_mark><tex2html_verb_mark>", por ejemplo
+</tex2html_verb_mark></tex2html_verb_mark></p><p>\[ \left\Downarrow \rule{0mm}{12mm} x= \frac{1-y}{1+y} \right \]
+</p><p> 
+
+</p><p><br><br>
+</p><h3><a name="SECTION02184200000000000000">Símbolos sobrepuestos</a></h3>
+<p>
+El comando  <em>stackrel</em> es el usado para poner dos símbolos, uno sobre
+otro.  La sintaxis del comando es:
+</p><p>
+<em>\stackrel{arriba}{abajo}</em>
+</p><p>
+Donde <em>arriba</em> y <em>abajo</em> son reemplazados por el símbolo que irá en la parte
+superior y en la parte inferior respectivamente. Por ejemplo
+</p><p>
+A $\stackrel{k_{1}}{\rightarrow}$ B
+</p><p>
+</p><p>
+Es posible modificar el tipo de letra que se le da a un texto, en este caso la  letra k,
+para esto se utiliza el comando  <em>\textstyle</em> seguido por el estilo que
+deseas, por ejemplo
+</p><p>
+A $\stackrel{\textstyle\rm k_{1}}{\longrightarrow}$  
+</p><p>
+También se pueden anidar, de tal forma de poner mas símbolos apilados, pero existe el
+problema  que el símbolo que va más
+arriba de todos es impreso corrido, es por esto que se
+debe utilizar el comando  <em>\raisebox</em> para evitarlo, esto se ve en el
+siguiente ejemplo 
+</p><p>
+</p><dl><dl><pre>\begin{displaymath}
+A\,\,\raisebox{-2.5ex}{$\stackrel{\stackrel{\textstyle k_{1}}
+{\textstyle{\longleftarrow }}}{\stackrel{\textstyle{\longrightarrow}}
+{\textstyle{k_{2}}}}$} \,\, B
+\end{displaymath}
+</pre>
+<p>
+ </p></dl> 
+ </dl>
+<p>
+</p><p>
+El comando  <em>\raisebox</em> será discutido en una sección más adelante. 
+</p><p>Por último un ejemplo mas complejo
+</p><p>
+</p><dl><dl><pre>\begin{displaymath}
+W^{min} = -T \Delta\;S_{separation} \,\, = \,\,
+\underbrace{-RT \, \sum_{i} \, x_{i} \, \ln
+x_{i}}_{\stackrel{\stackrel{\uparrow}{siempre \;\; &gt; \; 0}}{depende \; solo 
+\; de\; la \; forma\; en  \; (T,P)}
+\end{displaymath}
+</pre>
+<p>
+ </p></dl> 
+ </dl>
+<p>
+</p><p><br><br>
+</p><h3><a name="SECTION02184300000000000000">Cambiando el tipo en modo matemático </a></h3>
+<p>
+Normalmente en el ambiente matemático las letras aparecen en estilo
+<em>italic</em>, pero esto se puede cambiar a otros  estilos a través de los comandos
+<em> \textstyle, \scriptstyle, \rm, \bf </em>. Un par de ejemplos:
+<tt></tt></p><pre><tt>     $y = x^{2}$
+     ${\rm y} = x^{\textstyle 2}$
+</tt></pre><tt> </tt>
+
+<h3><a name="SECTION02184400000000000000">Espaciado en modo matemático </a></h3>
+<p>
+Es posible generar espacios dentro del modo matemático, para esto puedes
+utilizar uno de los comandos en la siguiente lista:
+</p><pre>         \,      ejemplo: $a \, b$  genera: a b
+         \:      ejemplo: $a \: b$  genera: a  b 
+</pre>
+Y también es posible borrar espacio entre dos textos, para esto utiliza el comando
+\! como se muestra en el siguiente ejemplo
+<pre>   Escribiendo $n / \log n$ produce n/ log n
+   Escribiendo $n / \! \log n$ produce n/log n
+</pre>
+<h2><a name="SECTION02185000000000000000">Ecuaciones en varias líneas </a></h2>
+<p>
+Los ambientes <em>eqnarray</em> y <em>eqnarray*</em> son usados para
+producir ecuaciones o varias ecuaciones consecutivas en más de una línea. El primer
+ambiente las genera numeradas mientras que el segundo no las numera. Por ejemplo
+</p><p>
+</p><p><a name="eqarr3">&nbsp;</a><a name="eqarr2">&nbsp;</a><a name="eqarr1">&nbsp;</a>  </p><p>
+</p><p>
+El ambiente para producir ecuaciones como estas,  es de la forma
+</p><p>
+</p><dl><dl><pre>\begin{eqnarray}
+(1-3 command sequence for each equation) 
+\end{eqnarray}
+</pre>
+<p>
+ </p></dl> 
+ </dl>
+<p>
+El comando para generar una ecuación en este ambiente es de la forma
+</p><p>
+(Lado izquierdo de la ecuación) &amp; (símbolo de desigualdad o igualdad) &amp; <br>
+(lado derecho de la ecuación) \\ <br>
+&amp;&amp; (continuación del lado derecho de la ecuación) \\ <br>
+\mbox{} \nonumber \\ (Opcional -- inserta espacio extra antes de la
+ecuación)<br>
+</p><p>
+Nota : El \\ puede ser omitido de la última ecuación en este ambiente.
+</p><p>
+Por ejemplo. La ecuaciones 2 - 5 pueden ser escritas de la siguiente forma
+</p><p>
+</p><p>
+</p><dl><dl><pre>\begin{eqnarray}
+y &amp; = &amp; 3.0 \times 10^{-5} \exp (-12 \, 000/T) \\ 
+\mbox{} \nonumber \\ 
+\Phi (x) &amp; = &amp; 5 - 2x  \hspace{5 mm} (x\leq2.5) \\ 
+  &amp; = &amp; 0.0  \hspace{11 mm} (x&gt;2.5)\\ 
+\mbox{} \nonumber \\ 
+{\cal F} + {\cal G} &amp; \leq &amp; a + b + c + d + e + f + g +  \nonumber \\ 
+  &amp; &amp; h + i + j + k + l + m
+\end{eqnarray}
+</pre>
+<p>
+ </p></dl> 
+ </dl>
+<p>
+Notar los siguientes puntos : <br>
+</p><ul><li> Si se desea que una ecuación no sea numerada debes dar el comando <em>
+	\nonumber</em> antes del comando \ en la línea de la ecuación.
+	</li><li> Cuando se genera en varias líneas una ecuación, las líneas extras aparecen
+	después del signo igual (=) o de la desigualdad o cualquier otro símbolo, en
+	ocasiones uno desearía que estas líneas fueran impresas un poco más a la izquierda,
+<p>
+</p><p>
+	Tú puedes hacer esto escribiendo los siguientes comandos en el ambiente <em>
+	eqnarray</em>
+</p><pre>      \lefteqn{(Lado izquierdo de la ecuación y el símbolo)} \\
+      &amp; &amp; (Lado derecho de la ecuación)\\
+</pre>
+Por ejemplo 
+<p>
+</p><pre>\begin{eqnarray*}
+\lefteqn{{\cal R}(y) + \int_{0}^{y} \Psi (x) \, dx =} \\ 
+  &amp; &amp; a + b + c + d + e + f + g +  \\ 
+  &amp; &amp; h + i + j + k + l + m + o + p + q
+\end{eqnarray*}
+</pre>
+<p>
+</p></li><li> <em>CUIDADO</em>: No poner líneas en blanco dentro de este ambiente, esto genera
+errores muy difíciles de decifrar.
+</li></ul><h2><a name="SECTION02186000000000000000">Referenciando ecuaciones </a></h2>
+<p>
+Es posible referenciar una ecuación desde cualquier
+lugar del texto, para ello se utilizan dos comandos, estos son
+</p><p>
+         \label{<em>key</em>} (En al ecuación)
+</p><p>
+         ~\ref{<em>key</em>}  (Insertada en el lugar del texto donde la ecuación es citada)
+</p><p>
+</p><p>Cualquier texto puede ser usado para reemplazar a <em>key</em>. Suponga que tiene la
+siguiente ecuación con el primer comando
+</p><p>
+</p><pre>          \begin{equation}
+               Y = 4x^{2} - 3x + 5  \label{ecua}
+          \end{equation}
+</pre>
+<p>
+En cualquier lugar del texto donde escriba ~\ref{ecua} obtendrá <a name="ecua">&nbsp;</a> </p><p>
+</p><p>
+Nota : Al igual que los otros comandos para referenciar páginas o 
+secciones este comando requiere que el documento sea compilado dos 
+veces.
+</p><p><br><br>
+</p><h1><a name="SECTION02190000000000000000">Tablas </a></h1>
+<p>
+</p><h2><a name="SECTION02191000000000000000">El ambiente de tabuladores (tabular) </a></h2>
+<p>
+LaTeX  provee la posibilidad de organizar  texto en filas y columnas. El formato del ambiente <em>tabular</em> es el siguiente
+</p><pre>    begin{center}
+    begin{tabular}{<em>cols</em>} \hline
+    (text) &amp; (texto) &amp; (texto) &amp; ... \\ \<em>arg</em>
+    (text) &amp; (texto) &amp; (texto) &amp; ... \\ \<em>arg</em>
+    end{tabular}
+    end{center}
+</pre>
+El primer argumento del ambiente <em>tabular</em> (<em>cols</em>) especifica la forma de las
+columnas. Consiste en una serie de los siguientes especificadores:
+<p>
+</p><blockquote>  l    (coloca el texto en el borde izquierdo)
+<p> c   (texto centrado)
+</p><p> r}  (coloca el texto en el borde derecho)
+</p><p> |    (imprime una líneas vertical del largo de la tabla)
+</p><p> ||   (imprime una doble línea vertical)
+</p></blockquote>
+<p>
+Una fila de la tabla consiste en columnas separadas por <em>&amp;</em>, seguida por <em>\\</em>, y además 
+se puede poner al final de la línea un comando opcional (<em>arg</em>).
+</p><p>
+Por ejemplo la tabla
+
+<table border="">
+<tbody><tr>
+<th> Adams, John </th> <th> I17 </th> <th> S28 </th> <th> 87 </th>
+</tr>
+<tr>
+<th> Adams, Cynthia </th> <th> E38 </th> <th> N17 </th> <th> 68 </th>
+</tr>
+<tr>
+<th> Williams, George </th> <th> I25 </th> <th> N7 </th> <th> 123 </th> 
+</tr>
+<tr> 
+<th> Williams, Joan </th> <th> I13 </th> <th> N38 </th> <th> 72 </th>
+</tr>
+</tbody></table>
+
+</p><p>
+</p><p>
+Es producida por los comandos
+</p><p>
+</p><dl><dl><pre>\begin{center}
+\begin{tabular}{|l||ccr|} \hline
+Adams, John  &amp;  I17 &amp;  S28  &amp;  87 \\ 
+Adams, Cynthia &amp;  E38 &amp;  N17  &amp;  68 \\  \cline{2-4}
+Williams, George &amp; I25 &amp; N7 &amp; 123 \\ 
+Williams, Joan &amp; I13 &amp; N38 &amp; 72 \\  \hline
+\end{tabular}
+\end{center}
+</pre>
+<p>
+ </p></dl> 
+ </dl>
+<p>
+Notar los siguientes puntos :
+</p><p>
+</p><ul><li>	LaTeX normalmente ubica la tabla en el borde izquierdo de la hoja, por tanto
+	si la deseas en el centro  debes encerrar el ambiente <em>tabular</em> en un ambiente
+	de centrado (<em>center</em>).
+<p>
+	</p></li><li> 	El comando <em>\hline</em> en el comienzo del ambiente es opcional.
+	Este genera una línea horizontal del tamaño de la tabla al comienzo de ésta.
+<p>
+	</p></li><li> Los siguientes comandos pueden ser usados después del  \\<br>
+<p>
+	</p><dl><dt>hline 
+</dt><dd> imprime una línea horizontal del tamaño de la tabla entre
+		la líneas anterior y la siguiente.<br>
+<p>
+		</p></dd><dt>cline{i-j} 
+</dt><dd> imprime una línea desde la columna i
+		hasta la columna j.<br>
+<p>
+ </p></dd></dl>
+<p>
+	</p></li><li> El comando \vline justo después del primer &amp; provoca la
+	impresión de una línea horizontal del largo de la fila que se va a imprimir.
+<p>
+	</p></li><li> Existen casos en que se desea poner un título a más de una columna, dentro de
+	la tabla, para esto existe el comando <em>multicolumn</em>. La sintaxis de este es :
+<p>
+	\multicolumn{<em>num</em>}{<em>col</em>}{<em>titulo</em>}
+</p><p>
+	El argumento <em>num</em> es el número de columnas siguientes que serán alcanzadas por
+	el comando (si deseas eliminar las primeras <em>n</em> debes poner <em>n &amp;</em> ).
+</p><p>
+	El argumento  <em>col</em> es una de las letras  l, c o r, 
+	dependiendo si deseas que el encabezado este a la izquierda, centro o derecha de la
+	columna, respectivamente. Y por último <em>título</em> es el título que le deseas dar
+	a la columna.
+</p><p>
+	Los siguientes comandos generan la tabla que viene después
+</p><p>
+	</p><p>
+	</p><pre>	\begin{center}
+	\begin{tabular}{|l|cc|cr|} \hline
+	&amp; \multicolumn{2}{|c|}{Comida} &amp; \multicolumn{2}{c|}{Productos} \\ 
+	Substancia &amp; $n$ &amp; $H$ &amp; $n$ &amp; $H$ \\  \hline
+	Ethanol &amp; 90 &amp; 30.3 &amp; $n_{1}$ &amp; 26.4 \\ 
+	Helio &amp; 10 &amp; 22.0 &amp; $n_{2}$ &amp; 19.2 \\ 
+	Hydrogeno &amp; --- &amp; --- &amp; $n_{3}$ &amp; 7.0 \\  \hline
+	\end{tabular}
+	\end{center}
+</pre>
+<p>
+
+<table border="">
+<tbody><tr> 
+  <th> <br> Substancia </th> <th> Comida <br> n   H </th> <th> Productos <br> n    H </th>
+</tr>
+<tr> 
+  <th> Ethanol </th> <th> 90   30.3  </th> <th> n1  26.4 </th>
+</tr>
+<tr>
+  <th> Helio </th> <th> 10   22.0  </th> <th> n2   19.2 </th>
+</tr>
+<tr>
+  <th> Hydrogeno </th> <th> -  -  </th> <th> n3   7.0 </th>
+</tr>
+</tbody></table>
+
+
+</p><p>
+Dos argumentos (a parte de l, c, r y |) pueden ser incluidos en comando
+<em>tabular</em>, estos son
+</p><p>
+</p><p> @{\hspace{largo}} inserta espacio horizontal según lo especificado  en el lugar especificado de la tabla. (El término largo
+ puede ser reemplazado por un dimensionamiento, por ejemplo 5mm or 2em.)
+</p><p>
+   p{largo}     Esto especifica el largo de la columna
+</p><p>
+Por último un ejemplo ilustrando mejor el comando completo y sus posibilidades
+</p><p>
+</p><dl><dl><pre>\begin{center}
+\begin{tabular}{|l@{\hspace{4em}}||c@{\hspace{4em}}|p{2.75in}|} \hline
+\multicolumn{3}{|c|}{\bf Tabla de ejemplo} \\  \hline\hline
+&amp; \multicolumn{1}{c|}{\bf Cantidad de } &amp; \\ 
+\multicolumn{1}{|c||}{\bf Nombre} &amp; \multicolumn{1}{c|}{\bf (acciones)} &amp;
+\multicolumn{1}{c|}{\bf Descripción} \\  \hline
+CTC &amp; 10.000.000 &amp;  Mantención, modernización de las líneas telefonicas y de telefonia
+lular del Pais\\  \hline
+EMOS &amp; 5.000.000 &amp; Mantener un aprovicionamiento permanente de agua a la nación \\ 
+\hline
+\end{tabular}
+\end{center}
+</pre>
+<p>
+ </p></dl> 
+ </dl>
+<p>
+
+<table border="">
+<caption> Tabla de Ejemplo </caption>
+<tbody><tr>
+  <th> <br> Nombre </th> <th> Cantidad de <br> (acciones) </th> <th> <br> Descripción </th>
+</tr>
+<tr>
+  <th> CTC </th> <th> 10.000.000 </th> <th> Mantención, modernización de las <br> líneas telefónicas y 
+de telefonía celular <br> del País </th>
+</tr>
+<tr>
+  <th> EMOS </th> <th> 5.000.000 </th> <th> Mantener un aprovisionamiento <br> permanete de agua de la nación </th>
+</tr>
+</tbody></table>
+
+
+</p><p> 
+
+</p><p></p><h2><a name="SECTION02192000000000000000">El ambiente Table </a></h2>
+<p>
+Este ambiente es usado para dos cosas
+</p><p>
+</p><ol><li> Para estar seguro que no ocurrirá un quiebre de página en el medio de la
+	tabla, de tal forma de que ésta no se corte y continuen en la siguiente página.
+<p>
+	</p></li><li> Para generar tablas numeradas, de tal forma que aparezcan en el índice de tablas.
+<p>
+</p></li></ol>
+<p>
+Los siguientes comandos configuran el ambiente.
+</p><p>
+(Texto 1, contiene las primeras referencias de la tabla)
+</p><dl> <dl> <pre> \begin{table} 
+(texto para generar la tabla, usualmente en ambiente tabular )
+\caption{(texto)} 
+\end{table}
+(Texto 2)
+</pre>
+</dl></dl>
+<p>
+Nota: El <em>texto</em> del comando \caption{(texto)} es el que
+aparecerá en el  índice de tablas como su título.
+</p><p>
+Estos comandos provocan que la tabla sea puesta en el primer lugar posible.
+</p><p>El siguiente es un ejemplo de cómo la tabla se acomoda en el texto
+</p><p>
+</p><dl><dl><pre>Tabla~1 , en esta tabla se puede apreciar la variación de precio del cafe a
+través de tres años.
+\begin{table}
+\begin{center}
+\begin{tabular}{|cr|} \hline
+A'no &amp; Precio \\  \hline
+1981 &amp; \$3.50 \\ 
+1982 &amp; \$4.25 \\ 
+1983 &amp; \$5.80 \\ 
+1984 &amp; \$7.25 \\  \hline
+\end{tabular}
+\caption{Precio del caf'e;, \$/lb}
+\end{center}
+\end{table}
+Este drámatico incremento puede ser a causa de las importaciones de te
+realizadas en el mismo per'iodo.
+</pre>
+<p>
+ </p></dl> 
+ </dl>
+<p>
+Tabla 1 , en esta tabla se puede apreciar la variación de precio del café a
+través de tres años.
+
+
+<table border="">
+<tbody><tr>
+  <th> Año </th> <th> Precio </th>
+</tr>
+<tr>
+  <th> 1981 </th> <th> $3.50 
+</th></tr>
+<tr>
+  <th> 1982 </th> <th> $4.25 </th>
+</tr>
+<tr>
+  <th> 1983 </th> <th> $5.40 </th>
+</tr>
+<tr>
+  <th> 1984 </th> <th> $7.25 </th>
+</tr>
+</tbody></table>
+
+<strong>Table:</strong> Precio del café, $/lb<br>
+</p><p> Este dramático incremento puede ser a causa de las importaciones de té
+realizadas en el mismo período.
+
+</p><p>
+</p><h2><a name="SECTION02193000000000000000">Produciendo un índice de tablas </a></h2>
+<p>
+El comando <em>\listoftables</em>  genera un índice  de
+tablas de la misma forma que el comando <em>\tableofcontents</em>. En
+este caso es el argumento del comando \caption{} que se usa como índice.
+</p><p>
+</p><h1><a name="SECTION021100000000000000000">Arreglos </a></h1>
+<p>
+<em>Arreglos</em> es el equivalente a las tablas en ambiente
+matemático. El  comando para definir un arreglo es  similar al que define
+una tabla. Debes estar en el ambiente matemático para generar un arreglo.
+</p><p>
+El formato del comando es el siguiente
+</p><p>
+</p><dl><dl><pre> \[begin{array}{clcr}   (para un arreglo de cuatro columnas)
+(texto) &amp; (texto) &amp; (texto) &amp; (texto)\\
+(texto) &amp; (texto) &amp; (texto) &amp; (texto)\\
+.
+.
+.
+(texto) &amp; (texto) &amp; (texto) &amp; (texto)
+end{array} \]
+</pre>
+</dl></dl>
+<p>
+</p><ul><li> En este ejemplo el ambiente matemático comienza con el comando
+	\[. Al final cerramos el ambiente  <em>array</em> y luego el
+	ambiente matemático.
+<p>
+	</p></li><li> El argumento  <em>clcr</em> en el comando actúa igual que el comando
+	de ambiente de tabla (centrado, izquierda, centrado y derecha,
+	respectivamente).
+<p>
+	</p></li><li> Son ignorados los espacios entre los elementos del arreglo.
+<p>
+	</p></li><li> El arreglo por omisión es puesto a la izquierda de la hoja, si lo
+	deseas lo puedes centrar a través del ambiente <em>center</em>.
+<p>
+</p></li></ul>
+<p>
+Por ejemplo,
+</p><p>
+</p><dl><dl><pre>\begin{center}
+\[ \begin{array}{lcr}
+a &amp; p+q &amp; \alpha + \beta + \gamma \\ 
+b+c &amp; r+s+t &amp; \delta + \epsilon \\ 
+d+e+f &amp; u &amp; \zeta
+\end{array} \]
+\end{center}
+</pre>
+<p>
+ </p></dl> 
+ </dl>
+<p>
+</p><p>
+Se puede poner delimitadores al arreglo con los comandos ya descritos  <em>
+\left</em> y <em>\right</em>. Por ejemplo :
+</p><p>
+</p><dl><dl><pre>\[ \left[ \begin{array}{cc}
+a_{11} &amp; a_{12} \\ 
+a_{21} &amp; a_{22} \\ 
+a_{31} &amp; a_{32}
+\end{array} \right\ \]
+</pre>
+<p>
+ </p></dl> 
+ </dl>
+<p>
+</p><p><br><br>
+</p><h1><a name="SECTION021110000000000000000">Apendices </a></h1>
+<p>
+</p><h2><a name="SECTION021111000000000000000">Pie de página</a></h2>
+<p>
+El comando \footnote[<em>num</em>]{<em>texto</em>}
+produce una nota al pie de la página con el <em>texto</em>; <em>num</em> señala
+el número al cual hace referencia el texto, si este número se omite 
+Latex pondrá en su lugar un número entero que incrementará sucesivamente, por
+ejemplo, si escribe
+</p><pre>     Rojas \footnote{Ver referencia en la pag. 384} discute este punto.
+</pre><br>
+Produce el texto
+<pre>     Rojas discute este punto.
+</pre>
+Y en el final de la página se ve el resultado.
+<p>
+También es posible utilizar un símbolo para indicar la nota al pie de la
+página. Para esto debes usar el siguiente formato :
+</p><pre>      \footnote[0]{$^{<em>simbolo</em>}$<em>texto</em> }
+</pre>
+Por ejemplo:
+<p>
+</p><dl><dl><pre>Es posible generar pies de p'gina con s'imbolos como un asterisco $^{*}$
+ \footnote[0]{$^{*}$ Remitirse al manual.}
+ ,o bien, para poesia puede ser una daga $^{\dag}$
+ \footnote[0]{$^{\dag}$ Pablo Neruda}
+</pre>
+<p>
+ </p></dl> 
+ </dl>
+<p><br>
+</p><h2><a name="SECTION021112000000000000000">Cajas </a></h2>
+<p>
+Es posible generar cajas que encierren texto, o bien, 
+cajas arbitrariamente dimensionadas, las cajas más usadas son
+</p><pre>       \mbox{<em>texto</em>}
+</pre>
+El texto queda incluído en una caja del tamaño justo para contener el <em>texto</em>.
+<pre>       \fbox{<em>text</em>}
+</pre>
+Este comando produce una casillero para encerrar el <em>texto</em>. Por ejemplo   y = \fbox{25 metros}  
+<p>
+Existen otros comandos capaces de generar una caja del tamaño deseado,
+como por ejemplo, los comandos \makebox[<em>size</em>][<em>pos</em>]{<em>text</em>} y 
+\framebox[<em>size</em>][<em>pos</em>]{<em>text</em>} que son similares a los otros dos anteriores.
+</p><p><br><br>
+</p><h1><a name="SECTION021120000000000000000">  Problemas con la compilación </a></h1>
+<p>
+</p><h2><a name="SECTION021121000000000000000">Como manejar los errores en la compilación </a></h2>
+<p>
+Un error en Latex se presenta al momento que el documento
+es compilado, Latex  envía un aviso de la forma
+</p><p>
+</p><dl><dl><pre>LaTex error.  See LaTex manual for explanation.
+			  Type H &lt;return&gt; for immediate help.
+!Environment enumrate undefined.
+\@Latexerr ...for immediate help.}\errmessage {#1}
+                                                   \endgroup
+1.21  \begin{enumrate}
+
+?
+</pre>
+<p>
+ </p></dl> 
+ </dl>
+<p>
+El signo de exclamación en la tercera línea es el indicador del error, y es
+seguido por el mensaje de error.
+</p><p>
+Luego la cuarta y quinta línea indican  el mismo error
+en leguaje de bajo nivel.
+</p><p>
+La línea seis indica la posición en que ocurrió el error, en este caso, el
+error ocurrió en la línea 21.
+</p><p>
+Luego el signo ? es el prompt, que espera el ingreso de  un comando como <em>x</em>,
+para salir de la compilación o <em>e</em> para editar el texto (con <em>H</em> se
+obtiene una ayuda).
+</p><p>
+</p><h2><a name="SECTION021122000000000000000">Advertencias de overfull y underfull (warnings) </a></h2>
+<p>
+Al compilar es común que aparezcan estas advertencias, en
+general no se deben considerar, y sólo se debe revisar el texto con
+<em>xdvi</em> para saber si existen verdaderos errores en el largo de alguna
+línea.
+</p><p>
+</p><h2><a name="SECTION021123000000000000000">Algunos errores comunes </a></h2>
+<p>
+En esta sección se mostrarán algunos de los errores más comunes
+y como solucionarlos.
+</p><p>
+</p><h3><a name="SECTION021123100000000000000">*</a></h3>
+<p>
+Normalmente un asterisco significa que el documento no tiene la
+instrucción de fin, es decir, le falta el comando \end{document}
+
+</p><h3><a name="SECTION021123200000000000000">! Missing $  inserted </a></h3>
+<p>
+Este error puede tener varios orígenes
+</p><p>
+</p><ul><li> Es posible que ingresaras al ambiente matemático de una forma y
+	salieras dando otro comando distinto al que correspondía para cerrarlo.
+<p>
+	</p></li><li> Puede ser que trataras de generar ambientes como el de
+	arreglos fuera del ambiente matemático, o que trataras de obtener
+	caracteres (que sólo se pueden obtener en el ambiente matemático) fuera
+	de él. como las letras griegas.
+<p>
+	</p></li><li> Tratar de imprimir un signo pesos de forma inapropiada sin el
+	signo \ antes.
+<p>
+	</p></li><li> Y por último poner línea en blanco en el ambiente matemático.
+</li></ul><h3><a name="SECTION021123300000000000000">! Missing { (or }) inserted </a></h3>
+<p>
+Es posible que hayas omitido un corchete al abrir o cerrar un
+ambiente.
+</p><p>
+</p><h3><a name="SECTION021123400000000000000">! Missing number, treated as zero. </a></h3>
+<p>
+Es posible que omitieras un número donde Latex esperaba uno.
+</p><p>
+</p><h3><a name="SECTION021123500000000000000">! Undefined control sequence </a></h3>
+<p>
+Es probable que te equivocaras al escribir un comando. Es muy
+común no dejar un espacio en blanco después de los  comandos como \bf o \alpha.
+</p><p>
+</p><h3><a name="SECTION021123600000000000000">! Extra alignment tab has been changed </a></h3>
+<p>
+Pusistes más &amp; o \&gt; de los que se suponía que
+debías poner, u  omitiste el \\ en la línea anterior.
+</p><p><br><br>
+</p><h1><a name="SECTION021130000000000000000">Ejemplo de documento en Latex </a></h1>
+<p>
+A continuación se ve un archivo fuente en Latex y el resultado luego de la compilación.
+</p><p>
+</p><pre>\documentclass[12pt,spanish]{article}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+\oddsidemargin 0in
+\textwidth 6.75in
+\topmargin 0in
+\textheight 8.5in
+\parindent 0em
+\parskip 1ex
+\begin{document}
+
+Universidad Michoacana \\ 
+Laboratorio de  Computación \\ 
+
+\begin{center}
+{\LARGE\bf SISTEMA OPERATIVO ULTRIX\\ }                                  
+\end{center}
+
+\section*{Generalidades}
+
+\begin{itemize}
+\item ULTRIX es el sistema operativo que administra los  recursos del
+  computador {\bf Dec5400} (nodo {\bf cecux1}).\\ 
+ 
+\item Características :
+\begin{itemize} 
+                       \item multiusuario
+                       \item multiproceso
+\end{itemize}
+
+\item Cada usuario es identificado con un nombre de usuario (username)
+  y una palabra clave (password).\\ 
+
+\item La estructura general del sistema de archivos está distribuida en
+   un sólo disco, organizados en directorios y subdirectorios;  en
+   particular, los usuarios son subdirectorios, con recursos definidos
+   y un sistema de protecciones para los archivos y directorios.\\ 
+
+\end{itemize}
+\section*{Modo de conexión}
+
+  Los usuarios deben tener previamente una cuenta en el computador
+  CECUX1, luego los pasos son los siguientes :
+\begin{itemize}
+
+      \item  Ingresar al Host, donde aparece escrito \verb"local"  y
+         digitar :~\verb'connect cecux1'\\ 
+         Es decir: \\ 
+         \verb'local&gt; connect cecux1'\\ 
+      \item  Luego  aparecerá  la  pantalla de ingreso al sistema, allí
+         se debe digitar su username (donde dice login) y su password.
+      \item  Posteriormente, si  se ingresaron  los  datos  correctamente,
+         se está en condición de trabajar en ULTRIX.
+\end{itemize}
+\section*{Comandos Básicos}
+\subsection*{Comandos para manejo de Archivos}
+
+  {\bf Generalidades :}\\  \\ 
+Los  siguientes  comandos pueden ser utilizados  tanto
+con archivos en el directorio actual, como con archivos en otros 
+directorios. Los archivos a distancia pueden ser `alcanzados` dando su
+`path` (dirección) en el sistema; las direcciones se especifican
+de la forma :\\                                                        
+\begin{center}
+ {\bf /usr/user/usuarios/juperez}\\ 
+\end{center}
+Es la dirección  de  Juanito  Perez,
+este usuario tiene definido su path en el caracter \verb'~', luego  si  crea
+un directorio (ver más adelante) , y este se  llama XX ,  entonces  la
+dirección de los archivos que quiera accesar dentro de este será:\\ 
+
+  \verb'~/XX/archivo'\\ 
+
+{\bf Comandos :}\\  \\ 
+\begin{enumerate}
+
+  \item {\bf ls}                 : lista los archivos y directorios.\\ 
+                                                                                
+  \item {\bf ls -l}            : idem al anterior pero incluye datos como :\\ 
+      \begin{itemize}
+                   \item dimensión\\ 
+                   \item protecciones\\ 
+                   \item fecha de creación\\ 
+      \end{itemize}
+
+  \item {\bf cp} a1 a2            : genera una copia, llamada a2, del archivo a1.\\ 
+
+  \item {\bf rm} a1               : borra  el  archivo a1, pide confirmación de la
+                        operación.\\ 
+                                                                                
+  \item {\bf rm} a*               : borra todos los archivos que comiencen su 
+                        nombre con a.\\ 
+                                                                                
+  \item {\bf more}  a1            : permite  listar el  contenido del archivo 
+				a1,  ocupando una pantalla a la vez.
+
+  \item {\bf mv} a1 ~/uno/dos     : permite mover el archivo a1 desde el
+directorio actual al subdirectorio uno/dos.
+
+  \item {\bf compress/uncompress} : son  comandos  que permiten
+comprimir archivos,
+es decir, reducen el espacio ocupado por estos,
+una vez  comprimido  un  archivo, no puede ser
+listado  ni  ejecutado,  para  ello  debe  ser
+reestablecido (descomprimirlo).
+
+Notar que es posible  utilizar, al  referirse a algún  archivo o
+directorio los caracteres especiales (wildcards) ? y *, que 
+remplazan a sólo un caracter y a cero o más respectivamente.                    
+
+\end{enumerate}
+\section*{Comandos para Directorios}
+
+Se ha mencionado la forma que se organiza el sistema de archivos,
+ahora es necesario especificar como un usuario puede trasladarse a
+los mencionados directorios, contruirlos y destruirlos.
+
+\begin{enumerate}
+\item {\bf mkdir} aa    : comando que permite crear un subdirectorio llamado aa,
+que 'colgará'  del  directorio  sobre el cual se está
+actualmente.
+
+\item {\bf rmdir} aa    : borra el directorio  aa, que debe ser subdirectorio del         
+actual y no debe tener archivos dentro de él.
+
+\item {\bf cd} /a/b/c/d : permite al usuario trasladarse al subdirectorio  d, que         
+es subdirectorio de c, este de b, y este último de a.
+
+\item {\bf pwd}         : despliega el path, o dirección actual,  del usuario.            
+\end{enumerate}
+\section*{Comandos de Recursos}
+
+      Este conjunto de instrucciones le permitirá conocer los recursos
+  de que puede disponer desde su cuenta.
+
+\begin{enumerate}
+  \item {\bf quota}   : despliega  información sobre el espacio  en disco asignado
+y utilizado.
+
+  \item {\bf du}  dir : informa acerca del uso en disco del directorio dir.
+\end{enumerate}
+\section*{Modos de Redireccionamiento}
+
+      Es posible  redireccionar la salida de algún programa ejecutable
+  o de  algun  comando (tópico avanzado),  para ello se utilizan los
+  símbolos \verb'&gt;' y \verb'&gt;&gt;'.
+\begin{enumerate}
+  \item a.out \verb'&gt;'salida  :  redirecciona lo que aparece en pantalla al archivo
+                    salida.                                                     
+
+  \item a.out \verb'&gt;&gt;'salida : idem al anterior pero agrega al final del archivo.
+
+\end{enumerate}
+\section*{Comandos de Procesos}                                                        
+
+ Un proceso es un programa que está en ejecución o en una cola esperando 
+ su turno, por ejemplo un programa creado por Ud.,  mandar un mensaje,
+ etc,  son procesos que no se nota que existen. Estos  pueden
+ ser controlados mediante los siguientes comandos:
+
+\begin{enumerate}
+  \item {\bf ps}        :  verifica los  procesos actualmente activos, desplegando
+               su identificador y su estado actual.
+
+  \item {\bf kill} xxxx :  permite  eliminar un  procesos (matarlo), la  idea es
+               identificar  el  proceso con  ps  y  luego  operar,  un
+               ejemplo clásico es cuando un terminal se queda colgado.
+               (el identificador es un número).
+
+\end{enumerate}
+\section*{Misceláneos}
+
+Existen  comandos  necesarios  para  el  manejo  general de los
+recursos que tiene cecux1, estos son:
+
+\begin{enumerate}
+  \item {\bf prt} aa -f xxxx : comando que permite imprimir el archivo aa en el 
+formato xxxx (doc6, doc8, ofi8, etc).                           
+
+  \item {\bf man}  xxxx      : help del sistema que permite obtener información del
+                   tópico xxxx.                                                 
+
+  \item {\bf apropos} xxxx   : permite  obtener un  listado de tópicos relacionados
+                   con el string dado xxxx.
+
+  \item {\bf vi} aa          : permite  editar el archivo aa si este existe, o  bien,
+                   crearlo si no es así.
+
+  \item {\bf mail} user \verb'&lt;' aa : permite enviar un mail, almacenado previamente en el
+                   archivo aa, a el usuario indicado por user que  está
+                   en el mismo computador (nodo) nuestro.
+\end{enumerate}
+\end{document}
+</pre>
+<p>
+Universidad Michoacana <br>
+Laboratorio de Computación <br>
+</p><pre>                <h1>SISTEMA OPERATIVO ULTRIX<br></h1>                                  
+<h1><a name="SECTION021140000000000000000">Generalidades</a></h1>
+<p>
+</p><ul><li> ULTRIX es el sistema operativo que administra los  recursos del
+  computador <b>Dec5400</b> (nodo <b>cecux1</b>).<br>
+<p>
+</p></li><li> Características :
+<ul><li> multiusuario
+                       </li><li> multiproceso
+</li></ul>
+<p>
+</p></li><li> Cada usuario es identificado con un nombre de usuario (username)
+  y una palabra clave (password).<br>
+<p>
+</p></li><li> La estructura general del sistema de archivos está distribuida en
+   un sólo disco, organizados en directorios y subdirectorios;  en
+   particular, los usuarios son subdirectorios, con recursos definidos
+   y un sistema de protecciones para los archivos y directorios.<br>
+<p>
+</p></li></ul><h1><a name="SECTION021150000000000000000">Modo de conexión</a></h1>
+<p>
+  Los usuarios deben tener previamente una cuenta en el computador
+  CECUX1, luego los pasos son los siguientes :
+</p><ul><li>  Ingresar al Host, donde aparece escrito  <tex2html_verb_mark><tex2html_verb_mark>  y
+         digitar : <tex2html_verb_mark><tex2html_verb_mark><br>
+         Es decir: <br>
+         <tex2html_verb_mark><tex2html_verb_mark><br>
+      </tex2html_verb_mark></tex2html_verb_mark></tex2html_verb_mark></tex2html_verb_mark></tex2html_verb_mark></tex2html_verb_mark></li><li>  Luego  aparecerá  la  pantalla de ingreso al sistema, allí
+         se debe digitar su username (donde dice login) y su password.
+      </li><li>  Posteriormente, si se  ingresaron  los  datos  correctamente,
+         se está en condición de trabajar en ULTRIX.
+</li></ul><h1><a name="SECTION021160000000000000000">Comandos Básicos</a></h1>
+<p>
+</p><h2><a name="SECTION021161000000000000000">Comandos para manejo de Archivos</a></h2>
+<p>
+  <b>Generalidades :</b><br><br>
+Los  siguientes  comandos pueden ser utilizados  tanto
+con archivos en el directorio actual, como con archivos en otros 
+directorios. Los archivos a distancia pueden ser `alcanzados` dando su
+`path` (dirección) en el sistema; las direcciones se especifican
+de la forma :<br>
+<b>/usr/user/usuarios/juperez</b><br>
+</p><p>
+Es la dirección  de  Juanito  Perez,
+este usuario tiene definido su path en el caracter <tex2html_verb_mark><tex2html_verb_mark>, luego  si  crea
+un directorio (ver más adelante) , y este se  llama XX ,  entonces  la
+dirección de los archivos que quiera accesar dentro de este será:<br>
+</tex2html_verb_mark></tex2html_verb_mark></p><p>
+  <tex2html_verb_mark><tex2html_verb_mark><br>
+</tex2html_verb_mark></tex2html_verb_mark></p><p>
+<b>Comandos :</b><br><br>
+</p><ol><li> <b>ls</b>                 : lista los archivos y directorios.<br>
+<p>
+  </p></li><li> <b>ls -l</b>            : idem al anterior pero incluye datos como :<br>
+      <ul><li> dimensión<br>
+                   </li><li> protecciones<br>
+                   </li><li> fecha de creación<br>
+      </li></ul>
+<p>
+  </p></li><li> <b>cp</b> a1 a2            : genera una copia, llamada a2, del archivo a1.<br>
+<p>
+  </p></li><li> <b>rm</b> a1               : borra  el  archivo a1, pide confirmación de la
+                        operación.<br>
+<p>
+  </p></li><li> <b>rm</b> a*               : borra todos los archivos que comiencen su 
+                        nombre con a.<br>
+<p>
+  </p></li><li> <b>more</b>  a1            : permite  listar el  contenido de archivo 
+				a1,  ocupando una pantalla a la vez.
+<p>
+  </p></li><li> <b>mv</b> a1  /uno/dos     : permite mover el archivo a1 desde el
+directorio actual al subdirectorio uno/dos.
+<p>
+  </p></li><li> <b>compress/uncompress</b> : son  comandos  que permiten
+comprimir archivos,
+es decir, reducen el espacio ocupado por estos,
+una vez  comprimido  un  archivo, no puede ser
+listado  ni  ejecutado,  para  ello  debe  ser
+reestablecido (descomprimirlo).
+<p>
+Notar que es posible  utilizar, al  referirse a algún  archivo o
+directorio los caracteres especiales (wildcards) '?' y '*', que 
+remplazan a sólo un caracter y a cero o más respectivamente.
+</p><p>
+</p></li></ol><h1><a name="SECTION021170000000000000000">Comandos para Directorios</a></h1>
+<p>
+Se ha mencionado la forma que se organiza el sistema de archivos,
+ahora es necesario especificar como un usuario puede trasladarse a
+los mencionados directorios, contruirlos y destruirlos.
+</p><p>
+</p><ol><li> <b>mkdir</b> aa    : comando que permite crear un subdirectorio llamado aa,
+que 'colgará'  del  directorio  sobre el cual se está
+actualmente.
+<p>
+</p></li><li> <b>rmdir</b> aa    : borra el directorio  aa, que debe ser subdirectorio del         
+actual y no debe tener archivos dentro de él.
+<p>
+</p></li><li> <b>cd</b> /a/b/c/d : permite al usuario trasladarse al subdirectorio  d, que         
+es subdirectorio de c, este de b, y este último de a.
+<p>
+</p></li><li> <b>pwd</b>         : despliega el path, o dirección actual,  del usuario.            
+</li></ol><h1><a name="SECTION021180000000000000000">Comandos de Recursos</a></h1>
+<p>
+      Este conjunto de instrucciones le permitirá conocer los recursos
+  de que puede disponer desde su cuenta.
+</p><p>
+</p><ol><li> <b>quota</b>   : despliega  información sobre el espacio  en disco asignado
+y utilizado.
+<p>
+  </p></li><li> <b>du</b>  dir : informa acerca del uso en disco del directorio dir.
+</li></ol><h1><a name="SECTION021190000000000000000">Modos de Redireccionamiento</a></h1>
+<p>
+      Es posible  redireccionar la salida de algún programa ejecutable
+  o de  algún  comando (tópico avanzado),  para ello se utilizan los
+  símbolos <tex2html_verb_mark><tex2html_verb_mark> y <tex2html_verb_mark><tex2html_verb_mark>.
+</tex2html_verb_mark></tex2html_verb_mark></tex2html_verb_mark></tex2html_verb_mark></p><ol><li> a.out <tex2html_verb_mark><tex2html_verb_mark>salida  :  redirecciona lo que aparece en pantalla al archivo
+                    salida.
+<p>
+  </p></tex2html_verb_mark></tex2html_verb_mark></li><li> a.out <tex2html_verb_mark><tex2html_verb_mark>salida : idem al anterior pero agrega al final del archivo.
+<p>
+</p></tex2html_verb_mark></tex2html_verb_mark></li></ol><h1><a name="SECTION021200000000000000000">Comandos de Procesos</a></h1>
+<p>
+ Un proceso es un programa que esta en ejecución o en una cola esperando 
+ su turno, por ejemplo un programa creado por Ud.,  mandar un mensaje,
+ etc,  son procesos que no se nota que existen. Estos  pueden
+ ser controlados mediante los siguientes comandos:
+</p><p>
+</p><ol><li> <b>ps</b>        :  verifica los  procesos actualmente activos, desplegando
+               su identificador y su estado actual.
+<p>
+  </p></li><li> <b>kill</b> xxxx :  permite  eliminar un  procesos (matarlo), la  idea es
+               identificar  el  proceso con  ps  y  luego  operar,  un
+               ejemplo clásico es cuando un terminal se queda colgado.
+               (el identificador es un número)
+<p>
+</p></li></ol><h1><a name="SECTION021210000000000000000">Misceláneos</a></h1>
+<p>
+Existen  comandos  necesarios  para  el  manejo  general de los
+recursos que tiene cecux1, estos son:
+</p><p>
+</p><ol><li> <b>prt</b> aa -f xxxx : comando que permite imprimir el archivo aa en el 
+formato xxxx (doc6, doc8, ofi8, etc).
+<p>
+  </p></li><li> <b>man</b>  xxxx      : help del sistema que permite obtener información del
+                   tópico xxxx.
+<p>
+  </p></li><li> <b>apropos</b> xxxx   : permite  obtener un  listado de tópicos relacionados
+                   con el string dado xxxx.
+<p>
+  </p></li><li> <b>vi</b> aa          : permite  editar el archivo aa si este existe o  bien
+                   crearlo si no es así.
+<p>
+  </p></li><li> <b>mail</b> user <tex2html_verb_mark><tex2html_verb_mark> aa : permite enviar un mail, almacenado previamente en el
+                   archivo aa, a el usuario indicado por user que  esta
+                   en el mismo computador (nodo) nuestro.
+</tex2html_verb_mark></tex2html_verb_mark></li></ol>
+<p></p></pre>
+<h1><a name="SECTION03000000000000000000">  About this document ... </a></h1>
+<p>
+ <strong></strong></p><p>
+This document was generated using the <a href="http://cbl.leeds.ac.uk/nikos/tex2html/doc/latex2html/latex2html.html"><strong>LaTeX</strong>2<tt>HTML</tt></a> translator Version .95.3 (Nov 17 1995) Copyright © 1993, 1994,  <a href="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</a>, Computer Based Learning Unit, University of Leeds. </p><p> The command line arguments were: <br>
+<strong>latex2html</strong> <tt>-split 0 -no_images latex.tex</tt>. </p><p> 
+<br> </p><hr>
+
+
+
+</li></ul></dl></li></body></html>

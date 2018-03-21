@@ -1,0 +1,104 @@
+\documentclass[a4paper,openright,twoside,12pt]{book}
+\usepackage[a4paper,left=4cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb} % simbolo de grado (\degree)
+\usepackage{graphicx}
+\usepackage{subcaption} 
+\usepackage{mathrsfs} %% simbolos de transformadas de fourier
+\usepackage[font=small]{caption}
+\usepackage[sort&compress]{natbib} %% Para comprimir las cites
+\usepackage{setspace} %% cambiar interlineado
+\interfootnotelinepenalty=10000 % saco el limite de las footnote a 1 linea por pagina
+
+%% ---------------
+%% | NEWCOMMANDS |
+%% ---------------
+\newcommand{\promedio}[1]{\langle #1 \rangle}
+\newcommand{\paginavacia}{\newpage \thispagestyle{empty} $\ $}
+%% Elimino numero de pagina y header de pagina anterior a capitulo:
+%% (es para usar con openright y hay que ponerlo antes de cada capitulo, excepto el primero)
+\newcommand{\prechapterpage}{
+	\ifthenelse{\isodd{\thepage}}{
+	\newpage
+        %~ \phantom{placeholder} % doesn't appear on page
+        $\ $
+	\thispagestyle{empty} % if want no header/footer
+	\newpage
+	}{}
+}
+%% Agregar paginas en blanco manteniendo apertura a izquierda (para usar con openany)
+\usepackage{ifthen}
+\newcommand{\prepartpage}{
+	\ifthenelse{\isodd{\thepage}}{\newpage}{
+	\newpage
+        %~ \phantom{placeholder} % doesn't appear on page
+        $\ $
+	\thispagestyle{empty} % if want no header/footer
+	\newpage
+	}
+}
+
+
+%% DEFINO CARPETAS
+\newcommand{\Simbolos}{./Simbolos}
+\newcommand{\Tapa}{./Tapa}
+\newcommand{\Introduccion}{./Introduccion}
+\newcommand{\ConceptosGeofisica}{./ConceptosGeofisica}
+\newcommand{\Curie}{./Curie}
+\newcommand{\Flexion}{./Flexion}
+\newcommand{\Conclusiones}{./Conclusiones}
+
+%% -----------------------------------------------------------------------------------
+
+
+\begin{document}
+
+ 
+\include{\Tapa/Tapa}
+
+
+\prepartpage
+\pagenumbering{roman}
+\setcounter{page}{3}
+\pagestyle{plain}
+\tableofcontents{}
+
+
+\include{\Simbolos/Simbolos}
+
+\prepartpage{}
+%~ \paginavacia{}
+\include{\Introduccion/Introduccion}
+
+
+\prepartpage{}
+\pagenumbering{arabic}
+\setcounter{page}{11}
+\pagestyle{headings}
+\include{\ConceptosGeofisica/ConceptosGeofisica}
+
+\prepartpage
+\include{\Curie/Curie}
+
+\prepartpage
+\include{\Flexion/Flexion}
+
+
+\paginavacia
+\paginavacia
+\include{\Conclusiones/Conclusiones}
+
+
+%~ \prechapterpage
+\prepartpage{}
+\nocite{*} %% con esto aparecen todas las entradas del .bib aunque no se hayan citado.
+\bibliographystyle{./bibtex/apalike-es}
+\bibliography{./bibtex/bibliography}
+\addcontentsline{toc}{part}{Bibliografía}
+\end{document}

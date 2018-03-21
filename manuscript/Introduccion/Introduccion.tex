@@ -1,0 +1,41 @@
+
+%~ \pagestyle{plain}
+%~ \chapter*{Introducción}\addcontentsline{toc}{part}{Introducción}
+
+
+\vspace*{0.4cm}
+{\bf \huge Introducción}
+\addcontentsline{toc}{part}{Introducción}
+
+\vspace*{0.8cm}
+
+La Geofísica es la rama de la ciencia que posee como objeto de estudio el Planeta Tierra desde un punto de vista físico, concentrada en los procesos y propiedades físicas del mismo. Su objetivo es ahondar en la comprensión de su estructura, evolución y los fenómenos que en él se generan. El origen de estas inquietudes acerca de nuestro planeta data de tiempos ancestrales. Los primeros pensadores ya intentaban dar explicaciones a los fenómenos naturales que los rodeaban, mientras que en ciertas civilizaciones ya hacían uso de herramientas como la brújula o instrumentos sísmicos, de los cuales se sabe de su existencia desde el año 132 AC. El auge del pensamiento científico tampoco fue indiferente a esta rama del conocimiento: luego de formular sus Teorías sobre Mecánica, Newton las aplicó para el estudio de la precesión del equinoccio, entre otros.
+
+Sin embargo, la Geofísica no fue considerada una disciplina independiente hasta el siglo XIX. A partir de entonces los avances tecnológicos acompañaron el crecimiento de esta ciencia, posibilitando la aparición de nuevos y mejores instrumentos de medición (desde magnetómetros protónicos hasta mediciones via satélites) como también de nuevas herramientas computacionales que permiten acelerar el análisis de cada vez mayores cantidades de datos.
+
+En este trabajo haremos foco en la modelización de la última capa de la Tierra que se conoce como Litósfera, compuesta por la corteza terrestre y el manto superior. Aún contando con los avances tecnológicos nombrados en el párrafo anterior, la adquisición de datos por perforación continúa siendo poco accesible, dificultosa y sólo nos brinda información de los primeros metros de la corteza. Es por ello que es necesario recurrir a métodos indirectos que nos den información de la Litósfera a partir de datos que podamos obtener en la superficie terrestre o en altura. Estos métodos están basados en la modelización física de la Litósfera.
+
+A lo largo de este trabajo propondremos dos métodos fundados en otros ya existentes: uno que parte del análisis del magnetismo para la Determinación de la Profundidad al Punto de Curie, y otro que utiliza datos gravimétricos y cartas de topografía para la Determinación del Espesor Elástico de la Corteza Terrestre. Además, expondremos los programas computaciones que se implementaron con fin de aplicar estas metodologías, mostrando en ambos casos, sus funcionamientos sobre modelos sintéticos así como también sobre una zona actualmente bajo estudio: la cuenca Neuquina. Si bien el objetivo principal del trabajo no es la interpretación y entendimiento de dicha zona, decidimos aportar a su estudio desde los métodos aquí implementados.
+
+El punto en común que poseen ambos es que la resolución de los modelos se realizan en el espacio de frecuencia, es por ello que podemos introducirlos dentro de la categoría de métodos espectrales; los cuales han tenido su auge en muchas áreas científicas y tecnológicas, así como también dentro de la Geofísica, con la aparición del método de las Transforamdas Rápidas de Fourier, a mediados de los años 60'. A través de este algoritmo optimizado es posible trasladar los problemas hacia el espacio de frecuencias muy rápidamente, reduciendo los tiempos de cálculo.
+
+Los programas computaciones para aplicar algunas de las metodologías ya existentes se distribuyen bajo licencias privativas. Frente a esto, es nuestro deseo que las implementaciones de los métodos que aquí propondremos se encuentren bajo licencias de Software Libre, con el fin de que todos puedan beneficiarse con ellos y que tengan la libertad de estudiarlos, modificarlos y distribuirlos si así lo desean.
+
+Para realizar esta tarea elegimos utilizar el lenguaje de programación Python. La principal razón de esta elección reside en que tanto el intérprete como la mayor parte de las librerías que posee se encuentran bajo Licencias de Software Libre. En segundo lugar, porque nos permite escribir código de forma muy rápida y entendible, liberando más cantidad de tiempo para trabajar sobre la idea que queremos implementar y haciendo más hincapié en ella que en la construcción del código. En tercer y último lugar lo elegimos debido a la existencia de poderosas librerías científicas y de cálculo numérico (SciPy y NumPy, \cite{SciPy}) como de ploteo (Matplotlib, \cite{Matplotlib}). Además, durante el desarrollo del trabajo supimos de la existencia de una librería orientada a la aplicación de métodos Geofísicos conocida como Fatiando a Terra (\cite{Uieda2014}), también bajo Licencias de Software Libre.
+
+
+\vspace{0.5cm}
+
+Como ya hemos dicho, en el desarrollo de este trabajo haremos foco en la modelización de la Litósfera. Es de especial interés entender su comportamiento tectónico, composición y estructura debido a los fenómenos naturales que en ella ocurren (vulcanismo, sismicidad, orogénesis, etc) y por la cantidad de recursos naturales que alberga.
+
+Existe una superficie, a la cual haremos referencia frecuentemente, conocida como discontinuidad de Mohorovi\~ci\'c, también llamada Moho. Se trata de la superficie que delimita la corteza terrestre del manto superior. En océano, la corteza normal suele tener un promedio de 6km de profundidad, mientras que para regiones continentales promedia los 35km. La presencia de cuerpos anómalos puede generar variaciones de esos valores, modificando la profundidad del Moho punto a punto. La Determinación del Espesor Elástico de la corteza juega un papel importante en la forma en la cual la presencia de topografía en regiones continentales produce tal perturbación en el Moho.
+
+También es necesario definir un marco de referencia para los datos con los cuales trabajaremos. Debido a la geometría regular que presenta la superficie terrestre, se hace muy difícil hallar una expresión matemática que la represente. Es por ello que es necesario definir una superficie que reproduzca ciertas características de la misma.
+
+Desde un punto de vista geométrico podemos realizar una primera aproximación de la Tierra por una esfera cuyo radio es el radio promedio de la misma. Siendo este modelo muy rudimentario e insuficiente, podemos extender dicha aproximación a un esferoide de revolución que llamaremos Elipsoide de Referencia. 
+
+En el presente trabajo se utilizó el Elipsoide de Referencia WGS84 (World Geodetic System 1984), cuyo semieje mayor posee una longitud de $a = 6378137.0$ m y la inversa del achatamiento $1/f = 298.257 223 563$, de donde se obtiene un semieje menor de $b \simeq 6356752.314245$ m. Este representa un sistema de referencia estándar para datos de altitud y de geoide (vease sección \ref{section-geoide}), en coordenadas elipsoidales de latitud ($\phi$), longitud ($\lambda$) y altitud ($h$), donde $h(\lambda, \phi)=0$ reproduce el Elipsoide en cuestión.
+
+Es común hallar los datos de muchas magnitudes referenciados en coordenadas elipsoidales, o también conocidas como geográficas. Sin embargo, en determinadas ocasiones es necesario contar con información acerca de la distancia entre los puntos donde estos fueron tomados. Si la zona de estudio no es muy grande (no se extiende más a allá de algunos grados) es posible realizar una proyección de los mismos a coordenadas planas cuyos ejes se encuentran en metros. A lo largo de este trabajo utilizaremos un tipo particular de proyección, conocida como Gauss-Krüger. Se trata de un derivado de la Transversal de Mercator, y divide al territorio argentino entre distintas zonas o fajas longitudinales. Para realizarla haremos uso del software PROJ4, a través de su interfaz en Python: pyproj.
+
+

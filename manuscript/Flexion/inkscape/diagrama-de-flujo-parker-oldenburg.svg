@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1757.8438"
+   height="1123.0231"
+   id="svg3109"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="diagrama-de-flujo-parker-oldenburg.svg">
+  <defs
+     id="defs3111">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         id="path4172"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="909.75013"
+     inkscape:cy="557.56853"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1366"
+     inkscape:window-height="717"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3114">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-44.218746,8.28125)">
+    <g
+       id="g4080"
+       transform="translate(-76,-200)">
+      <flowRoot
+         transform="translate(1263.4746,1000.0471)"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot3185"
+         xml:space="preserve"><flowRegion
+           id="flowRegion3187"><rect
+             y="129.50504"
+             x="154.28572"
+             height="102.85717"
+             width="519.99994"
+             id="rect3189" /></flowRegion><flowPara
+           style="text-align:center;text-anchor:middle"
+           id="flowPara3191">Salida:</flowPara><flowPara
+           id="flowPara3195"
+           style="text-align:center;text-anchor:middle">Deflexión</flowPara></flowRoot>      <rect
+         style="fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3971"
+         width="397.14285"
+         height="128.57143"
+         x="1479.4286"
+         y="1115.2192" />
+    </g>
+    <g
+       id="g4042"
+       transform="translate(0,-178.00012)">
+      <flowRoot
+         transform="translate(0.89870071,978.84794)"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot3153"
+         xml:space="preserve"><flowRegion
+           id="flowRegion3155"><rect
+             y="129.50504"
+             x="154.28572"
+             height="114.28574"
+             width="380"
+             id="rect3157" /></flowRegion><flowPara
+           style="text-align:center;text-anchor:middle"
+           id="flowPara3159">RMS con Deflexión anterior</flowPara></flowRoot>      <rect
+         style="fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3979"
+         width="408.57141"
+         height="128.57143"
+         x="142.85713"
+         y="1093.2194" />
+    </g>
+    <g
+       id="g4107"
+       transform="translate(-60,-119.7144)">
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot3161"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         transform="translate(697.91879,900.76149)"><flowRegion
+           id="flowRegion3163"><rect
+             id="rect3165"
+             width="374.53796"
+             height="201.85213"
+             x="154.28572"
+             y="129.50504" /></flowRegion><flowPara
+           id="flowPara3167"
+           style="text-align:center;text-anchor:middle">¿Diferencia de RMS menor que la tolerancia?</flowPara></flowRoot>      <path
+         style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0"
+         d="m 1041.4286,965.4731 253.7462,133.7462 -253.7462,133.7463 -253.74628,-133.7463 z"
+         id="path3999"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
+    </g>
+    <g
+       id="g4028"
+       transform="translate(14.285706,34.666748)">
+      <flowRoot
+         transform="translate(7.0407257,258.04703)"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot3133"
+         xml:space="preserve"><flowRegion
+           id="flowRegion3135"><rect
+             y="129.50504"
+             x="154.28572"
+             height="100.00002"
+             width="342.85715"
+             id="rect3137" /></flowRegion><flowPara
+           style="text-align:center;text-anchor:middle"
+           id="flowPara3139">Propuesta de Deflexión Inicial</flowPara></flowRoot>      <rect
+         y="373.21918"
+         x="140"
+         height="128.57143"
+         width="385.71426"
+         id="rect4008"
+         style="fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g4021"
+       transform="translate(18.571404,-12.666687)">
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot3125"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         transform="translate(-45.410988,98.847815)"><flowRegion
+           id="flowRegion3127"><rect
+             id="rect3129"
+             width="437.14288"
+             height="128.57143"
+             x="154.28572"
+             y="129.50504" /></flowRegion><flowPara
+           id="flowPara3131"
+           style="text-align:center;text-anchor:middle">Cálculo de Término Constante</flowPara></flowRoot>      <rect
+         style="fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect4010"
+         width="417.14285"
+         height="128.57143"
+         x="120.00001"
+         y="213.21918" />
+    </g>
+    <g
+       id="g4014"
+       transform="translate(21.731842,-60)">
+      <flowRoot
+         transform="translate(-48.571429,-59.999999)"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot3117"
+         xml:space="preserve"><flowRegion
+           id="flowRegion3119"><rect
+             y="129.50504"
+             x="154.28572"
+             height="128.57143"
+             width="437.14288"
+             id="rect3121" /></flowRegion><flowPara
+           style="text-align:center;text-anchor:middle"
+           id="flowPara3123">Grilla de Anomalías de Bouguer</flowPara></flowRoot>      <rect
+         y="53.219177"
+         x="95.411011"
+         height="128.57143"
+         width="459.99997"
+         id="rect4012"
+         style="fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g4035"
+       transform="translate(-3.8146973e-6,0)">
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot3141"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         transform="translate(-121.12083,496.97098)"><flowRegion
+           id="flowRegion3143"><rect
+             id="rect3145"
+             width="625.71429"
+             height="160.00002"
+             x="154.28572"
+             y="129.50504" /></flowRegion><flowPara
+           id="flowPara3149"
+           style="text-align:center;text-anchor:middle">Cálculo de Nueva Deflexión con Parker-Oldenburg</flowPara></flowRoot>      <rect
+         y="615.2193"
+         x="45.714283"
+         height="128.57143"
+         width="602.85712"
+         id="rect3197"
+         style="fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g4072"
+       transform="translate(-76,0)">
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot3177"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         transform="translate(1261.7754,500.04716)"><flowRegion
+           id="flowRegion3179"><rect
+             id="rect3181"
+             width="519.99994"
+             height="102.85717"
+             x="154.28572"
+             y="129.50504" /></flowRegion><flowPara
+           id="flowPara3183"
+           style="text-align:center;text-anchor:middle">Salida:</flowPara><flowPara
+           id="flowPara3193"
+           style="text-align:center;text-anchor:middle">Deflexión anterior</flowPara></flowRoot>      <rect
+         y="615.2193"
+         x="1479.4286"
+         height="128.57143"
+         width="397.14285"
+         id="rect3969"
+         style="fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g4114"
+       transform="translate(-60,8.2856625)">
+      <flowRoot
+         transform="translate(723.46958,500.56227)"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot3169"
+         xml:space="preserve"><flowRegion
+           id="flowRegion3171"><rect
+             y="129.50504"
+             x="154.28572"
+             height="221.24298"
+             width="324.55536"
+             id="rect3173" /></flowRegion><flowPara
+           style="text-align:center;text-anchor:middle"
+           id="flowPara3175">¿Aumentó el RMS?</flowPara></flowRoot>      <path
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="path4105"
+         d="m 1041.4286,577.4731 193.7462,93.7462 -193.7462,93.7463 -193.74628,-93.7463 z"
+         style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m 347.14284,122.36218 0,73.60733"
+       id="path4163"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4609"
+       d="m 347.14284,329.93832 0,73.10225"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m 347.14284,535.93832 0,74.53082"
+       id="path4611"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4613"
+       d="m 347.14284,743.93828 0,168.47501"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m 555.83937,979.50495 168.475,0"
+       id="path4615"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4655"
+       d="m 1235.8394,979.50495 162.169,0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m 1170.1251,679.50501 227.8833,0"
+       id="path4657"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4659"
+       d="m 786.79411,679.50501 -134.66901,0"
+       style="fill:none;stroke:#000000;stroke-width:1.99999988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m 981.14284,845.74322 0,-67.45975"
+       id="path4661"
+       inkscape:connector-curvature="0" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4663"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(18.243661,-523.23871)"><flowRegion
+         id="flowRegion4665"><rect
+           id="rect4667"
+           width="96.974648"
+           height="117.1777"
+           x="953.58398"
+           y="1319.0425" /></flowRegion><flowPara
+         id="flowPara4669"
+         style="text-align:center;text-anchor:middle">No</flowPara></flowRoot>    <flowRoot
+       transform="translate(299.00515,-391.93919)"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot4671"
+       xml:space="preserve"><flowRegion
+         id="flowRegion4673"><rect
+           y="1319.0425"
+           x="953.58398"
+           height="117.1777"
+           width="96.974648"
+           id="rect4675" /></flowRegion><flowPara
+         id="flowPara4677"
+         style="text-align:center;text-anchor:middle">Si</flowPara></flowRoot>    <flowRoot
+       transform="translate(-266.87013,-694.55442)"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot4679"
+       xml:space="preserve"><flowRegion
+         id="flowRegion4681"><rect
+           y="1319.0425"
+           x="953.58398"
+           height="117.1777"
+           width="96.974648"
+           id="rect4683" /></flowRegion><flowPara
+         style="text-align:center;text-anchor:middle"
+         id="flowPara4685">No</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4687"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(279.00515,-693.93919)"><flowRegion
+         id="flowRegion4689"><rect
+           id="rect4691"
+           width="96.974648"
+           height="117.1777"
+           x="953.58398"
+           y="1319.0425" /></flowRegion><flowPara
+         style="text-align:center;text-anchor:middle"
+         id="flowPara4693">Si</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4695"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(362.25978,-149.50258)"><flowRegion
+         id="flowRegion4697"><rect
+           id="rect4699"
+           width="521.23871"
+           height="149.50258"
+           x="1143.4927"
+           y="1197.8241" /></flowRegion><flowPara
+         id="flowPara4701"
+         style="font-style:italic;-inkscape-font-specification:Sans Italic">Converge</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4703"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(2081.5703,-183.84777)"><flowRegion
+         id="flowRegion4705"><rect
+           id="rect4707"
+           width="650.53821"
+           height="464.67017"
+           x="-606.09155"
+           y="931.14386" /></flowRegion><flowPara
+         id="flowPara4709"
+         style="font-style:italic;-inkscape-font-specification:Sans Italic">No converge</flowPara></flowRoot>  </g>
+</svg>

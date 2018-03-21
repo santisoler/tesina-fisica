@@ -1,0 +1,356 @@
+%~ \newevenside
+\part{Determinación de la Profundidad del Punto de Curie}
+
+
+%~ \newevenside
+\chapter{Modelo de Loza Infinita}
+
+La utilización de métodos espectrales para la determinación del Punto de Curie a partir de las anomalías magnéticas se originaron al poco tiempo de la divulgación de la Transformada Rápida de Fourier. Estos podrían clasificarse en dos tipos: aquellos que examinan el efecto de cuerpos anómalos aislados, y por otro lado los que examinan de forma estadística las propiedades de las anomalías.
+
+Uno de los trabajos pioneros del último grupo es el de \cite{Spector1970}, en el cual los autores presentan una forma compacta del espectro de potencial de un ensamble de prismas con magnetizaciones arbitrarias; aplicando los desarrollos de \cite{Bhattacharyya1964} para la determinación de la anomalía magnética generada por un prisma y el Principio Fundamental de la Mecánica Estadística.
+
+\cite{Blakely1995} condensa el modelo construido por \cite{Spector1970} de la siguiente manera: dada una loza con superficies superiores e inferiores a profundidades $Z_{t}$ y $Z_{b}$, respectivamente; extendida infinitamente en las direcciones horizontales, y con magnetización $M(x,y)$ arbitraria, el espectro de potencia de la anomalía magnética medida que genera en $z=0$ puede escribirse como:
+\begin{equation}
+    \Phi_{\Delta T}({\bf k}) = \Phi_{M}({\bf k}) \,\, \Big\{ 4\pi^2 C_{m}^{2} |\Theta_{m}|^{2} |\Theta_{f}|^{2} \Big\}  \Big\{ e^{-2|{\bf k}|Z_{t}} \Big[ 1 - e^{-|{\bf k}|(Z_{b}-Z_{t})} \Big]^{2} \Big\}
+\end{equation}
+donde ${\bf k}$ es el número de onda, $\Phi_{M}(k_{x},k_{y})$ es el espectro de potencia de la magnetización $M(x,y)$, $C_{m}$ es una constante de proporcionalidad y $\Theta_{m}$ y $\Theta_{f}$ son factores relacionados con la dirección de la magnetización y del campo geomagnético, respectivamente. Este modelo propone la existencia de un límite a una profundidad $Z_{b}$ a partir del cual no existen magnetizaciones. Se puede entender este límite como el Punto a la Profundidad de Curie, ya que más allá de eso las magnetizaciones remanentes son inexistentes.
+
+Vale observar que todos los factores de la ecuación anterior son radialmente simétricos, excepto por $\Phi_{\Delta M}(k_{x},k_{y})$, $|\Theta_{m}|^{2}$ y $|\Theta_{f}|^{2}$. Sin embargo, se puede demostrar que los promedios radiales de los últimos dos son constantes; por ende, el promedio radial del espectro de potencial puede ser escrito de la siguiente manera:
+\begin{equation}
+    \overline{\Phi}_{\Delta T} \,(k) = \promedio{\Phi_{\Delta T} \,(k)} = B \, \promedio{\Phi_{M}(k)} \,  e^{-2 k Z_{t}} \Big[ 1 - e^{-k(Z_{b}-Z_{t})} \Big]^{2}
+\end{equation}
+donde $k$ es el módulo de ${\bf k}$ y $B$ es una constante de proporcionalidad.
+
+De conocer el comportamiento de la magnetización $M(x,y)$ en cada punto de la corteza, el cálculo de su espectro radial es trivial y la determinación de las profundidades de la loza 
+son fáciles de obtener. Sin embargo en situaciones geofísicas eso no sucede, por lo cual debemos proponer un modelo estadístico adecuado para $M(x,y)$.
+
+A lo largo de la bibliografía el modelo de preferencia es proponer que $M(x,y)$ es completamente aleatoria y no correlacionada. En ese caso, el espectro de potencia de $M(x,y)$ es constante y la ecuación anterior se reduce a:
+\begin{equation}
+    \overline{\Phi}_{\Delta T} \,(k) = A e^{-2 k Z_{t}} \Big[ 1 - e^{-k(Z_{b}-Z_{t})} \Big]^{2}
+    \label{eq-blakely-espectro}
+\end{equation}
+donde $A$ es una nueva constante de proporcionalidad. Y finalmente, aplicando el logaritmo en ambos miembros obtenemos la siguiente expresión:
+
+\begin{equation}
+    \ln \overline{\Phi}_{\Delta T} \,(k) = \ln A - 2Z_{t}\, k + 2\, \ln \left( 1 - e^{-k(Z_{b}-Z_{t})} \right)
+    \label{eq-blakely-ln-espectro}
+\end{equation}
+
+\begin{figure}[t!]
+    \centering{}
+    \includegraphics[width=0.98\textwidth]{\Curie/figs/blakely-espectros.pdf}
+    \caption{Gráficas de promedios radiales del espectro de potencia de anomalías magnéticas y de su logaritmo, según el modelo de \cite{Spector1970} y \cite{Blakely1995}.}
+    \label{fig-blakely-espectros}
+\end{figure}
+
+En la Figura \ref{fig-blakely-espectros} se muestran las gráficas correspondientes a las ecuaciones anteriores (\ref{eq-blakely-espectro} y \ref{eq-blakely-ln-espectro}). Actualmente, las diversas metodologías existentes intentan ajustar los parámetros $Z_{b}$ y $Z_{t}$ a partir del espectro de potencias de las anomalías magnéticas.
+
+
+\section{Métodos Actuales}
+
+\cite{Tanaka1999} proponen realizar dos aproximaciones a la ecuación \ref{eq-blakely-espectro}: una para baja frecuencias y otra para altas frecuencias (ecuaciones \ref{eq-tanaka-low-freq} y \ref{eq-tanaka-high-freq}, respectivamente).
+\begin{align}
+    \overline{\Phi}_{\Delta T}(k) \simeq 4 A (Z_{b}-Z_{c})^{2} \, k^{2} \, e^{-2 k Z_{t}} \quad &\Rightarrow \quad \ln \left[ \, \overline{\Phi}_{\Delta T}(k)^{1/2}/k \, \right] \simeq \ln C - Z_{c} \, k
+    \label{eq-tanaka-low-freq} \\
+    \overline{\Phi}_{\Delta T}(k) \simeq A \, e^{-2 k Z_{t}} \quad &\Rightarrow \quad \ln \left[ \, \overline{\Phi}_{\Delta T}(k)^{1/2} \, \right] \simeq \ln D - Z_{t} \, k
+    \label{eq-tanaka-high-freq}
+\end{align}
+
+$C$ y $D$ son constantes y $Z_{c}$ es la profundidad del centroide de la loza ($2 Z_{c} = Z_{b} + Z_{t}$).
+
+Ambas aproximaciones permiten relacionar linealmente funciones del espectro de potencia de las anomalías con las profundidades del centroide y del techo de la loza. Esto reduce la obtención de los parámetros a un simple ajuste lineal de los puntos (ver Figura \ref{fig-tanaka-graficas}). Una vez estimadas ambas cantidades es posible obtener el valor para el piso de la misma, es decir, la Profundidad de Curie.
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.98\textwidth]{\Curie/figs/tanaka-graficas.png}
+\caption{Aplicación del método propuesto por \cite{Tanaka1999} para el promedio radial de un espectro de potencia dado. Se muestran dos gráficas con las funciones necesarias para obtener las relaciones lineales expuestas en las ecuaciones \ref{eq-tanaka-low-freq} y \ref{eq-tanaka-high-freq} y sobre ellas los segmentos utilizados para el ajuste de las profundidades.}
+\label{fig-tanaka-graficas}
+\end{figure}
+
+Este método permite determinar la Profundidad de Curie en diversos puntos de nuestra zona de estudio, construyendo ventanas cuadradas de los datos de anomalía magnética y realizando un cálculo como el que se describió en el párrafo anterior para cada uno de estos puntos.
+
+Una de las desventajas que hallamos en este método es la ausencia de herramientas que permitan discriminar si la ventana de datos de anomalía que se utiliza es lo suficientemente ``buena'' como para llevar a cabo el ajuste de los parámetros.
+
+Además, encontramos que esta metodología deja libre a nuestra subjetividad qué puntos tomar para realizar el ajuste de las rectas. Cómo se pueden ver en la Figura \ref{fig-tanaka-graficas}, la determinación de ambas pendientes puede verse modificada en función de qué puntos de las curvas tomamos para realizar el ajuste, conllevando una estimación errónea de los parámetros que deseamos precisar.
+
+Una posible solución a este problema es analizar cuál es el rango de validez de cada aproximación, con lo cual podríamos identificar de forma más objetiva qué puntos debemos seleccionar para realizar los ajustes por mínimos cuadrados.
+
+Por otro lado, \cite{Ross2006} proponen otro método que soluciona algunos de los problemas mencionados. Su método consiste en construir una ventana de datos de ancho $W$ por cada punto en donde desean determinar las profundidades $Z_{t}$ y $Z_{b}$ . Luego proceden a aumentar el tamaño de la ventana hasta que observan un pico en la gráfica del $\ln \overline{\Phi}_{\Delta T} \,(k)$. La presencia del pico indica que las dimensiones de la ventana son suficientemente grandes como para incluir las bajas frecuencias asociadas al piso de la loza magnética.
+
+Finalmente ajustan manualmente la curva de la ecuación \ref{eq-blakely-ln-espectro} a los puntos de más baja frecuencia, ya que a partir de un determinado $k$ el scatter de puntos se desvía de la recta teórica, lo que podemos interpretar como la componente de ruido que poseen los datos de anomalías magnéticas.
+
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.98\textwidth]{\Curie/figs/ross-graficas.png}
+\caption{Ejemplo del método de \cite{Ross2006} para la determinación de la Profundidad de Curie. La gráfica a) corresponde a una ventana de 130km de ancho, mientras que la b) a una de 180km. Las curvas negras corresponden a los datos, mientras que cada curva de color hace referencia a un ajuste con un par de parámetros distintos.}
+\label{fig-ross-graficas}
+\end{figure}
+
+Este método resuelve uno de los problemas de \cite{Tanaka1999}, dando un criterio para discriminar entre las ``buenas'' ventanas, de las que no lo son. Además advierte que la mejor forma de elegir los puntos sobre los cuales estimar las profundidades no es construir una grilla de puntos como lo hace \cite{Tanaka1999}, sino elegirlos cuidadosamente, intentando que la ventana quede dentro de una ``región magnética'', es decir que no posean información de lozas de diferentes profundidades.
+
+Sin embargo, sigue incorporando un ingrediente subjetivo en el análisis, ya que el ajuste de la curva lo llevan a cabo de forma manual, a prueba y error, argumentando que sus ajustes por mínimos cuadrados no respondían a situaciones geofísicamente posibles.
+
+
+\section{Ánalisis del Espectro de Potencia}
+Partiendo de la ecuación \ref{eq-blakely-espectro} podemos concluir sencillamente que los rangos de validez de las aproximaciones propuestas por \cite{Tanaka1999} en las ecuaciones \ref{eq-tanaka-low-freq} y \ref{eq-tanaka-high-freq} vienen dadas por las ecuaciones \ref{eq-tanaka-validez-low} y \ref{eq-tanaka-validez-high}, respectivamente.
+\begin{align}
+    k \ll 1/(Z_{b}-Z_{t})
+    \label{eq-tanaka-validez-low} \\
+    k \gg 1/(Z_{b}-Z_{t})
+    \label{eq-tanaka-validez-high}
+\end{align}
+
+Al intentar utilizar estos rangos de validez nos encontramos con el problema de que ellos mismos están delimitados por los parámetros que deseamos calcular, por lo cual nos resultan poco útiles.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{\Curie/figs/tanaka-validez-5-35.pdf}
+\caption{Promedio radial del espectro de potencias de las anomalías magnéticas (a) y su logaritmo (b), según la ecuación \ref{eq-blakely-espectro} junto con las curvas correspondientes a las aproximaciones de bajas y altas frecuencias para una loza de $Z_{t}=5\,{\rm km}$ y $Z_{b}=35\,{\rm km}$ ($Z_{c}=20\,{\rm km}$).}
+\label{fig-tanaka-validez-5-35}
+\end{figure}
+
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{\Curie/figs/tanaka-validez-18-22.pdf}
+\caption{Promedio radial del espectro de potencias de las anomalías magnéticas (a) y su logaritmo (b), según la ecuación \ref{eq-blakely-espectro} junto con las curvas correspondientes a las aproximaciones de bajas y altas frecuencias para una loza de $Z_{t}=18\,{\rm km}$ y $Z_{b}=22\,{\rm km}$ ($Z_{c}=20\,{\rm km}$).}
+\label{fig-tanaka-validez-18-22}
+\end{figure}
+
+Consideremos por ejemplo dos lozas: una gruesa de $Z_{t}=5\,{\rm km}$ y $Z_{b}=35\,{\rm km}$ y otra delgada de $Z_{t}=18\,{\rm km}$ y $Z_{b}=22\,{\rm km}$. En ambos casos, el centroide está ubicado en $Z_{c}=20\,{\rm km}$. En las Figuras \ref{fig-tanaka-validez-5-35} y \ref{fig-tanaka-validez-18-22} se muestran los promedios radiales de los espectros de potencia y sus logaritmos junto con las gráficas correspondientes a las aproximaciones de bajas y altas frecuencias para la loza gruesa y delgada, respectivamente.
+
+Como podemos apreciar en ellas, \cite{Ross2006} están en lo correcto al hacer hincapié en la necesidad de observar el pico en las gráficas del $\ln \overline{\Phi}_{\Delta T} \,(k)$, ya que de otra forma no se obtiene información sobre el piso de la loza magnética. Es necesario también contar con información de frecuencias altas o intermedias. Esto en la práctica se ve facilitado ya que si somos capcaes de observar las componentes de ruido, entonces podemos afirmar que alcanzamos frecuencias suficientemente altas.
+
+En conclusión, una ventana satisfactoria para la obtención de nuestras profundidades es aquella cuyo espectro de frecuencia exhibe un pico con buena resolución y una recta hasta encontrarse con las frecuencias activadas por el ruido.
+ 
+Aún así vimos necesario realizar análisis cuantitativos sobre dicho espectro y la construcción de la ventana.
+
+
+\subsection{Estimación del Ancho de la Ventana}
+Consideremos una ventana cuadrada de ancho $W$ y distancia entre primeros vecinos $d$ (distancia de sampleo). Derivando la ecuación \ref{eq-blakely-espectro} ei igualando a cero, se obtiene la frecuencia $k_{p}$ en la cual se da el pico (ver Figura \ref{fig-espectro-blakely-anotaciones} a).
+
+\begin{equation}
+    \frac{\partial \, \overline{\Phi}_{\Delta T}}{\partial k}\Bigg|_{k_{p}} \!\!\!\!  =0 \quad \Rightarrow \quad   k_{p} = \frac{\ln(Z_{b})-\ln(Z_{t})}{Z_{b}-Z_{t}}
+\end{equation}
+
+Si definimos a $k_{0}$ la frecuencia fundamental ($k_{0}=2\pi / W$) y deseamos ubicar $(\alpha-1)$ puntos antes del pico, entonces $k_{0}$ debe ser:
+
+\begin{equation}
+    k_{0} = \frac{k_{p}}{\alpha}
+\end{equation}
+
+Podemos hallar una relación entre el ancho de la ventana y las profundidades de la loza sustituyendo $k_{p}$ entre las ecuaciones anteriores.
+\begin{equation}
+    W = 2\pi \alpha \frac{Z_{b}-Z_{t}}{\ln(Z_{b})-\ln(Z_{t})}
+\end{equation}
+
+Con el fin de simplificar la dependencia del ancho de la ventana $W$ con respecto a las profundidades $Z_{b}$ y $Z_{t}$, definimos al cociente de estas dos como $\xi = Z_{b}/Z_{t}$. Reescribiendo la ecuación anterior se obtiene:
+\begin{equation}
+    W = 2 \pi \alpha \, Z_{t} \, \frac{\xi-1}{\ln(\xi)}
+    \label{eq-tamano-ventana}
+\end{equation}
+
+Si consideramos que $Z_{b}$ puede llegar a ser hasta diez veces mayor que $Z_{t}$ (lo cuál es lógico para una loza gruesa), entonces el factor dependiente de $\xi$ en la ecuación \ref{eq-tamano-ventana} barre valores desde 1 a 4 para lozas delgadas a más gruesas, como se muestra en la Figura \ref{fig-grafica-xi}.
+
+\begin{figure}[b!]
+\centering
+\includegraphics[width=0.7\textwidth]{\Curie/figs/xi.pdf}
+\caption{Gráfica del factor dependiente de $\xi=Z_{b}/Z_{t}$ de la ecuación \ref{eq-tamano-ventana}.}
+\label{fig-grafica-xi}
+\end{figure}
+
+\label{parrafo-ejemplo-curie}Por ejemplo, si queremos obtener 2 puntos entre $k=0$ y $k_{p}$ ($\alpha=3$) para una ventana con $Z_{b}=25{\rm km}$ y $Z_{t}=5{\rm km}$, es decir $\xi=5$, el tamaño de ventana que necesitamos es aproximadamente de $T=234{\rm km}$.
+
+
+\subsection{Estimación de la Distancia de Sampleo}
+
+Como dijimos antes, en la práctica resulta sencillo discernir si la distancia de sampleo que utilizamos es suficientemente pequeña analizando la presencia de ruido en nuestro espectro. Sin embargo, resulta interesante analizar qué valor de $d$ debería ser suficientemente pequeño, ya que al subestimarlo se incrementa considerablemente la cantidad de puntos por ventana y con ello el tiempo de cómputo de las Transformadas de Fourier.
+
+Un criterio sería exigirle a nuestro espectro de potencias que el ancho del pico (aquel que aparece en la gráfica del $\overline{\Phi}_{\Delta T}(k)$) ocupe una porción $1/\beta$ de todo el eje de frecuencias. Su ancho puede ser definido como la distancia entre $k=0$ y $\sigma_{k}$, siendo esta la frecuencia en la cual el espectro de potencia presenta el segundo punto de inflexión (véase Figura \ref{fig-espectro-blakely-anotaciones} a).
+
+Para obtener el valor de $\sigma_{k}$ es necesario analizar cuándo se anula la derivada segunda del espectro de potencia. Dicha ecuación no posee solución analítica, sin embargo podemos obtener un valor aproximado calculando el punto de inflexión de la raíz cuadrada del espectro de potencia: $\overline{\Phi}_{\Delta T}^{\,1/2}(k)$. En ese caso, $\sigma_{k}$ queda definido por:
+\begin{equation}
+    \sigma_{k} \simeq 2 \, \frac{\ln(Z_{b})-\ln(Z_{t})}{Z_{b}-Z_{t}} = 2k_{p}
+\end{equation}
+
+\begin{figure}[b!]
+\centering
+\includegraphics[width=0.98\textwidth]{\Curie/figs/espectro-blakely-anotaciones.pdf}
+\caption{Espectro de potencia según ecuación \ref{eq-blakely-espectro} y su raíz cuadrada, identificando la frecuencia del pico $k_{p}$ y su ancho $\sigma_{k}$.}
+\label{fig-espectro-blakely-anotaciones}
+\end{figure}
+
+En la Figura \ref{fig-espectro-blakely-anotaciones} b podemos observar que el valor de $\sigma_{k}$ se aproxima muy bien a la frecuencia del punto de inflexión de $\overline{\Phi}_{\Delta T}(k)$. Incluso hemos verificado dicha aproximación a través de la resolución numérica de $\sigma_{k}$, reforzando aún más la validez de la misma.
+
+La frecuencia máxima del espectro de potencias $k_{max}$ queda definida en función de la distancia de sampleo como:
+\begin{equation}
+    k_{\rm max} = \frac{2\pi}{2d} = \frac{\pi}{d}
+\end{equation}
+
+Y dado que el pico ocupará $1/\beta$ de todo el eje de frecuencias: $k_{\rm max} = \beta \, \sigma_{k}$
+
+Podemos agrupar las ecuaciones anteriores y concluir que:
+\begin{equation}
+    d = \frac{\pi}{2\beta} \, \frac{Z_{b} - Z_{t}}{\ln Z_{b} - \ln Z_{t}} = \frac{W}{4\alpha\beta}
+\end{equation}
+
+Continuando con el ejemplo de la página \pageref{parrafo-ejemplo-curie}, para que el pico de $\overline{\Phi}_{\Delta T}(k)$ ocupe un sexto del eje de frecuencias, entonces la distancia de sampleo debe ser $d=3,25\,{\rm km}$.
+
+\prechapterpage{}
+\chapter{Método Propuesto e Implementación en Python}
+\chaptermark{Método Propuesto e Implementación}
+Las dificultades que presenta el método de \cite{Ross2006} (expuesto en el capítulo anterior) vendrán dadas, en principio por la subjetividad involucrada en el ajuste de la curva del espectro de potencias de las anomalías, y luego por un detalle que no hemos nombrado anteriormente. Este tiene que ver con el tamaño de la ventana y las regiones magnéticas.
+
+Según el ejemplo de la página \pageref{parrafo-ejemplo-curie}, la ventana de puntos de anomalía debe tener un ancho de 264 ${\rm km}$. Esto puede presentar un problema en la práctica, ya que si las ``regiones'' magnéticas poseen dimensiones menores, el espectro de potencias incluirá información de más de una loza, dificultando la posibilidad del ajuste.
+
+Para solucionar esto proponemos aplicar sobre la ventana de anomalías lo que se conoce como padding, es decir, agrandarla rellenando con valores, que en nuestro caso elegimos ceros. Esto produce que el espectro de potencia de una dada ventana posea más resolución. La longitud del eje de frecuencias no sufrirá ningún cambio, ya que $k_{\rm max}$ se mantiene invariante; sin embargo, con el aumento del tamaño de la ventana, el espectro de potencia incorpora más puntos.
+
+\begin{figure}[b!]
+\centering
+\includegraphics[width=0.98\textwidth]{\Curie/figs/grafica-senial.pdf}
+\caption{(a) Señal compuesta por dos funciones sinusoidales con frecuencias $1\cdot 10^{3} \, {\rm m^{-1}}$ y $1.5\cdot 10^{3} \, {\rm m^{-1}}$ con una distancia de muestreo de  $10 \, {\rm m}$ y (b) su Espectro de Potencia recortado a las frecuencias de interés.}
+\label{fig-grafica-senial}
+\end{figure}
+
+En la Figura \ref{fig-grafica-senial} mostramos como ejemplo una señal generada por dos funciones sinusoidales con frecuencias  $1\cdot 10^{3} \, {\rm m^{-1}}$ y $1.5\cdot 10^{3} \, {\rm m^{-1}}$ con una distancia de muestreo de  $10 \, {\rm m}$ y su Espectro de Potencia. Mientras que en la Figura \ref{fig-grafica-padding} podemos ver la misma señal luego de haberle realizado un padding de 9000 ceros. Vale observar en estas gráficas que del espectro de potencia solo observamos el semieje positivo, ya que debido a que las señales poseen solo valores reales, este es simétrico con respecto al origen.
+
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.98\textwidth]{\Curie/figs/grafica-padding.pdf}
+\caption{a) La misma señal de la Figura \ref{fig-grafica-senial} pero habiendo aplicado un padding de 9000 ceros. b) Su Espectro de Potencia.}
+\label{fig-grafica-padding}
+\end{figure}
+
+Lo que se obtiene luego de realizar el padding es mayor resolución en el Espectro de Potencia. En el problema de la determinación de la Profundidad de Curie, esto se traduce en la capacidad de utilización de ventanas más pequeñas conservando una buena resolución del espectro.
+
+Si bien, la ventana deberá seguir respetando la relación impuesta por la ecuación \ref{eq-tamano-ventana}, ahora podemos utilizar un valor de $\alpha$ mínimo. Continuando con el ejemplo de la página \pageref{parrafo-ejemplo-curie}, si ahora pedimos que haya únicamente 1 punto detrás del pico, entonces $\alpha=2$, con lo cual el ancho de la ventana debe ser de 156km.
+
+Se debe ser cuidadoso a la hora de implementar e interpretar el padding. En los casos expuestos en las Figuras \ref{fig-grafica-senial} y \ref{fig-grafica-padding} podemos ver que el Espectro de Potencia de la señal original muestra los dos picos relacionados con las frecuencias de cada sinusoide. Sin embargo, el hecho de aplicar padding no adelgaza los picos, es decir, no somos capaces de recuperar las deltas de Dirac que contiene el espectro analítico de las funciones sinusoidales. Con esto deseamos hacer hincapié que el padding es una buena técnica para ``rellenar'' el espectro de potencia, pero ante la falta de información de mayores longitudes de onda, aplicarlo resulta inútil.
+
+La otra problemática que superamos es la que tiene que ver con la subjetividad del ajuste de la curva del espectro. Aquí proponemos ajustar la curva dada por la ecuación \ref{eq-blakely-ln-espectro} haciendo uso del algoritmo de Levenberg-Marquardt, el cual permite realizar un ajuste de mínimos cuadrados en problemas no lineales como el nuestro. Seleccionando los puntos de bajas frecuencias que componen el pico (en la gráfica del logaritmo del espectro) para realizar la regresión, obtenemos como salida los valores que mejor ajustan las constantes $\ln A$, $Z_{t}$ y $Z_{b}$ de la ecuación \ref{eq-blakely-ln-espectro}.
+
+
+
+\section{Implementación en Python}
+Con el objetivo de llevar a cabo el método propuesto hemos escrito una implementación del mismo en lenguaje Python. En la Figura \ref{fig-curie-diagrama-de-flujo} se muestra un sencillo diagrama de flujo del programa desarrollado.
+
+\begin{figure}[b!]
+\centering
+\includegraphics[width=0.6\textwidth]{\Curie/figs/diagrama-de-flujo.pdf}
+\caption{Diagrama de Flujo del algoritmo desarrollado para el cálculo de Profundidades de Curie.}
+\label{fig-curie-diagrama-de-flujo}
+\end{figure}
+
+\subsection{Selección de Ventana de Anomalías}
+Como datos de entrada tomamos valores de anomalías magnéticas situados en una grilla regular en coordenadas planas, es decir, las distancias entre los puntos deben estar en metros. El software desarrollado nos da acceso a una sencilla interfaz gráfica que nos permite seleccionar una ventana cuadrada de puntos de anomalía con la que deseamos trabajar. Su centro será el punto en el cual asociaremos luego la profundidad que obtengamos. Para no tener inconvenientes con la determinación del mismo, el ancho de la ventana tendrá siempre un número impar de puntos.
+
+Además de determinar la ubicación de la ventana, la interfaz nos permite redimensionarla, aumentando o disminuyendo su ancho. Una vez seleccionada, procedemos a calcular el promedio radial del espectro de potencia. 
+
+\subsection{Cálculo del Espectro de Potencias y Promedio Radial}
+Al inicio el software nos pide especificar la cantidad de puntos que deseamos que nuestro espectro posea. Con la ventana ya seleccionada, el software automáticamente calcula cuántos puntos de padding cero que necesita agregar para que el espectro posea dicha cantidad de puntos; y luego modifica la ventana de anomalías con el padding necesario.
+
+La Transformada de Fourier de la nueva ventana se lleva a cabo a través de la función fftpack.fft2 de SciPy (\cite{SciPy}) y luego se calcula el espectro de potencia simplemente con el cuadrado del módulo de los valores. De este proceso se obtiene una grilla en el espacio de frecuencias $(k_x, k_y)$ con valores positivos o nulos. Cerca del origen de coordenadas se ubica la información de bajas frecuencias; mientras que a medida que nos movemos hacia los extremos, las mismas aumentan.
+
+Para calcular el Promedio Radial dividimos la grilla de frecuencias en anillos concéntricos con centro en el origen. La cantidad de anillos será la mitad de los puntos por eje de la grilla. Luego promediamos los valores de anomalías que caigan dentro de cada anillo. De esta forma obtenemos el promedio radial del espectro de potencia por cada anillo; y como cada uno posee una frecuencia media (radio medio en el espacio de frecuencias), se construye así una gráfica en 1 dimensión a partir de nuestro espectro de potencia. Además de los valores del promedio radial, calculamos también la desviación estándar en cada anillo, con lo cual obtenemos un intervalo de error por cada punto del promedio radial.
+
+Luego, analizamos gráficamente el logaritmo de la curva obtenida verificando si se asemeja a simple vista a la propuesta de \cite{Blakely1995}, en otras palabras, si presenta un pico y luego un comportamiento lineal decreciente. De no ser así debemos seleccionar otra ventana y proceder de la misma manera. Si por el contrario, la ventana aparenta ser ajustable, procedemos al siguiente paso.
+
+\subsection{Ajuste de la Curva}
+El ajuste del logaritmo del promedio radial del espectro de potencias se realiza sencillamente a través del algoritmo de Levenberg-Marquardt, mediante su implementación en la función curve\_fit de SciPy. Habiendo seleccionado previamente los puntos con los cuales queremos que la curva ajuste, los cuales en general coinciden con los de bajas frecuencias.
+
+Como salida de este método obtenemos las profundidades $Z_{t}$ y $Z_{b}$ que mejor ajustan junto con la constante aditiva $\ln A$ y los errores de esos valores. Es importante analizar si el ajuste es satisfactorio, ya que puede suceder que la curva obtenida se correlacione con los puntos seleccionados, pero el error relativo de las profundidades sea muy elevado, dando un intervalo de confianza muy amplio como para considerar dicha estimación como un buen resultado.
+
+Aún así, es común ver en la bibliografía que los errores en las Profundidades de Curie suelen ser elevados, incluso rondando entre el 10\% y el 20\%. Por ende, podemos esperar encontrarnos con cifras en ese orden.
+
+
+\subsection{Interfaz Interactiva}
+En la Figura \ref{fig-cudepy-muestra-1} se muestra la interfaz del software que permite la selección de la ventana de anomalías. En el gráfico de la derecha podemos seleccionar interactivamente la ventana que deseamos y luego ordenarle que nos muestre, en los ejes de la izquierda, el promedio radial del espectro de las anomalías interiores a dicha ventana.
+
+Si deseamos tomar ese espectro para realizar el ajuste de la curva, continuamos al siguiente paso: elegir qué puntos de la gráfica utilizaremos como entrada. Un ejemplo de esto se muestra en la Figura \ref{fig-cudepy-muestra-2} a. Una vez ajustado, el software nos muestra los valores de los parámetros $Z_{t}$ y $Z_{b}$ y la curva de ajuste correspondiente, como se expone en la Figura \ref{fig-cudepy-muestra-2} b. Además, nos da información de los errores de estos parámetros, y nos alerta en caso de que el error relativo de la Profundidad de Curie $Z_{b}$ sea mayor al 40\%.
+
+%~ \newpage
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.98\textwidth]{\Curie/figs/CuDePy-muestra-1.pdf}
+\caption{Interfaz Interactiva para la selección de ventana de anomalías. A la derecha se ve la grilla de anomalías magnéticas junto con la región seleccionada para conformar la ventana. A la izquierda se ve el logaritmo del promedio radial del espectro de potencias, habiendo aplicado el padding necesario para tener 70 puntos en dicha gráfica. En este ejemplo se tomó una ventana de 30km de ancho.}
+\label{fig-cudepy-muestra-1}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.98\textwidth]{\Curie/figs/CuDePy-muestra-2.pdf}
+\caption{(a) Ventana para seleccionar los puntos con los cuales deseamos hacer el ajuste de la curva, a partir del espectro obtenido en el ejemplo de la Figura \ref{fig-cudepy-muestra-1}. (b) Curva de ajuste de dichos puntos. En rojo se muestran aquellos que han sido elegidos para el ajuste. Los parámetros que se obtuvieron fueron: $Z_{t} = (3.6 \pm 0.6)$km y $Z_{b} = (5.9 \pm 1.3)$km.}
+\label{fig-cudepy-muestra-2}
+\end{figure}
+\newpage{}
+
+\section{Modelo sintético}
+Con el objetivo de corroborar el funcionamiento del software desarollado, construimos un modelo sintético que consiste en una loza de 600km de ancho con profundidades $Z_{t}=5$km y $Z_{b}=25$km.
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.99\textwidth]{\Curie/figs/sintetico-seleccion-ventana.png}
+\caption{Interfaz gráfica mostrando la selección de la ventana de las anomalías magnéticas generada por el modelo sintético.}
+\label{fig-curie-sintetico-seleccion-ventana}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.75\textwidth]{\Curie/figs/sintetico-ajuste-curva.pdf}
+\caption{Espectro de Potencia de la ventana seleccionada en la Figura \ref{fig-curie-sintetico-seleccion-ventana} junto con la curva de ajuste. Las profundidades obtenidas fueron de $Z_{t}= (5.0 \pm 0.2)$km y $Z_{b} = (25 \pm 2)$km.}
+\label{fig-curie-sintetico-ajuste-curva}
+\end{figure}
+
+Para simular el comportamiento aleatorio de la magnetización $M(x,y)$
+la loza está constituida por 2020$\times$2020 prismas de aproximadamente 300m de ancho, que se extienden verticalmente desde $Z_{t}$ hasta $Z_{b}$ y cada uno cuenta con una magnetización aleatoria con distribución uniforme entre -1 y 1 [A/m], verticalmente orientada.
+
+Luego, a través de funciones de la librería Fatiando a Terra (\cite{Uieda2014}), calculamos la anomalía que esta loza genera en una grilla de 101$\times$101 nodos con un equiespaciado de 3km, ubicada en $z=0$, de tal forma que el origen de la grilla coincide con el origen (en $(x,y)$) de la loza. En la Figura \ref{fig-curie-sintetico-seleccion-ventana} se expone la interfaz de CuDePy, en la cual se puede observar la anomalía generada por la loza y a su izquierda el espectro de la ventana seleccionada.
+
+En la Figura \ref{fig-curie-sintetico-ajuste-curva} mostramos el espectro junto con la curva de ajuste. Los parámetros que se obtuvieron para este modelo sintético fueron: $Z_{t}= (5.0 \pm 0.2)$km y $Z_{b} = (25 \pm 2)$km. Demostrando así que el software desarrollado reproduce con buena precisión al modelo sintético propuesto.
+
+Vale observar que la profundidad de Curie que obtuvimos, en un caso muy ideal, posee un error relativo del orden del 10\%. Esto debe tomarse como una buena medición del parámetro $Z_{b}$. Como se mencionó en párrafos anteriores, es usual encontrarse con valores de error bastante elevados en la determinación de las profundidades de la loza, especialmente en el $Z_{b}$.
+
+\prechapterpage
+\chapter{Aplicación del Método}
+
+\section{En La Payunia}
+EL bloque San Rafael y Payunia se encuentran ubicados en el centro-sur de la Provincia de Mendoza (ver Figura \ref{fig-curie-payunia}). En ella podemos hallar dos volcanes importantes: el Payún Matrú y el Cerro Nevado, que presentan un magmatismo joven de composición primordialmente basáltica.
+
+Tomando los datos de anomalía magnéticas obtenidos por \cite{Anci2012}, aplicamos el método desarrollado para obtener la Profundidad del Punto de Curie en esta zona. Hemos sido capaces de ajustar satisfactoriamente dicho valor en 29 ventanas diferentes, con un error promedio del 20$\%$. El ancho de las ventanas utilizadas variaba según la profundidad del Punto de Curie en cada una de ellas. Para regiones donde el $Z_{b}$ era más superficial utilizamos ventanas del orden de los 30km, mientras que para las que presentaban valores más profundos, el mismo rondaba los 60km.
+
+\begin{figure}[b!]
+    \centering{}
+    \includegraphics[width=1\textwidth]{\Curie/figs/curie-payunia.pdf}
+    \caption{Grillas de Anomalía Magnética para la región de Payunia junto a la grilla de Profundidades de Curie calculadas. Se pueden identificar el volcán Payún Matrú (el más austral) y el Cerro Nevado.}
+    \label{fig-curie-payunia}
+\end{figure}
+
+Como resultado obtuvimos la grilla de Profundiades del Punto de Curie que se muestra en la Figura \ref{fig-curie-payunia}, en la cual podemos diferenciar una región más caliente hacia el este, y otra más fría hacia el oeste. Cuanto más superficial se encuentra el Punto de Curie entendemos que la región es más cálida, ya que la isoterma se encuentra más cerca de la superficie terrestre. Estos resultados están de acuerdo con la geología de la zona: en la región volcánica la isoterma es más superficial debido al flujo térmico que las cámaras magmáticas generan.
+
+
+\section{En Vinchina}
+
+\begin{figure}[b!]
+    \centering
+    \begin{subfigure}[h]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{\Curie/figs/ceci-anomalia.jpg}
+    \end{subfigure}
+    \begin{subfigure}[h]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{\Curie/figs/ceci-curie.jpg}
+    \end{subfigure}
+    \caption{Grillas de Anomalía Magnética para la región de Vinchina junto a la grilla de Profundidades de Curie calculadas por \cite{Weidmann2015}.}
+    \label{fig-curie-vinchina}
+\end{figure}
+
+El método aquí desarrollado fue puesto a disposición de \cite{Weidmann2015} con el fin de aplicarlo en la zona de estudio que involucra su trabajo de Tesis. La misma consiste en la Cuenca de Vinchina, ubicada en la Región de los Andes Centrales, sobre la zona de subducción subhorizontal de la placa oceánica de Nazca (ver Figura \ref{fig-curie-vinchina}).
+
+
+
+
+En esta región, se han interpretado importantes colisiones de terrenos, que han causado grandes orogénesis dentro del Gondwana. Los modelos geológicos-geofísicos  indican la existencia de una importante estructura geológica de alta densidad, ubicada bajo la cuenca de Vinchina,  que se podría vincular con un sector del arco Famatiniano y la cuña de acreción de Cuyania y Gondwana. Resultando ser una cuenca fría y inmadura.
+
+Los resultados obtenidos mediante la aplicación del software aquí desarrollado se pueden ver en la Figura \ref{fig-curie-vinchina}, los cuales refuerzan las interpretaciones mencionadas en el párrafo anterior.
+

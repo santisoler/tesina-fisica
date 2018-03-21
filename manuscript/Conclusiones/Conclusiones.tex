@@ -1,0 +1,22 @@
+%~ \chapter*{Conclusiones}
+\vspace*{0.4cm}
+
+{\bf \huge Conclusiones}
+\addcontentsline{toc}{part}{Conclusiones}
+
+\vspace{0.8cm}
+
+En el desarrollo de esta Tesina hemos sido capaces de construir dos métodos espectrales para determinar la Profundidad al Punto de Curie y el Espesor Elástico de la Corteza Terrestre.
+
+En el primero logramos analizar las técnicas existentes de \cite{Tanaka1999} y \cite{Blakely1995}, basadas en el trabajo de \cite{Spector1970}; y proponer variaciones a ellos. Obteniendo finalmente un método que utiliza ventanas interactivas para ajustar por mínimos cuadrados el promedio radial del espectro de potencia de las anomalías magnéticas con la curva predicha por un modelo de loza infinita, suponiendo que esta posee una magnetización aleatoria y no correlacionada. Comprobamos su funcionamiento a través de un modelo sintético y lo utilizamos para obtener la profundidad al punto de Curie en la región conocida como La Payunia. Además, el método y el software implementado fueron utilizados por \cite{Weidmann2015} en la zona de Vinchina ayudando a corroborar las hipótesis propuestas en su trabajo.
+
+Este método presenta dificultades en regiones donde la hipótesis de magnetización aleatoria no es válida. Para sortear esto se podría implementar modelos similares proponiendo otro tipo de estadísticas a las magnetizaciones de la loza y con ellos intentar ajustar la curva teórica de la misma forma que proponemos en nuestro método.
+
+Para el segundo conseguimos implementar la obtención del Espesor Elástico de la Corteza Terrestre a través del ajuste entre las cargas topográficas y un Moho que se obtiene por inversión de las Anomalías de Bouguer. Este es realizado mediante la utilización de ventanas interactivas que permiten calcular el Espesor Elástico que mejor ajusta a cada una de ellas, permitiendo así obtener una distribución de valores de $T_{e}$ en toda nuestra zona de estudio. A partir de ella, determinamos un Moho que llamamos Flexural, haciendo uso del algoritmo de \cite{Garcia2014}, que sirve para contrastar nuestros resultados.
+
+Al igual que el anterior, corroboramos su funcionamiento a través de un modelo sintético y luego lo aplicamos en la cuenca Neuquina, donde hallamos un buen funcionamiento del mismo, a excepción de una zona donde interpretamos la presencia de una intrusión más densa que podría tratarse de la dorsal de Huincul.
+
+En este último método encontramos que la inversión de las anomalías de Bouguer introduce un factor de subjetividad y ambigüedad en los resultados, ya que para lograrlo es necesario ajustar valores de frecuencias de corte para los filtros pasabajos que se necesitan aplicar. \cite{Calmant1987} y \cite{Braitenberg2002} hacen mención a un método que evade este obstáculo, y sería interesante implementarlo a futuro. Este consiste, en rasgos generales, en calcular varios Mohos de prueba a partir de la carga topográfica, uno por cada valor de Espesor Elástico; y luego tomar el valor óptimo de $T_{e}$ para esa ventana aquel cuya raíz produce una anomalía que ajusta a la de Bouguer.
+
+
+Los códigos fuentes del software desarrollado a lo largo de este trabajo pueden descargarse de https://github.com/santis19/tesina-fisica.

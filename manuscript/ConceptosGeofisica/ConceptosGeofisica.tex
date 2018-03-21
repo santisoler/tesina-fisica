@@ -1,0 +1,363 @@
+\part{Conceptos de Física y Geofísica}
+
+
+\chapter{Gravimetría e Isostasia}
+
+Los métodos gravimétricos poseen un lugar formidable en la historia de la ciencia. Las primeras observaciones cuantificadas de la caída de los objetos tienen sus raíces en los experimentos de Galileo Galilei alrededor del año 1590. En 1687 Isaac Newton publica su famoso tratado {\it Philosophiae Naturalis Principia Mathematica} en el cual propone que la fuerza gravitatoria es una interacción entre toda la materia, incluido el planeta Tierra.
+
+En 1672 un estudiante francés, Jean Richer, nota que un reloj pendular diseñado para ser preciso en París perdía unos pocos minutos al día en Cayenne, Guinea Francesa. De esta forma se descubre que las observaciones con péndulos sirven para medir la variación espacial del geopotencial gravitatorio. Newton interpretó correctamente esta diferencia entre ambas mediciones como consecuencia de la forma ``ovalada'' de la Tierra. Los franceses opinaban distinto, por lo que enviaron dos expediciones: una a las altas latitudes de Suecia y otra a Ecuador para medir cuidadosamente la longitud de un arco de un grado en ambos lugares para compararlos. La expedición a Ecuador estaba liderada por Pierre Bouguer, quien es conocido por la anomalía que lleva su nombre.
+
+La aplicación de mediciones de gravedad a problemas geológicos se remonta a las hipótesis rivales de John Pratt y George Airy publicadas entre 1855 y 1859 acerca del equilibrio isostático mediante el cual se soporta la topografía. En ese entonces notaron que las plomadas cerca del Himalaya se deflectaban de la vertical una cantidad menor de la predicha debido a la masa topográfica de la cadena montañosa. Ambos propusieron que en la ausencia de fuerzas además de la gravitatoria, las partes rígidas de la corteza ``flotan'' en un substrato denso, por ende la masa total en cada columna vertical hasta la profundidad de compensación debe equilibrarse punto a punto. De esa forma, las regiones elevadas deben estar compensadas por deficiencia de masa, mientras que las depresiones topográficas están sustentadas por excesos de masas.
+
+Pratt explicó estas observaciones en términos de variación lateral de la densidad, es decir, que los Himalayas estaban elevados por ser menos densos que la corteza que los rodea. Airy propuso encambio que la corteza posee una densidad uniforme, pero varía su grosor, por ende la cadena montañosa se eleva sobre el terreno que la rodea gracias a la presencia de raíces corticales.
+
+\begin{flushright}
+    \cite{Blakely1995}
+\end{flushright}
+
+\section{Potencial Gravitatorio y Geoide}\label{section-geoide}
+Según la Ley de Gravitación Universal de Newton, el potencial gravitatorio generado por un diferencial de masa en un punto a una distancia $r$ del mismo es:
+
+\begin{equation}
+    dV = +G \frac{dm}{r} 
+\end{equation}
+
+donde G es la constante de gravitación universal\footnote{Obsérvese que se utiliza la convención del signo positivo para la definición del potencial.}. Por ende, el potencial generado por una distribución de masas con densidad $\rho(\vec{r})$ y volumen V puede escribirse como:
+\begin{equation}
+    W_{a}(\vec{r}) = G \int\limits_{V}  \frac{\rho(\vec{r}\,')}{|\vec{r} - \vec{r}\,'|} d\vec{r}\,'
+\end{equation}
+
+Puede demostrarse que este potencial satisface la ecuación de Poisson:
+\begin{equation}
+    \nabla^{2} W_{a} = -4\pi G \rho
+\end{equation}
+
+Fuera de las masas la densidad $\rho$ se anula y el potencial satisface la ecuación de Laplace:
+\begin{equation}
+    \nabla^{2} W_{a} = 0
+\end{equation}
+y por ende, $W_{a}$ es una función harmónica.
+
+En el caso de que el cuerpo que genera dicho potencial sea la Tierra, no debemos dejar de considerar el efecto de rotación de la misma, el cual genera un potencial centrífugo $\Phi$.{}
+\begin{equation}
+    \Phi(\vec{r}) = \frac{1}{2} \omega^{2} d_{z}^{2}
+\end{equation}
+donde $\omega$ es la velocidad angular de la Tierra y $d_{z} = \sqrt{x^{2} + y^{2}}$ la distancia del punto $\vec{r}$ al eje rotacional ($z$).
+
+En conclusión, el potencial gravitatorio generado por la Tierra fuera de sus masas puede escribirse como la suma de un potencial harmónico y un potencial centrífugo.
+\begin{equation}
+    W = W_{a} + \Phi
+\end{equation}
+
+Sin embargo, podemos replantear dicho potencial como la suma de dos potenciales: uno que llamaremos ``normal'' $U$ y otro denominado ``perturbativo'' $T$. Definiremos al primero de forma tal  que la superficie equipotencial dada por $U(\vec{r}) = U_{0}$ tenga la misma forma que el Elipsoide de revolución. Mientras que el segundo será el potencial perturbador necesario para alcanzar el potencial $W$.
+
+Reescribiendo los potenciales en las coordenadas elipsoidales $(h, \lambda, \phi)$, y teniendo en cuenta que $U$ no depende de $\lambda$, podemos expresar a $W$ como:
+\begin{equation}
+    W(h, \lambda, \phi) = U(h, \phi) + T(h, \lambda, \phi)
+\end{equation}
+
+Finalmente, definiremos al geoide como aquella superficie equipotencial definida por $W(h, \lambda, \phi) = U_{0}$ y ondulación del geoide a la función $N(\lambda, \phi)$ tal que:
+\begin{equation}
+    W(h \! = \! N(\lambda, \phi), \, \lambda, \, \phi) = U(h\!=\!0, \phi) = U_{0}
+\end{equation}
+
+
+%% METER FIGURA DE ELIPSOIDE GEOIDE Y ONDULACION DEL GEOIDE
+
+\section{Anomalías Gravimétricas}
+
+\subsection{Gravedad Normal y Anomalía Gravimétrica}
+Antes de poder hacer referencia a una anomalía gravimétrica es necesario definir el escenario ``normal'' del cual dicha anomalía se aparta. Para ello se utiliza el concepto de gravedad normal.
+
+El vector de aceleración de la gravedad puede obtenerse a partir del potencial que lo genera. Por ejemplo, el vector de gravedad generado por el potencial terrestre $W$ puede obtenerse de la siguiente manera\footnote{Obsérvese que se utiliza la convención del signo positivo para la definición del gradiente del potencial.}:
+\begin{equation}
+    \vec{g} = + \nabla W
+\end{equation}
+
+Y de aquí obtenemos la componente radial de la aceleración:
+\begin{equation}
+    g_{z} = \frac{\partial W}{\partial r}
+\end{equation}
+
+Ahora, podemos definir la gravedad normal como la componente radial del gradiente normal $U$ evaluada en la superficie del Elipsoide.
+\begin{equation}
+    g_{0} = \frac{\partial U}{\partial r} \Big|_{h=0}
+\end{equation}
+
+Aprovechando que el potencial $U$ es harmónico, es posible realizar un desarrollo en harmónicos esféricos y luego obtener el valor de $g_{0}$ como función de $\phi$. Para el Elipsoide WGS84 $g_{0}$ adopta el siguiente:
+\begin{equation}
+    g_{0}(\phi) = 9.7803267714 \frac{1+0.00193185138639 \sin^2(\phi)}{\sqrt{1-0.00669437999013 \sin^2(\phi)}}
+\end{equation}
+
+Finalmente, podemos definir la anomalía gravitatoria observada como la diferencia entre la gravedad observada y la normal:
+\begin{equation}
+    \Delta g(h, \lambda, \phi) = g_{z}(h, \lambda, \phi) - g_{0}(\phi)
+\end{equation}
+
+
+En la Figura \ref{fig-anomalias-1-2} se expone un ejemplo simple de un modelo de litósfera que incluye el manto, la corteza, una dada topografía junto con  la raíz que genera, e incluye un cuerpo anómalo inmerso en corteza. En la primer gráfica podemos apreciar la gravedad observada, es decir, la que genera el modelo completo junto con el resto de la Tierra. Mientras que en la segunda gráfica se muestra cómo se ve modificada al quitarle a dicha magnitud la gravedad normal. El efecto que posee esto sobre el modelo es el de remover la corteza normal y el manto, dejando una raíz con un contraste de densidad negativo y parte del cuerpo anómalo con contraste de densidad positivo.
+
+\subsection{Anomalía de Aire Libre}
+
+
+%% Arreglar esto!
+
+Observemos que la anomalía de gravedad observada posee una dependencia en $h$. Por ejemplo, si la medición fue realizada en topografía, $h$ vendrá a tomar el valor de la cota topográfica. Dicha dependencia resulta innecesaria, por lo cual es beneficioso eliminarla. Para realizarlo haremos uso de lo que se conoce como corrección de Aire Libre.
+
+Esta consiste en quitar el efecto que produce el potencial normal $U$ al elevar el punto de medición desde el geoide a la altura $h$. El mismo se obtiene realizando una aproximación por series de Taylor de la aceleración de la gravedad:
+\begin{equation}
+    g(h) \simeq g_{0} + \frac{\partial g(h)}{\partial r} \, h \simeq g_{0} - 0.3086 \cdot 10^{-5} \, h
+\end{equation}
+donde la constante 0.3086 está expresada en $s^{-2}$.
+
+Definimos entonces el término de corrección de Aire Libre como:
+\begin{equation}
+    g_{fa}(h) = - 0.3086 \cdot 10^{-5} \, h
+\end{equation}
+
+Y la anomalía de Aire Libre no será más que la Anomalía de Gravedad Observada menos dicha corrección:
+\begin{equation}
+    \Delta g_{fa} = g_{z} - g_{0} - g_{fa}
+\end{equation}
+
+\begin{figure}[b!]
+\centering
+\includegraphics[width=0.98\textwidth]{\ConceptosGeofisica/figs/anomalias-fig-1-2.pdf}
+\caption{Gravedad Observada y Anomalía Observada para un ejemplo con Topografía, Raíz y cuerpo anómalo en corteza, medidas en topografía.}
+\label{fig-anomalias-1-2}
+\end{figure}
+
+
+
+
+\subsection{Anomalía de Bouguer}
+Además de la corrección de Aire Libre, suele realizarse también otra corrección para eliminar el efecto que produce la topografía sobre dicha anomalía. Ésta se conoce como anomalía de Bouguer.
+
+La forma simple de la anomalía de Bouguer consiste en aproximar la altura topográfica en un punto dado por un cilindro infinito y restarle el efecto que este genera a la anomalía de Aire Libre en el mismo punto.
+\begin{equation}
+    g_{bg} = 2\pi g_{0} \rho_{c} h \simeq 0.1119 \cdot 10^{-5} \, h
+\end{equation}
+donde $\rho_{c} = 2670$ kg/m$^{3}$ es la densidad estándar de las masas topográficas y la constante de proporcionalidad está expresada en s$^{-2}$.
+
+Finalmente, definimos la Anomalía de Bouguer como:
+\begin{equation}
+    \Delta g_{bg} = \Delta g_{fa} - g_{bg} = g_{z} - g_{0} - g_{fa} - g_{bg}
+\end{equation}
+
+
+En la Figura \ref{fig-anomalias-3-4} se exponen las anomalías de Aire Libre y de Bouguer para el mismo ejemplo que el de la Figura \ref{fig-anomalias-1-2}. En la primer gráfica vemos que la corrección de Aire Libre quita el efecto que produce el haber obtenido las mediciones en altura, sin embargo no produce ninguna modificación al modelo. Mientras que en la segunda gráfica observamos cómo la corrección de Bouguer elimina el efecto gravimétrico que produce la topografía.
+
+\begin{figure}[b!]
+\centering
+\includegraphics[width=0.98\textwidth]{\ConceptosGeofisica/figs/anomalias-fig-3-4.pdf}
+\caption{Anomalía de Aire Libre y Anomalía Simple de Bouguer para el mismo ejemplo que el de la Figura \ref{fig-anomalias-1-2}.}
+\label{fig-anomalias-3-4}
+\end{figure}
+
+\section{Isostasia}
+%%¿Qué es la isostasia? Watts
+%% de Wikipedia:
+La isostasia es el estado de equilibrio entre la corteza y el manto terrestre debido, entre otros factores, a la diferencia de densidades entre ambos. La corteza terrestre es generalmente menos densa que el manto, con lo cual, debido al principio de Arquímedes, se puede interpretar que la primera flota sobre el segundo.
+
+\subsection{Isostasia de Airy}
+Existe un modelo isostático clásico conocido como Modelo Isostático de Airy-Heiskanen o Isostasia de Airy el cual predice que una elevación topográfica produce una raíz que se introduce en el manto a una profundidad que depende de dicha elevación. El equilibrio se produce con la competencia de la fuerza gravitatoria de la corteza y el empuje generado por la diferencia de densidades del manto y la raíz.
+
+Dada una topografía arbitraria consideremos una columna de toda la litósfera (desde la topografía hasta el manto superior), como se puede apreciar en la Figura \ref{fig-airy}. Según el modelo de Airy, el peso de la parte cortical de la columna (primer miembro de la ecuación \ref{eq-airy-peso-empuje}) debe anularse con el empuje generado por el desplazamiento de manto debido a la intrusión de la raíz (segundo miembro de la ecuación \ref{eq-airy-peso-empuje}).
+\begin{equation}
+    \rho_{t}\,g\,h + \rho_{c}\,t\,g + \rho_{c}\,w\,g = \rho_{m}\,w\,g + \rho_{c}\,t\,g
+    \label{eq-airy-peso-empuje}
+\end{equation}
+
+Reagrupando los términos se obtiene la ecuación de equilibrio isostático de Airy:
+\begin{equation}
+    w = \frac{\rho_{t}}{\rho_{m}-\rho_{c}} \, h
+    \label{eq-airy}
+\end{equation}
+
+Al aplicar dicha ecuación a cada punto del perfil o grilla es posible obtener la raíz isostática. Como observación, tomando valores normales de densidades de topografía, corteza y manto ($\rho_{t}=2670$ kg/m$^{3}$, $\rho_{t}=2900$ kg/m$^{3}$, $\rho_{m}=3300$ kg/m$^{3}$) la relación de proporcionalidad entre la intrusión de la corteza en manto y la topografía queda:
+\begin{equation}
+    w \simeq 6,675 \, h
+\end{equation}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.75\textwidth]{\ConceptosGeofisica/figs/airy.pdf}
+\caption{Perfil de litósfera con topografía, corteza normal, raíz isostática de Airy y manto superior. En la columna elegida la topografía posee una altura $h$ y la raíz una profundidad $w$ medida desde el limite inferior de la corteza normal, definida con un ancho $t$.}
+\label{fig-airy}
+\end{figure}
+
+
+
+\prechapterpage
+\chapter{Magnetometría y Magnetismo}
+El campo geomagnético debe ser la propiedad geofísica de la Tierra más ancestralmente estudiada. La atracción mutua entre imanes se remonta a los tiempos de Tales de Mileto, mientras que la tendencia de estas rocas a alinearse en direcciones preferenciales ya se conocían en China para el I D.C.
+
+En el siglo XIII, Petrus Peregrinus llevó a cabo importantes experimentos con esferas de rocas magnéticas, describiendo por primera vez los conceptos de polarización magnética, meridianos magnéticos y la idea de que polos opuestos se atraen y polos iguales se repelen. En 1600, el físico William Gilbert publicó su tratado {\it De Magnete} en el cual proclama que {\it ``la Tierra es un gran imán''}, atribuyéndole así otra propiedad además de la redondez al planeta Tierra. En 1838, el matemático Carl Friederich Gauss le otorgó a las mediciones geomagnéticas el primer formalismo a escala global, aplicando el análisis de armónicos esféricos a un conjunto de mediciones disponibles en ese tiempo.
+
+La aplicación de métodos magnéticos a problemas geológicos avanzó en paralelo con el desarrollo de los magnetómetros. En 1630 se usaron brújulas para realizar prospecciones de oro en Suecia. Y Max Thomas Edelmann utilizó magnetos balanceados en las primeras mediciones aeromagnéticas en la primer década del siglo pasado, los cuales permiten una mejor cobertura que las realizadas en tierra.
+
+En 1955 Varian Associates diseñaron un magnetómetro protónico, un instrumento simple que mide la magnitiud total del campo magnético sin necesidad de estabilizadores o equipos de orientación, el cual revolucionó las mediciones aéreas y terrestres, siendo el estándar en campañas actuales.
+
+Mientras que el campo gravitatorio es invariante en el tiempo, a excepción de algunos cambios por la redistribuciones de masas (como las mareas, movimientos magmáticos, etc), el campo magnético terrestre varía en intensidad y orientación en escalas de tiempos que van desde los milisegundos a milenios. Esto hace parecer que la reducción de mediciones magnéticas para el estudio de cuerpos de la corteza sea muy complicada, sin embargo en la práctica no lo es.
+
+Para poder alcanzar dicha reducción es necesario discriminar entre los campos magnéticos generados por los cuerpos de la corteza y los originados por distintas otras fuentes, como el movimiento de magma en el interior de la Tierra, vientos solares, la presencia de la ionósfera, etc.
+
+
+\begin{flushright}
+    \cite{Blakely1995}
+\end{flushright}
+
+\section{Potencial Magnético Terrestre}
+En la mayoría de las situaciones geofísicas, las corrientes eléctricas son despreciables en regiones donde se realizan las mediciones de magnetometría, por lo cual es posible expresar al campo magnético como el gradiente de un potencial escalar (caso contrario deberíamos hacer uso del potencial vector $\bf{A}$).
+\begin{equation}
+    \nabla \times {\bf B} = 0 \,\,\,\,\,\, \Rightarrow \,\,\,\,\,\, {\bf B} = - \nabla \varphi
+\end{equation}
+
+Además, si consideramos una esfera de radio $a$ que no es atravesada por fuentes magnéticas entonces el potencial $\varphi$ satisface la ecuación de Laplace.
+\begin{equation}
+    \nabla^{2} \varphi = 0
+\end{equation}
+
+Si existen fuentes dentro y fuera de la esfera, entonces el potencial en las regiones libres de ellas y cercanas a su superficie, puede ser escrito como suma de los potenciales originados por fuentes internas ($i$) y externas ($e$) a la esfera, respectivamente.
+\begin{equation}
+    \varphi = a \sum\limits_{n=0}^{\infty} \left[ \left( \frac{r}{a} \right)^{n} T_{n}^{\,e} + \left( \frac{a}{r} \right)^{n+1} T_{n}^{\,i} \right]
+\end{equation}
+\begin{align}
+    T_{n}^{i} &= \sum_{m=0}^{n} (g_{n}^{mi} \cos m\lambda  + h_{n}^{mi} \sin m\lambda ) P_{n}^{m}(\theta) \\
+    T_{n}^{e} &= \sum_{m=0}^{n} (g_{n}^{me} \cos m\lambda  + h_{n}^{me} \sin m\lambda ) P_{n}^{m}(\theta)
+\end{align}
+
+
+Donde el ángulo $\theta$ es la colatitud, es decir, 90$\degree$ - $\phi$, y $\lambda$ la longitud; las constantes $g_{n}^{m}$ y $h_{n}^{m}$ se conocen como coeficientes de Gauss; y $P_{n}^{m}$ es el polinomio asociado de Legendre de grado $n$ y orden $m$ normalizado según la convención de Schmidt \cite[p. 113]{Blakely1995}.
+
+A partir de mediciones de campo magnético alrededor del globo es posible demostrar que las constantes $g_{n}^{me}$ y $h_{n}^{me}$ pueden ser despreciadas en una primera aproximación, es decir, el campo magnético terrestre está principalmente originado por las fuentes internas. Por simplicidad nos desharemos de los índices $i$ y $e$, y daremos por supuesto que las constantes $g_{n}^{m}$ y $h_{n}^{m}$ se refieren a fuentes internas. Sin embargo, se suele aplicar correcciones, como la diurna, para eliminar los efectos de las fuentes externas.
+
+En conclusión, podemos escribir el potencial generado por fuentes internas a la Tierra como:
+\begin{equation}
+    \varphi = a \sum\limits_{n=1}^{\infty} \left( \frac{a}{r} \right)^{n+1} \sum\limits_{m=0}^{n} (g_{n}^{m} \cos m\lambda + h_{n}^{m} \sin m\lambda) P_{n}^{m}(\theta)
+\end{equation}
+
+Al igual que hicimos en gravimetría al introducir el Elipsoide, es necesario definir un marco de referencia para la magnetometría. Dicho sistema de referencia se construye al igual que el Elipsoide, por acuerdo internacional, y se lo denomina IGRF (International Geomagnetic Reference Field).
+
+El IGRF consiste en establecer los términos de Gauss hasta orden 10, ya que se ha demostrado que el campo generado por ellos representa en gran medida el campo originado en el núcleo de la Tierra. Debido a sus variaciones temporales, se adopta un nuevo modelo IGRF cada 5 años, período denominado {\it época}.
+
+Es posible separar el potencial $\varphi$ entre dos componentes:
+\begin{equation}
+    \varphi = \varphi^{D} + \varphi^{ND} \\
+\end{equation}
+\begin{equation}
+    \varphi^{D} = \frac{a^{3}}{r^{2}} \left[ g_{1}^{0}\frac{z}{r} + g_{1}^{1}\frac{x}{r} + h_{1}^{1}\frac{y}{r} \right]
+\end{equation}
+
+\begin{equation}
+\left\{
+\begin{aligned}
+    x &= r \cos\lambda \, \sin\theta \\
+    y &= r \sin\lambda \, \sin\theta \\
+    z &= r \cos\theta
+\end{aligned}
+\right.
+\end{equation}
+
+
+La componente $\varphi^{D}$ coincide con el potencial generado por un dipolo magnético con magnetización ${\bf m} = \frac{4\pi}{\mu_{0}}a^{3}(g_{1}^{1}, \, h_{1}^{1}, \, g_{1}^{0})$ y se conoce como potencial dipolar, mientras que $\varphi^{ND}$ se denomina potencial no dipolar. Se puede demostrar que $\varphi^{ND}$ compone solo un 10$\%$ del campo total, por lo cual podemos considerar al campo magnético terrestre como dipolar a una muy buena aproximación.
+
+\section{Elementos del Campo Geomagnético}
+A la hora de determinar el campo magnético terrestre en un dado punto de la superficie terrestre es posible hacerlo mediante sus tres componentes: $B_{x}$, $B_{y}$, $B_{z}$. De forma alternativa, es posible describirlo a partir de la intensidad total del campo $T$, y dos ángulos: la inclinación $I$ y la declinación $D$.
+\begin{gather}
+    T = \sqrt{B_{x}^{2} + B_{y}^{2} + B_{z}^{2}} \\
+    I = \arctan \frac{B_{z}}{\sqrt{B_{x}^{2} + B_{y}^{2}}} \\
+    D = \arcsin \frac{B_{y}}{\sqrt{B_{x}^{2} + B_{y}^{2}}}
+\end{gather}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.35\textwidth]{\ConceptosGeofisica/figs/inclination-declination.pdf}
+\caption{Ejemplo gráfico de cómo determinar los ángulos de inclinación $I$ y declinación $D$ a partir del vector campo magnético $B$.}
+\label{fig-inclination-declination}
+\end{figure}
+
+Dado un campo magnético ${\bf B}$, podemos ver en la Figura \ref{fig-inclination-declination} cómo quedan definidos los ángulos $I$ y $D$.
+
+\section{Anomalías Magnéticas}
+En los vuelos aeromagnéticos se suelen utilizar magnetómetros escalares ({\it total-field magnetometers}) los cuales son capaces de medir la magnitud del campo magnético, sin importar la dirección del mismo.
+
+La anomalía magnética se define entonces como la diferencia entre la intensidad medida y la magnitud de un campo regional como puede ser el IGRF apropiado para el momento en el cual se llevó a cabo la medición. Si ${\bf T}$ representa el campo total en cualquier punto y ${\bf F}$ es el campo regional, entonces podemos escribir la anomalía magnética como:
+\begin{equation}
+    \Delta T = |{\bf T}| - |{\bf F}|
+\end{equation}
+
+Además de quitarle el campo generado por el IGRF, se suele realizar correcciones para extraer  las contribuciones de los fuentes externas. Un ejemplo de ellas es la corrección diurna, que elimina las contribuciones al campo magnético generado por la actividad solar.
+
+\section[Transición de Fase Ferromagnética y Profundidad de Curie]{Transición de Fase Ferromagnética y \\Profundidad de Curie}
+\chaptermark{Ferromagnetismo y Profundidad de Curie}
+
+En párrafos anteriores hemos hecho mención sobre el origen del magnetismo terrestre en dos fuentes principales, una de ellas el núcleo (especialmente el núcleo exterior) y la otra, la corteza terrestre. La razón por la cual se descarta al manto como generador del campo geomagnético se debe a una característica de los materiales ferromagnéticos como es la Temperatura de Curie.
+
+Los materiales paramagnéticos son aquellos que al estar expuestos a un campo magnético generan una magnetización en la misma dirección del campo, sin embargo, cuando el campo se desvanece, su magnetización vuelve a ser nula.
+
+Por otro lado, los materiales ferromagnéticos son aquellos que se comportan similar a los paramagnetos frente a un campo externo, sin embargo cuando este se anula, el material presenta una magnetización remanente no nula.
+
+Sin embargo, los materiales ferromagnéticos poseen dicha cualidad por debajo de una temperatura característica conocida como Temperatura de Curie. Una vez que la alcanzan sufren una Transición de Fase y se transforman en paramagnetos, es decir, no presentan más magnetizaciones remanentes.
+
+En el interior de la Tierra las temperaturas aumentan con la profundidad, lo suficiente como para que dentro de la misma corteza superen la Temperatura de Curie de las rocas ferromagnéticas allí presentes. A la profundidad en la cual las rocas sufren la transición de fase se la conoce como Profundidad al Punto de Curie, o Profundidad de Curie.
+
+Por debajo de dicha profundidad podemos considerar que no existen fuentes de campo magnético, no hasta alcanzar el núcleo externo, donde el campo magnético se genera por movimientos de fluidos, un mecanismo distinto al de magnetizaciones remanentes en la corteza.
+
+De conocer la naturaleza de las rocas presentes en la corteza es posible determinar cuál es la Temperatura de Curie de las mismas y por ende la Profundidad de Curie puede ser tomada como una isoterma, es decir, una superficie que posee la misma temperatura en todos sus puntos. Sin embargo hay que tener especial cuidado al realizar esto, ya que las Temperaturas de Curie de diversas rocas pueden variar hasta centenas de grados.
+
+
+\prechapterpage
+\chapter[Métodos Espectrales y FFT]{Métodos Espectrales y Transformada Rápida de Fourier}
+
+Un camino posible para la interpretación de anomalías es trabajar con {\bf métodos directos}, es decir, proponer un modelo inicial de los cuerpos causantes de dicha anomalía construido a partir del conocimiento geológico y geofísico ya existente de la zona de estudio, para luego ajustar parámetros para mejorar el ajuste de la anomalía resultante con la observada.
+Con modelo entendemos la distribución geométrica de cuerpos anómalos con parámetros característicos como densidad, susceptibilidad, resistencia, magnetización, etc.
+
+La desventajas que presentan estos métodos residen en en la necesidad de poseer información a priori sobre nuestra zona, lo cual no siempre es posible, y además en un aspecto más intrínseco del problema: la ambigüedad de la solución. Está demostrado que dado un potencial, ya sea gravitatorio o magnético, existen diversas distribuciones de densidades que generan el mismo resultado, un ejemplo de esto es la Capa Equivalente de Green \cite[p. 61]{Blakely1995}. Por lo tanto, si el conocimiento de la zona no es preciso, nuestra solución al problema por estos métodos puede llegar a ser errónea, aunque los valores de anomalías ajusten de forma excelente.
+Por último, pero no menos importante, estos métodos se llevan a cabo mediante prueba y error, lo cual resulta en un costo de tiempo y trabajo elevado hasta alcanzar la solución.
+
+Los métodos opuestos a estos últimos son los llamados {\bf métodos de inversión}, en los cuales la solución al problema se obtiene de forma directa desde las anomalías. Se propone un tipo de comportamiento de los cuerpos anómalos y se ajustan los parámetros según dicho modelo. 
+En este caso al modelo lo entendemos como la respuesta física que genera cualquier distribución arbitraria de los cuerpos anómalos que estamos considerando.
+
+Los beneficios que otorgan estos métodos están relacionados con el ahorro de trabajo, ya que la resolución del problema puede ser encarada computacionalmente, como también generan más confiabilidad ya que necesitan menos información a priori. La desventaja que presentan reside en la falta de generalización, es decir, es posible que la zona de estudio no responda según el modelo geofísico propuesto, por lo cual el resultado que se obtenga de la inversión será erróneo.
+
+Dentro de estos métodos podemos ubicar a algunos {\bf métodos espectrales}, como los que desarrollamos en este trabajo. Estos hacen uso de la Tansformada de Fourier para trasladar el problema hacia el espacio de frecuencias, donde algunos problemas como la continuación ascendente \footnote{Continuación Ascendente: es la obtención de la anomalía generada por cualquier distribución \\ de densidades a una altura arbitraria conociendo únicamente la anomalía a una altura menor.} se reducen a relaciones lineales.
+
+La Transformada de Fourier (TF) de cualquier función $f(x)$ se puede definir de la siguiente manera:
+\begin{equation}
+    \mathcal{F} \left[ f(x) \right](k) = \int\limits_{-\infty}^{\infty} f(x) \, e^{-i k x} \, dx
+\end{equation}
+donde $k=2\pi/\lambda$ es el número de onda y $\lambda$ es la longitud de onda asociada a $k$. Por conveniencia, hablaremos de forma indistinta del número de onda y de la frecuencia haciendo referencia siempre al $k$, aunque se indique lo contrario.
+
+Una de las propiedades importantes que posee la Transformada de Fourier es la identidad que relaciona la Transformada de una función con la Transformada de su derivada n-ésima:
+\begin{equation}
+    \mathcal{F}[f^{(n)}(x)](k) = (ik)^{n} \,\, \mathcal{F}[f(x)](k)
+    \label{eq-transformada-de-la-derivada}
+\end{equation}
+
+Además, la Transformada de Fourier puede definirse para funciones de más de una variable, siendo el caso de interés para el presente trabajo, la Transformada de Fourier en 2D:
+\begin{equation}
+     \mathcal{F} \left[ f({\bf r}) \right]({\bf k}) = \int\limits_{-\infty}^{\infty} f({\bf r}) \, e^{-i {\bf k} \cdot {\bf r}} \, d{\bf r}
+\end{equation}
+donde ${\bf r} = (x, y)$ y ${\bf k}=(k_{x}, k_{y})$ ahora son vectores.
+
+No fue hasta las décadas de los 60 y 70 que los métodos espectrales comenzaron a tener mayor atención para la resolución de problemas geofísicos. Este auge fue causado por el reciente desarrollo del algoritmo de \cite{Cooley1965} denominado Transformada Rápida de Fourier (FFT), el cual permite llevar a cabo la resolución de una Transformada de Fourier Discreta (ecuación \ref{eq-dft}) de forma muy eficiente, disminuyendo considerablemente los tiempos de cálculo.
+\begin{gather}
+    F_{kl} =  \sum_{m=0}^{M-1} \sum_{n=0}^{N-1} f_{mn}\exp\left\{-2\pi i \left(\frac{mk}{ M}+\frac{nl}{N}\right)\right\} \quad k = 0, \ldots, M-1;\quad l = 0, \ldots, N-1 
+    \label{eq-dft}
+\end{gather}
+
+Una desventaja de los métodos espectrales es la necesidad de que los datos se encuentren ubicados en los nodos de una grilla regular, es decir, una cuadrícula de puntos equiespaciados. En el caso de campañas aeromagnéticas esto no presenta un problema, ya que la densidad de puntos medidos es lo suficientemente alta como para que los algoritmos de interpolación de los datos a los puntos de la grilla sea muy fiel al dato original.
+
+Sin embargo existen situaciones donde los puntos no poseen tales características, sino que pueden describir caminos o regiones sin datos (algo que suele suceder en mediciones terrestres que pueden presentar obstáculos hacia determinadas zonas). En estos casos se debe tener precaución a la hora de interpretarlos, ya que los algoritmos de interpolación pueden estar rellenando erróneamente esas regiones vacías.
+
+Otra característica contraproducente de las TF es que suelen producir efectos de borde, es decir, en los límites de la grilla los métodos espectrales suelen cometer errores y no responder como lo hacen en los puntos más interiores. Esto se origina en la hipótesis de que la función $f$ debe ser periódica en todo el espacio $\Re^{2}$. Como no se poseen datos en todo ese espacio al trabajar con cantidades discretas, se transforma la función $f$ en periódica extendiéndola a infinito con un período igual al ancho de la grilla. De esta forma solo se hace necesario calcular las componentes espectrales para longitudes de ondas menores a ese período. Es por ello que es conveniente siempre disponer de datos en áreas mayores a la zona de estudio, para poder luego descartar los valores cercanos a los bordes.
+
+Por último podemos notar que la Transformada de Fourier resulta ser una función compleja en el espacio de frecuencias. En varios casos se suele hacer uso de lo que se conoce como el Espectro de Potencia de una función $f(x,y)$, el cual se define como el cuadrado del módulo de la Transformada de Fourier de la función $f$:
+\begin{equation}
+    \Phi_{f}({\bf k}) = \left| \, \mathcal{F}[f({\bf r})]\, \right|^{2}
+\end{equation}
+
+
+%%%% REVISAR BIEN EN BIBLIOGRAFIA
+Una propiedad importante que posee el espectro de potencia es que si la función $f$ posee únicamente valores reales, entonces su Espectro de Potencia $\Phi_{f}({\bf k})$ será simétrico con respecto al origen.
